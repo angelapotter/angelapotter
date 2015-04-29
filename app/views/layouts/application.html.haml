@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %title Angela Potter
+    %meta{:content => "Interaction designer in the Bay Area.", :name => "description"}
+      %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+      %meta{:content => "width=device-width", :name => "viewport"}/
+      = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+
+      %script{:src => "//code.jquery.com/jquery-1.9.1.js"}
+      = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+      = csrf_meta_tags
+  %body{:class => ""}
+    .container-xl
+      .header
+        .icon-menu
+        %a{:href => "/portfolio", :title => "home"}
+          %h1 Angela Potter Design
+      .left-nav__container.nav
+        .left-nav
+          %a.mainTab.portfolioLink{:href => "/portfolio"} Portfolio
+          %a.subTab.olsetWebsiteLink{:href => "/portfolio/olset-website.php"} OLSET.com
+          %a.subTab.olsetAnydoLink{:href => "/portfolio/olset-anydo.php"} Any.do Travel
+          %a.subTab.olsetBizCardsLink{:href => "/portfolio/olset-biz-cards.php"}
+            OLSET biz cards
+          %a.subTab.musicNotationLink{:href => "/portfolio/music-notation-app.php"}
+            Music notation app mockup
+          %a.subTab.myfiveLink{:href => "/portfolio/myfive.php"} MyFive
+          %a.subTab.oldPersonLink{:href => "/portfolio/old-person.php"} Old Person App
+          %a.subTab.snakeLink{:href => "/portfolio/snake.php"} Snake
+          %a.mainTab.resumeLink{:href => "/resume.php"} Resume
+          %a.mainTab.aboutLink{:href => "/about.php"} About
+      .content-container
+        = yield
+
+        .contact.footer
+          .content-container
+            .left
+              %a{:href => "malto:angelacbpotter@gmail.com", :title => "email me"}
+                .socialIcon.email
+              %a{:href => "tel:2069498204", :title => "call me"}
+                .socialIcon.phone
+            %a{:href => "http://www.linkedin.com/in/angelacbpotter/", :target => "_blank", :title => "LinkedIn"}
+              .socialIcon.linkedIn
+            %a{:href => "https://twitter.com/takehypotenuses", :target => "_blank", :title => "Twitter"}
+              .socialIcon.twitter
+            %a{:href => "https://dribbble.com/angelapotter", :target => "_blank", :title => "Dribbble"}
+              .socialIcon.dribbble
+            %a{:href => "http://ux.stackexchange.com/users/27505/angelapotter", :target => "_blank", :title => "UX StackExchange"}
+              .socialIcon.stackExchange
+            %a.margin-right--none{:href => "https://github.com/angelapotter", :target => "_blank", :title => "Github"}
+              .socialIcon.github
+    #smallWidth.media-query
