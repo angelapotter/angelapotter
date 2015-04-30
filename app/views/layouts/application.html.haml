@@ -13,24 +13,7 @@
       = csrf_meta_tags
   %body{:class => ""}
     .container-xl
-      .header
-        .icon-menu
-        %a{:href => "/portfolio", :title => "home"}
-          %h1 Angela Potter Design
-      .left-nav__container.nav
-        .left-nav
-          %a.mainTab.portfolioLink{:href => "/portfolio"} Portfolio
-          %a.subTab.olsetWebsiteLink{:href => "/portfolio/olset-website.php"} OLSET.com
-          %a.subTab.olsetAnydoLink{:href => "/portfolio/olset-anydo.php"} Any.do Travel
-          %a.subTab.olsetBizCardsLink{:href => "/portfolio/olset-biz-cards.php"}
-            OLSET biz cards
-          %a.subTab.musicNotationLink{:href => "/portfolio/music-notation-app.php"}
-            Music notation app mockup
-          %a.subTab.myfiveLink{:href => "/portfolio/myfive.php"} MyFive
-          %a.subTab.oldPersonLink{:href => "/portfolio/old-person.php"} Old Person App
-          %a.subTab.snakeLink{:href => "/portfolio/snake.php"} Snake
-          %a.mainTab.resumeLink{:href => "/resume.php"} Resume
-          %a.mainTab.aboutLink{:href => "/about.php"} About
+      = render partial: 'application/header'
       .content-container
         = yield
 

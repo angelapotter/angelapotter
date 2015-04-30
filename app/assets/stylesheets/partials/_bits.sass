@@ -1,0 +1,24 @@
+$brand-primary: #00b8a5
+
+$gray-darkest: #333
+$gray-dark: #666
+$gray-medium: #999
+$gray-light: #aaa
+$gray-lighter: #ccc
+$gray-lightest: #f1f1f5
+
+
+$page-width: 1024px
+
+$link-color: $brand-primary
+
+@function strip($number)
+  @return $number / ($number * 0 + 1)
+
+@function em( $target, $context: 16px )
+  @return ( strip($target) / strip($context) ) * 1em
+
+
+%font-weight-light
+  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  font-weight: 300

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'portfolio_items#index'
 
+  get '/portfolio' => 'portoflio_items#index'
   get '/about' => 'application#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
