@@ -1,0 +1,6 @@
+.container.container--page-width.container--content.container--first
+  %h2.heading--page Portfolio
+
+  - portfolio_items.each do |item|
+    = item.name
+    = item.slug

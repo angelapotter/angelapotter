@@ -1,0 +1,17 @@
+.header
+  .container.container--page-width
+    .icon-menu
+    %a.header__home-link{ href: portfolio_path, title: "home"}
+      %h1 Angela Potter
+    %ul.header__nav--primary
+      %li
+        %a.nav__link{ href: portfolio_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
+          Portfolio
+        %ul.header__nav--secondary
+          - portfolio_items.each do |item|
+            %li
+              %a.subTab.olsetWebsiteLink{ href: portfolio_path( item.slug ) }= item.name
+      %li
+        %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
+      %li
+        %a.nav__link{ href: about_path, class: ( 'active' if params[ :action ] == 'about' ) } About

@@ -64,20 +64,20 @@
     &:after
       display: block
       position: absolute
-      // bottom: $nav-link-border-size * -1
-      bottom: 0
+      bottom: $nav-link-border-size * -1
       left: 0
       right: 0
       height: $nav-link-border-size
+      background: $link-color
       content: ''
+      +transition( bottom $transition-default )
 
     &:hover,
     &.active
       color: $link-color
 
       &:after
-        background: $link-color
-        // bottom: 0
+        bottom: 0
 
 .header__nav--secondary
   display: none

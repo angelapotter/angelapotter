@@ -46,13 +46,61 @@ $header-height: 73px
 
 %content-font-style
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  line-height: 1.5
 
 %header-font-style
   @extend %font-weight-light
 
-// STYLES
+// EFFECTS
+
+$transition-default: 0.3s
 
 =box-shadow( $top, $left, $blur, $color, $inset: '' )
   -webkit-box-shadow: $top $left $blur $color #{$inset}
   -moz-box-shadow: $top $left $blur $color #{$inset}
   box-shadow: $top $left $blur $color #{$inset}
+
+=transition($transition...)
+  -moz-transition:    $transition
+  -o-transition:      $transition
+  -webkit-transition: $transition
+  transition:         $transition
+
+=transition-property($property...)
+  -moz-transition-property:    $property
+  -o-transition-property:      $property
+  -webkit-transition-property: $property
+  transition-property:         $property
+
+=transition-duration($duration...)
+  -moz-transition-property:    $duration
+  -o-transition-property:      $duration
+  -webkit-transition-property: $duration
+  transition-property:         $duration
+
+=transition-timing-function($timing...)
+  -moz-transition-timing-function:    $timing
+  -o-transition-timing-function:      $timing
+  -webkit-transition-timing-function: $timing
+  transition-timing-function:         $timing
+
+=transition-delay($delay...)
+  -moz-transition-delay:    $delay
+  -o-transition-delay:      $delay
+  -webkit-transition-delay: $delay
+  transition-delay:         $delay
+
+=transform( $transform )
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -o-transform: $transform
+  -ms-transform: $transform
+  transform: $transform
+
+=transition-transform( $transition )
+  +transition( transform $transition, -webkit-transform $transition, -moz-transform $transition, -o-transform $transition )
+
+.left
+  float: left
+.right
+  float: right

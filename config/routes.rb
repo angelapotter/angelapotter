@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/about' => 'application#about'
   get '/resume' => 'application#resume'
 
+  PortfolioItems.all.each do |item|
+    get "/portfolio/:slug" => "portfolio_items#show"
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

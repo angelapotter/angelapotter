@@ -14,26 +14,10 @@
 
       = csrf_meta_tags
   %body{ class: body_css_class }
-    .container-xl
-      = render partial: 'application/header'
-      .content-container
-        = yield
+    = render partial: 'layouts/header'
+    .wrapper
+      = yield
 
-        .contact.footer
-          .content-container
-            .left
-              %a{ href: "malto:angelacbpotter@gmail.com", title: "email me"}
-                .socialIcon.email
-              %a{ href: "tel:2069498204", title: "call me"}
-                .socialIcon.phone
-            %a{ href: "http://www.linkedin.com/in/angelacbpotter/", target: "_blank", title: "LinkedIn"}
-              .socialIcon.linkedIn
-            %a{ href: "https://twitter.com/takehypotenuses", target: "_blank", title: "Twitter"}
-              .socialIcon.twitter
-            %a{ href: "https://dribbble.com/angelapotter", target: "_blank", title: "Dribbble"}
-              .socialIcon.dribbble
-            %a{ href: "http://ux.stackexchange.com/users/27505/angelapotter", target: "_blank", title: "UX StackExchange"}
-              .socialIcon.stackExchange
-            %a.margin-right--none{ href: "https://github.com/angelapotter", target: "_blank", title: "Github"}
-              .socialIcon.github
+    = render partial: 'layouts/footer'
+
     #smallWidth.media-query

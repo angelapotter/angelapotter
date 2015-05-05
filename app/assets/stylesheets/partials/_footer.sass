@@ -7,9 +7,11 @@
   padding-bottom: 0
   margin-top: 30px
   height: 100%
-  .content-container
+
+  .container
     padding: 0
     text-align: right
+
     a
       display: inline-block
       margin: 0 15px 0 0
@@ -17,39 +19,38 @@
       vertical-align: middle
       div
         display: block
-        // text-align: center;
-        // vertical-align: middle;
-      .socialIcon
-        background: url("/images/social-icons-retina.png") 0 0 no-repeat
-        background-size: 280px 80px
-        display: inline-block
-        height: 40px
-        width: 40px
-        // margin-right: 8px;
-        &.dribbble
-          &:hover, &:active
-            background-position: 0 -40px
-        &.github
-          background-position: -40px 0
-          &:hover, &:active
-            background-position: -40px -40px
-        &.stackExchange
-          background-position: -80px 0
-          &:hover, &:active
-            background-position: -80px -40px
-        &.twitter
-          background-position: -120px 0
-          &:hover, &:active
-            background-position: -120px -40px
-        &.linkedIn
-          background-position: -160px 0
-          &:hover, &:active
-            background-position: -160px -40px
-        &.email
-          background-position: -200px 0
-          &:hover, &:active
-            background-position: -200px -40px
-        &.phone
-          background-position: -240px 0
-          &:hover, &:active
-            background-position: -240px -40px
+
+  .social-icon
+    background: image-url( "social-icons-retina.png") 0 0 no-repeat
+    background-size: 280px 80px
+    display: inline-block
+    height: 40px
+    width: 40px
+
+    &.dribbble
+      &:hover, &:active
+        background-position: 0 -40px
+    &.github
+      background-position: -40px 0
+      &:hover, &:active
+        background-position: -40px -40px
+    &.stackExchange
+      background-position: -80px 0
+      &:hover, &:active
+        background-position: -80px -40px
+    &.twitter
+      background-position: -120px 0
+      &:hover, &:active
+        background-position: -120px -40px
+    &.linkedIn
+      background-position: -160px 0
+      &:hover, &:active
+        background-position: -160px -40px
+    &.email
+      background-position: -200px 0
+      &:hover, &:active
+        background-position: -200px -40px
+    &.phone
+      background-position: -240px 0
+      &:hover, &:active
+        background-position: -240px -40px
