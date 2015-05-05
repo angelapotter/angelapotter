@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'portfolio_items#index'
+  get '/portfolio' => 'portfolio_items#index'
 
-  get '/portfolio' => 'portoflio_items#index'
   get '/about' => 'application#about'
+  get '/resume' => 'application#resume'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

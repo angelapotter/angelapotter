@@ -3,6 +3,7 @@
 body
   @extend %content-font-style
   font-size: 16px
+  line-height: 1.4
 
 a,
 a:hover
@@ -29,9 +30,15 @@ a:hover
   max-width: $page-width
 
 .container--first
-  padding-top: $header-height + $padding-default
+  padding-top: $header-height + $page-padding-y
+  padding-bottom: $page-padding-y
 
 .container--content
-  @media ( max-width: $page-width + $padding-default * 2 )
-    padding-left: $padding-default
-    padding-right: $padding-default
+  @media ( max-width: $page-width + $page-padding-x * 2 )
+    padding-left: $page-padding-x
+    padding-right: $page-padding-x
+
+.heading--page
+  $font-size: 30px
+  font-size: em( $font-size )
+  margin: 0 0 em( 20px, $font-size ) 0

@@ -3,16 +3,17 @@
   %head
     %title Angela Potter
     %meta{content: "Interaction designer in the Bay Area.", name: "description"}
-      %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-      %meta{content: "width=device-width", name: "viewport"}/
-      = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-      = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,300,700'
+      %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+      %meta{content: "width=device-width", name: "viewport"}
 
-      %script{src: "//code.jquery.com/jquery-1.9.1.js"}
+      = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+      = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,200,700'
+
+      = javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js"
       = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
       = csrf_meta_tags
-  %body{class: ""}
+  %body{ class: body_css_class }
     .container-xl
       = render partial: 'application/header'
       .content-container

@@ -5,7 +5,7 @@
       %h1 Angela Potter
     %ul.header__nav--primary
       %li
-        %a.nav__link{ href: portfolio_path }
+        %a.nav__link{ href: portfolio_path, class: ( 'active' if params[ :action ] == 'portfolio' ) }
           Portfolio
           %ul.header__nav--secondary
             %li
@@ -25,6 +25,6 @@
             %li
               %a.subTab.snakeLink{ href: "/portfolio/snake.php"} Snake
       %li
-        %a.nav__link{ href: "/resume.php"} Resume
+        %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
       %li
-        %a.nav__link{ href: about_path } About
+        %a.nav__link{ href: about_path, class: ( 'active' if params[ :action ] == 'about' ) } About

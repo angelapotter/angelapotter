@@ -1,3 +1,5 @@
+// COLORS
+
 $brand-primary: #00b8a5
 
 $gray-darkest: #333
@@ -7,18 +9,30 @@ $gray-light: #aaa
 $gray-lighter: #ccc
 $gray-lightest: #f1f1f5
 
-
-$page-width: 1024px
-$header-height: 53px
+// LINKS
 
 $link-color: $brand-primary
 $link-color-visited: darken( $link-color, 10% )
 
-$padding-default: 20px
-
 =link-hover-style
-  color: white
-  background: $link-color
+  color: $link-color
+  border-bottom: 2px solid $link-color
+
+// SPACING
+
+$padding-md: 20px
+$padding-lg: 50px
+$padding-xl: 70px
+
+// PAGE
+
+$page-width: 1024px
+$page-padding-x: $padding-md
+$page-padding-y: $padding-lg
+
+$header-height: 73px
+
+// FONT
 
 @function strip($number)
   @return $number / ($number * 0 + 1)
@@ -26,14 +40,19 @@ $padding-default: 20px
 @function em( $target, $context: 16px )
   @return ( strip($target) / strip($context) ) * 1em
 
-// FONT STYLES
-
 %font-weight-light
   font-family: "Raleway", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
-  font-weight: 300
+  font-weight: 200
 
 %content-font-style
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
 
 %header-font-style
   @extend %font-weight-light
+
+// STYLES
+
+=box-shadow( $top, $left, $blur, $color, $inset: '' )
+  -webkit-box-shadow: $top $left $blur $color #{$inset}
+  -moz-box-shadow: $top $left $blur $color #{$inset}
+  box-shadow: $top $left $blur $color #{$inset}

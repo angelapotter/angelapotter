@@ -5,7 +5,11 @@
   top: 0
   left: 0
   right: 0
+  z-index: 1
+  padding-top: $padding-md
+  background: transparentize( white, 0.03 )
   border-bottom: 1px solid $gray-lighter
+  +box-shadow( 12px, 12px, 12px, transparentize( white, 0.4 ) )
 
   .container--page-width
     display: table
@@ -20,7 +24,7 @@
     @extend %header-font-style
     float: left
     margin-bottom: 0
-    font-size: em( 50px )
+    font-size: em( 55px )
     color: $gray-lighter
     text-transform: uppercase
     line-height: 0.7
@@ -67,7 +71,8 @@
       height: $nav-link-border-size
       content: ''
 
-    &:hover
+    &:hover,
+    &.active
       color: $link-color
 
       &:after
