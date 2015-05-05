@@ -17,7 +17,7 @@
   left: 0
 
   h1
-    @extend %font-weight-light
+    @extend %header-font-style
     float: left
     margin-bottom: 0
     font-size: em( 50px )
@@ -60,19 +60,19 @@
     &:after
       display: block
       position: absolute
-      bottom: $nav-link-border-size * -1
+      // bottom: $nav-link-border-size * -1
+      bottom: 0
       left: 0
       right: 0
       height: $nav-link-border-size
       content: ''
-      +transition( border 0.3s )
 
     &:hover
       color: $link-color
 
       &:after
         background: $link-color
-        bottom: 0
+        // bottom: 0
 
 .header__nav--secondary
   display: none

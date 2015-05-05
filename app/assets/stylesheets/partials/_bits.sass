@@ -9,8 +9,16 @@ $gray-lightest: #f1f1f5
 
 
 $page-width: 1024px
+$header-height: 53px
 
 $link-color: $brand-primary
+$link-color-visited: darken( $link-color, 10% )
+
+$padding-default: 20px
+
+=link-hover-style
+  color: white
+  background: $link-color
 
 @function strip($number)
   @return $number / ($number * 0 + 1)
@@ -18,7 +26,14 @@ $link-color: $brand-primary
 @function em( $target, $context: 16px )
   @return ( strip($target) / strip($context) ) * 1em
 
+// FONT STYLES
 
 %font-weight-light
-  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  font-family: "Raleway", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
   font-weight: 300
+
+%content-font-style
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+
+%header-font-style
+  @extend %font-weight-light
