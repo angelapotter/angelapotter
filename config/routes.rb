@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   root 'portfolio_items#index'
-  get '/portfolio' => 'portfolio_items#index'
+  get '/portfolio', :to => redirect( '/' )
 
   get '/about' => 'application#about'
   get '/resume' => 'application#resume'
 
-  PortfolioItems.all.each do |item|
-    get "/portfolio/:slug" => "portfolio_items#show"
-  end
+  get "/portfolio/:slug" => "portfolio_items#show", as: :portfolio_items
 
 
   # The priority is based upon order of creation: first created -> highest priority.

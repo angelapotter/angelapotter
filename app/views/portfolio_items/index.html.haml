@@ -1,6 +1,14 @@
-.container.container--page-width.container--content.container--first
+.container.container--page-width.container--content.container--first.container--last
   %h2.heading--page Portfolio
 
-  - portfolio_items.each do |item|
-    = item.name
-    = item.slug
+  .portfolio-cards
+    - portfolio_items.each do |item|
+      .portfolio-card>
+        .portfolio-card__link-container
+          = link_to portfolio_items_path( item.slug ), class: 'portfolio-card__link' do
+            = image_tag "portfolio/covers/#{ item.slug }.jpg", class: 'portfolio-card__image'
+            .portfolio-card__static-overlay
+            .portfolio-card__hover-overlay
+            .portfolio-card__text
+              .portfolio-card__name= item.name
+              .portfolio-card__blurb= item.blurb

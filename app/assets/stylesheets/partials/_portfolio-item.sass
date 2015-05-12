@@ -1,0 +1,99 @@
+$sample-image-properties: ( image-width: 900px, gutter: 40px )
+$sample-width: map-get( $sample-image-properties, image-width ) + map-get( $sample-image-properties, gutter )
+
+.portfolio-item__samples-container
+  position: relative
+
+  .arrow-prev,
+  .arrow-next
+    $size: 1.8em
+    $background: map-get( $grays, dark )
+    $color: white
+    position: absolute
+    top: 45%
+    z-index: 1
+    +circle( $size, black )
+    margin-top: $size * -1 / 2
+    font-size: em( 35px )
+    text-align: center
+    line-height: 1.9
+    color: $color
+    cursor: pointer
+    opacity: 0.15
+    +transition( opacity map-get( $transitions, md ) )
+
+  .arrow-prev
+    left: map-get( $nav-link-props, padding-x )
+
+  .arrow-next
+    right: map-get( $nav-link-props, padding-x )
+
+  &:hover
+    .arrow-prev,
+    .arrow-next
+      opacity: 0.6
+
+$dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
+
+.dot-navigation
+  text-align: center
+
+.dot-navigation__dots
+  position: relative
+  display: inline-block
+
+.dot-navigation__dot-container
+  padding: map-get( $dot-props, gutter ) / 2
+  display: inline-block
+  cursor: pointer
+
+  &:hover,
+  &.active
+    .dot-navigation__dot
+      background: map-get( $dot-props, color )
+
+.dot-navigation__dot
+  +circle( map-get( $dot-props, size ), transparent )
+  border: 2px solid map-get( $dot-props, color )
+
+.dot-navigation__dot-fill
+  position: absolute
+  top: map-get( $dot-props, gutter ) / 2
+  left: map-get( $dot-props, gutter ) / 2
+  +circle( map-get( $dot-props, size ), map-get( $dot-props, color ) )
+  +transition( left map-get( $transitions, md ) )
+
+.portfolio-item__samples
+  width: $sample-width * 3
+  position: relative
+  +transition( left map-get( $transitions, md ) )
+
+.portfolio-item__sample
+  display: inline-block
+  vertical-align: top
+  width: $sample-width
+  max-width: 100%
+  padding-right: 40px
+
+  &.left-of-active
+    left: $sample-width * -1
+
+  &.right-of-active
+    left: $sample-width
+
++set-aspect-ratio( '.sample__image', ( 605px / map-get( $sample-image-properties, image-width ) ) )
+  display: block
+  width: 100%
+  height: 100%
+
+.portfolio-item__caption
+  margin: 1em 15% 0.5em
+  font-size: em( 14px )
+  color: map-get( $grays, dark )
+
+.portfolio-item__project-links
+  text-align: center
+  margin-top: 40px
+
+  a
+    margin: 0 8px

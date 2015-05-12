@@ -1,0 +1,19 @@
+=hollow-button( $color: map-get( $grays, dark ) )
+  border: 1px solid $color
+  background: transparent
+  color: $color
+  +transition( background map-get( $transitions, sm ), color map-get( $transitions, sm ) )
+
+  &:hover
+    background: $color
+    border: 1px solid $color
+    color: white
+
+.btn
+  padding: 10px 14px
+
+.btn-default
+  +hollow-button
+
+.btn-primary
+  +hollow-button( $brand-primary )

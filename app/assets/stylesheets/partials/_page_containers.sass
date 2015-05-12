@@ -1,0 +1,23 @@
+.wrapper
+  width: 100%
+  overflow: hidden
+
+.container
+  +box-sizing( border-box )
+  margin: 0 auto
+  padding: 0
+
+.container--page-width
+  width: 100%
+  max-width: map-get( $page-properties, width )
+
+.container--first
+  padding-top: map-get( $page-properties, padding-y )
+
+.container--last
+  padding-bottom: map-get( $page-properties, padding-y )
+
+.container--content
+  @media ( max-width: map-get( $page-properties, width ) + map-get( $page-properties, padding-x ) * 2 )
+    padding-left: map-get( $page-properties, padding-x )
+    padding-right: map-get( $page-properties, padding-x )

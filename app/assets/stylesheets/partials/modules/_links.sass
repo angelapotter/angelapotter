@@ -1,0 +1,18 @@
+$link-color: $brand-primary
+$link-color-visited: darken( $link-color, 10% )
+
+=link-hover-style
+  color: $link-color
+  border-bottom: 2px solid $link-color
+
+.link--text
+  color: $link-color
+
+  &:visited
+    color: $link-color-visited
+
+  &:hover,
+  &:active,
+  &:focus
+    +link-hover-style
+

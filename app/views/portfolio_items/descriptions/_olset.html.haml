@@ -1,0 +1,38 @@
+%p
+  This is the website for my current company, OLSET. OLSET is a travel company that uses big data to personalized hotel bookings.
+  Our patented algorithm analyzes user reviews and can tell what travelers are saying about specific aspects of each hotel. We then come up with a customized match
+  rating for each of our users based on what features are important to them.
+%p Here are some of the design changes I made since joining the OLSET team 10 months ago.
+%br/
+%p Major changes I made to the site:
+%ul
+  %li
+    %strong Removing the registration barrier.
+    When I started at OLSET, users had to sign up before they could do anything on the site.
+    I changed this so the user can search for hotels, customize their preferences, and get all the way up to the checkout page before requiring registration.
+    This allows users to see the value of the site before asking them to commit to anything.
+  %li
+    %strong Putting preferences on the same page as the hotel search results.
+    One of OLSET's value propositions is that you only have to build your
+    profile once, and after that we'll know what kind of hotels you want and you won't have to spend time tweaking search filters. However, users generally want
+    to see the results of a search before refining it. This way they can use an iterative process to narrow down the results, e.g. "I like these results, except
+    they're too expensive. I'll lower my price point."
+  %li
+    %strong Adding default preferences based on 4 traveler types.
+    We allow the user to control the weightings of
+    their preferences so they can truly find that perfect hotel &mdash; e.g. they can say that WiFi is mandatory, but continental breakfast is a nice-to-have. Although users liked all these controls in
+    theory, in practice they found them overwhelming. We added four different traveler profiles that set default preferences based on our hypotheses about those groups. After that, users are free
+    to edit preferences in detail, but this gives them somewhere to start. (See initial sketches of this feature below.)
+  %li
+    %strong Showing more than 3 results.
+    Originally we only showed the top 3 hotel recommendations for a given search by default. Our whole value is that we have such a great recommendation
+    algorithm that you shouldn't need to look through a bunch of hotels to find the perfect one. Although we still gave the option for users to view more hotels from their search,
+    we found in testing that users' first reaction was to assume that that's all the results we found. Users have such a strong schema for how travel
+    booking usually works, that they're extremely thrown off when we deviate from the normal flow found on sites like Expedia and Priceline. We also found that users don't trust us from
+    the beginning, and in order to build that trust we need to let them investigate and see for themselves that we really recommended the right hotel.
+  %li
+    %strong Adding a map view.
+    We all knew that we'd want to add this eventually, but had no idea how important it was until we got requests from almost every user we tested
+    to add it. Users love map views! It really helps them orient them, especially if they're unfamiliar with the city they're traveling to.
+%span.right.small.inline-block.margin-top--20
+  %a{ href: "https://www.olset.com", title:"olset.com"} View live site

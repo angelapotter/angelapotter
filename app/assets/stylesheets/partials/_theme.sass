@@ -1,0 +1,18 @@
+body
+  @extend %content-font-style
+  font-size: 16px
+
+a,
+a:hover
+  text-decoration: none
+
+$page-properties: ( width: 1024px, padding-x: map-get( $padding-sizes, md ), padding-y: map-get( $padding-sizes, lg ) )
+$header-properties: ( nav-primary-height: 75px, nav-secondary-height: 47px )
+
+.heading--page
+  $font-size: 30px
+  font-size: em( $font-size )
+  margin: 0 0 em( 20px, $font-size ) 0
+
+
+

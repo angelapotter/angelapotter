@@ -1,14 +1,7 @@
-@import partials/bits
-
 .header
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  z-index: 1
-  padding-top: $padding-md
-  background: transparentize( white, 0.03 )
-  border-bottom: 1px solid $gray-lighter
+  +box-sizing( border-box )
+  padding-top: map-get( $padding-sizes, md )
+  border-bottom: 1px solid map-get( $grays, lighter )
   +box-shadow( 12px, 12px, 12px, transparentize( white, 0.4 ) )
 
   .container--page-width
@@ -25,7 +18,7 @@
     float: left
     margin-bottom: 0
     font-size: em( 55px )
-    color: $gray-lighter
+    color: map-get( $grays, lighter )
     text-transform: uppercase
     line-height: 0.7
 
@@ -39,45 +32,69 @@
   float: right
   margin-bottom: 0
 
-  $nav-link-border-size: 0.3em
-
   li
     display: inline-block
     vertical-align: middle
     padding: 0 1.2em
-    overflow: hidden
+
+    &:first-child
+      padding-left: 0
 
     &:last-child
       padding-right: 0
 
-  .nav__link
-    $font-size: 19px
+$nav-link-props: ( underline-height: 0.3em, padding-x: 12px )
+
+.nav__link
+  display: block
+  position: relative
+  padding: 0.7em map-get( $nav-link-props, padding-x )
+  overflow: hidden
+  color: map-get( $grays, dark )
+
+.nav__link--primary
+  $font-size: 19px
+  font-size: em( $font-size )
+  font-weight: light
+  text-transform: uppercase
+  letter-spacing: em( 1px, $font-size )
+
+  &:after
     display: block
-    position: relative
-    padding: 0.7em 0.7em
-    font-size: em( $font-size )
-    font-weight: light
-    color: $gray-dark
-    text-transform: uppercase
-    letter-spacing: em( 1px, $font-size )
+    position: absolute
+    bottom: map-get( $nav-link-props, underline-height ) * -1
+    left: 0
+    right: 0
+    height: map-get( $nav-link-props, underline-height )
+    background: $link-color
+    content: ''
+    +transition( bottom map-get( $transitions, md ) )
+
+  &:hover,
+  &.active
+    color: $link-color
 
     &:after
-      display: block
-      position: absolute
-      bottom: $nav-link-border-size * -1
-      left: 0
-      right: 0
-      height: $nav-link-border-size
-      background: $link-color
-      content: ''
-      +transition( bottom $transition-default )
-
-    &:hover,
-    &.active
-      color: $link-color
-
-      &:after
-        bottom: 0
+      bottom: 0
 
 .header__nav--secondary
   display: none
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  text-align: right
+
+  li
+    padding: 0.7em 1.05%
+
+.nav__link--secondary
+  $font-size: 17px
+  padding: 0.1em map-get( $nav-link-props, padding-x )
+  font-size: em( $font-size )
+  +transition( color map-get( $transitions, sm ), background map-get( $transitions, sm ) )
+
+  &:hover,
+  &.active
+    color: white
+    background: $link-color

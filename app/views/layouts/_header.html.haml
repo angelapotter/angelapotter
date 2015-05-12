@@ -4,14 +4,15 @@
     %a.header__home-link{ href: portfolio_path, title: "home"}
       %h1 Angela Potter
     %ul.header__nav--primary
-      %li
-        %a.nav__link{ href: portfolio_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
+      %li>
+        %a.nav__link.nav__link--primary{ href: portfolio_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
           Portfolio
         %ul.header__nav--secondary
           - portfolio_items.each do |item|
-            %li
-              %a.subTab.olsetWebsiteLink{ href: portfolio_path( item.slug ) }= item.name
-      %li
-        %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
-      %li
-        %a.nav__link{ href: about_path, class: ( 'active' if params[ :action ] == 'about' ) } About
+            %li>
+              %a.nav__link.nav__link--secondary{ href: portfolio_path( item.slug ), class: ( 'active' if params[ :action ] == item.slug ) }
+                = item.name
+      %li>
+        %a.nav__link.nav__link--primary{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
+      %li>
+        %a.nav__link.nav__link--primary{ href: about_path, class: ( 'active' if params[ :action ] == 'about' ) } About

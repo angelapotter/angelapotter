@@ -1,0 +1,74 @@
+$portfolio-card-properties: ( gutter: 10px, width: 502px )
+
+.portfolio-items
+  .container--first
+    padding-top: map-get( $header-properties, nav-secondary-height ) + map-get( $page-properties, padding-y )
+
+  .header__nav--secondary
+    display: block
+
+.portfolio-card
+  display: inline-block
+  vertical-align: top
+  width: percentage( 1 / 2 )
+  +box-sizing( border-box )
+  padding: map-get( $portfolio-card-properties, gutter )
+
+  &:nth-child( odd )
+    padding-left: 0
+
+  &:nth-child( even )
+    padding-right: 0
+
++set-aspect-ratio( '.portfolio-card__link', ( 365 / 503 ) )
+  display: block
+  min-height: 100px
+
+  &:hover
+    .portfolio-card__hover-overlay
+      opacity: 1
+
+    .portfolio-card__text
+      top: 45%
+
+.portfolio-card__image
+  display: block
+  width: 100%
+  height: 100%
+
+.portfolio-card__static-overlay,
+.portfolio-card__hover-overlay,
+.portfolio-card__text
+  position: absolute
+  left: 0
+  right: 0
+
+.portfolio-card__static-overlay,
+.portfolio-card__hover-overlay,
+  bottom: 0
+
+.portfolio-card__static-overlay,
+  height: 20%
+  +linear-gradient
+
+.portfolio-card__hover-overlay
+  top: 0
+  background: transparentize( black, 0.4 )
+  opacity: 0
+  +transition( opacity map-get( $transitions, md ) )
+
+.portfolio-card__text
+  top: 100%
+  margin-top: -2.5em
+  padding: 0 percentage( 25px / map-get( $portfolio-card-properties, width ) )
+  text-align: center
+  color: white
+  +transition( top map-get( $transitions, md ) )
+
+.portfolio-card__name
+  font-size: em( 21px )
+  font-weight: bold
+  padding-bottom: 0.5em
+
+.portfolio-card__blurb
+  font-size: em( 16px )
