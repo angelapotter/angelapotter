@@ -1,5 +1,5 @@
-.container.container--first.container--last.container--page-width.container--content
-  .portfolio-item.js__portfolio-item{ class: "portfolio-item--#{ @portfolio_item.slug }"}
+.portfolio-item.js__portfolio-item{ class: "portfolio-item--#{ @portfolio_item.slug }"}
+  .container.container--first.container--page-width.container--content.container--portfolio-samples
     .portfolio-item__samples-container
       .portfolio-item__samples.js__samples
         - @portfolio_item.samples.each do |sample|
@@ -8,18 +8,20 @@
               = image_tag "portfolio/samples/#{ @portfolio_item.slug }/#{ sample.slug }.jpg", class: 'sample__image'
             %p.portfolio-item__caption= sample.caption
 
-      .arrow-prev.js__arrow-prev
-        %i.glyphicon.glyphicon-chevron-left
-      .arrow-next.js__arrow-next
-        %i.glyphicon.glyphicon-chevron-right
+      .js__samples-navigation.hidden
+        .arrow-prev.js__arrow-prev
+          %i.glyphicon.glyphicon-chevron-left
+        .arrow-next.js__arrow-next
+          %i.glyphicon.glyphicon-chevron-right
 
-      .dot-navigation
-        .dot-navigation__dots.js__dots
-          - @portfolio_item.samples.each do |sample|
-            .dot-navigation__dot-container.js__dot{ data: { name: sample.slug } }>
-              .dot-navigation__dot
-          .dot-navigation__dot-fill.js__dot-fill
+        .dot-navigation
+          .dot-navigation__dots.js__dots
+            - @portfolio_item.samples.each do |sample|
+              .dot-navigation__dot-container.js__dot{ data: { name: sample.slug } }>
+                .dot-navigation__dot
+            .dot-navigation__dot-fill.js__dot-fill
 
+  .container.container--last.container--page-width.container--content
     %h2= @portfolio_item.name
     %p= @portfolio_item.role
     %p= @portfolio_item.timeframe

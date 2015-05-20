@@ -19,7 +19,7 @@ $sample-width: map-get( $sample-image-properties, image-width ) + map-get( $samp
     line-height: 1.9
     color: $color
     cursor: pointer
-    opacity: 0.15
+    opacity: 0.2
     +transition( opacity map-get( $transitions, md ) )
 
   .arrow-prev
@@ -64,8 +64,9 @@ $dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
   +transition( left map-get( $transitions, md ) )
 
 .portfolio-item__samples
-  width: $sample-width * 3
+  width: 100%
   position: relative
+  white-space: nowrap
   +transition( left map-get( $transitions, md ) )
 
 .portfolio-item__sample
@@ -75,11 +76,22 @@ $dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
   max-width: 100%
   padding-right: 40px
 
-  &.left-of-active
-    left: $sample-width * -1
++mq( $sample-width + 40px )
+  .portfolio-item__samples-container
+    overflow: hidden
 
-  &.right-of-active
-    left: $sample-width
+    .arrow-prev
+      left: 0
+    .arrow-next
+      right: 0
+
+  .portfolio-item__sample
+    padding-right: 0
+
++mq( 800px )
+  .container--portfolio-samples
+    padding-left: 1%
+    padding-right: 1%
 
 +set-aspect-ratio( '.sample__image', ( 605px / map-get( $sample-image-properties, image-width ) ) )
   display: block
@@ -87,9 +99,11 @@ $dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
   height: 100%
 
 .portfolio-item__caption
-  margin: 1em 15% 0.5em
+  max-width: 45em
+  margin: 1em 1.5% 0.5em
   font-size: em( 14px )
-  color: map-get( $grays, dark )
+  color: map-get( $grays, darkest )
+  white-space: normal
 
 .portfolio-item__project-links
   text-align: center

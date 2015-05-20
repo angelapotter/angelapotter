@@ -1,12 +1,5 @@
 $portfolio-card-properties: ( gutter: 10px, width: 502px )
 
-.portfolio-items
-  .container--first
-    padding-top: map-get( $header-properties, nav-secondary-height ) + map-get( $page-properties, padding-y )
-
-  .header__nav--secondary
-    display: block
-
 .portfolio-card
   display: inline-block
   vertical-align: top
@@ -19,6 +12,11 @@ $portfolio-card-properties: ( gutter: 10px, width: 502px )
 
   &:nth-child( even )
     padding-right: 0
+
+  @media ( max-width: 700px )
+    display: block
+    width: auto
+    padding: 10px 0
 
 +set-aspect-ratio( '.portfolio-card__link', ( 365 / 503 ) )
   display: block

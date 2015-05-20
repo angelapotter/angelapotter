@@ -9,24 +9,25 @@ class AP.PortfolioItemSamples
   DOT_ELM_PADDING  = 8
 
   constructor: ->
-
     @contextElm       = $ '.js__portfolio-item'
     @containerElm     = @contextElm.find '.js__samples'
     @sampleElms       = @containerElm.find '.js__sample'
     @swipeElm         = @containerElm
-    @prevArrowElm     = @contextElm.find '.js__arrow-prev'
-    @nextArrowElm     = @contextElm.find '.js__arrow-next'
-    @dotsContainerElm = @contextElm.find '.js__dots'
+    @navContainerElm  = @contextElm.find '.js__samples-navigation'
+    @prevArrowElm     = @navContainerElm.find '.js__arrow-prev'
+    @nextArrowElm     = @navContainerElm.find '.js__arrow-next'
+    @dotsContainerElm = @navContainerElm.find '.js__dots'
 
     if @dotsContainerElm.length
       @dotElms    = @dotsContainerElm.find '.js__dot'
       @dotFillElm = @dotsContainerElm.find '.js__dot-fill'
 
-    if @sampleElms.length
+    if @sampleElms.length > 1
       @initContent()
       @initEvents()
 
   initContent: ->
+    @navContainerElm.removeClass 'hidden'
     @changeToSample @sampleElms.first()
 
   initEvents: ->
@@ -59,26 +60,23 @@ class AP.PortfolioItemSamples
     @changeToSample targetSampleElm
 
   onDotClick: ( _event ) =>
-    _event.preventDefault()
     @onSlideNavChange _event
 
   onSwipeLeft: ( _event ) =>
-    unless @activeSampleElm.data( SAMPLE_DATA_ATTR ) is @sampleElms.last().data( SAMPLE_DATA_ATTR )
-      @changeToNextSample()
+    @changeToNextSample()
 
   onSwipeRight: ( _event ) =>
-    unless @activeSampleElm.data( SAMPLE_DATA_ATTR ) is @sampleElms.first().data( SAMPLE_DATA_ATTR )
-      @changeToPrevSample()
+    @changeToPrevSample()
 
   changeToSample: ( _sampleElm ) ->
-    slideIndex        = @sampleElms.index _sampleElm
+    sampleIndex = @sampleElms.index _sampleElm
 
     if @dotElms
       @dotFillElm.css
-        left: @dotElms.outerWidth() * slideIndex + DOT_ELM_PADDING
+        left: @dotElms.outerWidth() * sampleIndex + DOT_ELM_PADDING
 
     @containerElm.css
-      left: ( @sampleElms.outerWidth() * slideIndex ) * -1
+      left: ( @sampleElms.outerWidth() * sampleIndex ) * -1
 
     @activeSampleElm = _sampleElm
 

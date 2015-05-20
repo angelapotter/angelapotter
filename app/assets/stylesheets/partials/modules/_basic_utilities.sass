@@ -1,5 +1,10 @@
 $padding-sizes: ( md: 20px, lg: 50px, xl: 70px )
 
+
+=mq( $bp, $type: max-width )
+  @media ( #{ $type }: $bp )
+    @content
+
 =box-sizing( $value )
   -webkit-box-sizing: $value
   -moz-box-sizing: $value
@@ -57,7 +62,10 @@ $padding-sizes: ( md: 20px, lg: 50px, xl: 70px )
   +box-sizing( border-box )
 
 
-// ALIGNMENT
+// CLASSES
+
+.hidden
+  display: none
 
 .left
   float: left
