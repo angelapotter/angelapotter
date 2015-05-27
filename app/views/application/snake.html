@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+    <%= javascript_include_tag 'snakeGame/snakeGame', 'data-turbolinks-track' => true %>
+  <body class="snake">
+    <div class="wrapper">
+      <div class="container container--page-width">
+        <h4>Snake</h4>
+        <div class="snake__game-container">
+          <canvas id="snake__game-canvas" width=60 height=60></canvas>
+        </div>
+        <div id="text">
+          <p><strong>Eat the food without hitting the walls or your own tail!</strong></p>
+          <br />
+          <p>move: arrow keys<br />
+            pause: space bar<br />
+            resume: arrow keys<br />
+            new game: enter<br />
+          </p>
+          <br />
+          <p id="score"></p>
+        </div>
+        <div class="snake__home-link">
+          <a href="<%= root_path %>"><p><< home</p></a>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

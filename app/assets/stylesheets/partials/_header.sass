@@ -4,7 +4,6 @@ $header-bps: ( nav-logo-stack: 410px )
   +box-sizing( border-box )
   padding-top: map-get( $padding-sizes, md )
   border-bottom: 1px solid map-get( $grays, lighter )
-  +box-shadow( 12px, 12px, 12px, transparentize( white, 0.4 ) )
 
   .container--page-width
     display: table
@@ -28,7 +27,6 @@ $header-bps: ( nav-logo-stack: 410px )
     left: 0
 
   h1
-    @extend %header-font-style
     width: 396px
     height: 39px
     margin-bottom: 0
@@ -145,7 +143,6 @@ $nav-link-props: ( underline-height: 0.3em, padding-x: 12px )
   $font-size: 17px
   padding: 0.3em map-get( $nav-link-props, padding-x )
   font-size: em( $font-size )
-  +transition( color map-get( $transitions, sm ), background map-get( $transitions, sm ) )
 
   &:hover,
   &.active

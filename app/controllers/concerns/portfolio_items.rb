@@ -6,8 +6,12 @@ class PortfolioItems < ActiveHash::Base
     {
       name: 'Goldbely',
       role: 'Design + Front-End Dev',
-      timeframe: 'Current',
+      timeframe: 'Current Project',
       blurb: "A website where you can order iconic regional dishes from across the country, shipped to your door.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit Goldbely.com',
+        url: 'https://goldbely.com',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'search-autocomplete',
@@ -25,15 +29,19 @@ class PortfolioItems < ActiveHash::Base
         }),
         OpenStruct.new({
           slug: 'delivery-date-calendar',
-          caption: "We allow customers to choose an arrival date for their packages. Because many merchants don't ship every day and perishable packages are time sensitive, the customer needs to be able to see at a glance which days have free shipping, and which days require more costly expedited shipping.",
+          caption: "This calendar allows customers to choose what date they want their packages to be delivered and what the shipping charge is for each day.",
         }),
       ],
     },
     {
       name: 'Any.do Travel',
       role: 'Design + Front-End Dev',
-      timeframe: 'Fall 2013 — Summer 2014',
+      timeframe: 'Fall 2013 - Summer 2014',
       blurb: "A partnership between Any.do and OLSET that allows you to book hotels from the Any.do Android app.",
+      outbound_link: OpenStruct.new({
+        label: 'Download Any.do',
+        url: 'https://play.google.com/store/apps/details?id=com.anydo',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'three-screens',
@@ -43,8 +51,12 @@ class PortfolioItems < ActiveHash::Base
     {
       name: 'OLSET',
       role: 'Design + Front-End Dev',
-      timeframe: 'Summer 2013 — Summer 2014',
+      timeframe: 'Summer 2013 - Summer 2014',
       blurb: "A website that matches you with your ideal hotel based on your travel history.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit OLSET.com',
+        url: 'https://olset.com',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'hotel-matches',
@@ -71,11 +83,11 @@ class PortfolioItems < ActiveHash::Base
       name: 'Music App',
       role: 'Design',
       timeframe: 'Winter 2014',
-      blurb: "A design I did for a music notation app for Android.",
+      blurb: "A mockup for a music notation app for Android.",
       samples: [
         OpenStruct.new({
           slug: 'two-screens',
-          caption: "",
+          caption: "This is a quick mockup I did for an Android music notation app. Above is the main screen, showing the keyboard for inputting individual notes. There are two other keyboards as well: one for phrases and one for playback.",
         }),
       ],
     },
@@ -84,6 +96,10 @@ class PortfolioItems < ActiveHash::Base
       role: 'UI Design + Prototyping',
       timeframe: 'Summer 2013',
       blurb: "Designs for a web app that helps freelancers keep track of who's sending them business.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit MyFive.com',
+        url: 'http://myfive.com',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'new-gig',
@@ -96,6 +112,10 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design + XML',
       timeframe: 'Winter 2013',
       blurb: "An Android app with a flashlight, magnifying glass, and large print notebook.",
+      outbound_link: OpenStruct.new({
+        label: 'Download Old Person App',
+        url: 'https://play.google.com/store/apps/details?id=com.thirdlayer.oldperson&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS50aGlyZGxheWVyLm9sZHBlcnNvbiJd',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'three-screens',
@@ -107,6 +127,10 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design + Front-End Dev',
       timeframe: 'Winter 2013',
       blurb: "My version of the classic game Snake, written in Javascript.",
+      outbound_link: OpenStruct.new({
+        label: 'Play Snake',
+        url: '/snake',
+      }),
       samples: [
         OpenStruct.new({
           slug: 'snake',

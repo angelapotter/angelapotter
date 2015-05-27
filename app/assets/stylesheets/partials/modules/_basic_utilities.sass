@@ -5,6 +5,11 @@ $padding-sizes: ( md: 20px, lg: 50px, xl: 70px )
   @media ( #{ $type }: $bp )
     @content
 
+=calc( $prop, $equation )
+  #{ $prop }: -webkit-calc( #{ $equation } )
+  #{ $prop }: -moz-calc( #{ $equation } )
+  #{ $prop }: calc( #{ $equation } )
+
 =box-sizing( $value )
   -webkit-box-sizing: $value
   -moz-box-sizing: $value
@@ -52,6 +57,26 @@ $padding-sizes: ( md: 20px, lg: 50px, xl: 70px )
   background: linear-gradient(to bottom, $start $from,$stop $to)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorstr='#{$stop}',GradientType=0 )
 
+// LAYOUTS
+
+=thrree-cols-fixed-middle( $col-mid-width )
+  .col-left,
+  .col-right
+    width: percentage( 1 / 2 )
+    min-height: 1px
+    +calc( width, "50% - #{ $col-mid-width / 2 }" )
+
+  .col-left
+    float: left
+
+  .col-right,
+  .col-mid
+    float: right
+
+  .col-mid
+    float: left
+    width: $col-mid-width
+
 // SHAPES
 
 =circle( $size, $color )
@@ -60,6 +85,7 @@ $padding-sizes: ( md: 20px, lg: 50px, xl: 70px )
   border-radius: $size / 2
   background: $color
   +box-sizing( border-box )
+
 
 
 // CLASSES

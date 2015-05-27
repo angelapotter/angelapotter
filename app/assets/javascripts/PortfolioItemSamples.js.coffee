@@ -6,7 +6,7 @@ class AP.PortfolioItemSamples
 
   SAMPLE_DATA_ATTR = 'name'
   ACTIVE_CLASS     = 'active'
-  DOT_ELM_PADDING  = 8
+  DOT_ELM_PADDING  = 10
 
   constructor: ->
     @contextElm       = $ '.js__portfolio-item'
@@ -17,6 +17,7 @@ class AP.PortfolioItemSamples
     @prevArrowElm     = @navContainerElm.find '.js__arrow-prev'
     @nextArrowElm     = @navContainerElm.find '.js__arrow-next'
     @dotsContainerElm = @navContainerElm.find '.js__dots'
+    @captionElms      = @contextElm.find '.js__caption'
 
     if @dotsContainerElm.length
       @dotElms    = @dotsContainerElm.find '.js__dot'
@@ -78,6 +79,8 @@ class AP.PortfolioItemSamples
     @containerElm.css
       left: ( @sampleElms.outerWidth() * sampleIndex ) * -1
 
+    @changeCaption _sampleElm
+
     @activeSampleElm = _sampleElm
 
   changeToNextSample: =>
@@ -95,3 +98,9 @@ class AP.PortfolioItemSamples
       @changeToSample prevSlideElm
     else
       @changeToSample @sampleElms.last()
+
+  changeCaption: ( _sampleElm ) ->
+    currentCaptionElm = @captionElms.filter ( _i, _item ) =>
+      $( _item ).data( SAMPLE_DATA_ATTR ) is _sampleElm.data( SAMPLE_DATA_ATTR )
+    @captionElms.addClass 'hidden'
+    currentCaptionElm.removeClass 'hidden'

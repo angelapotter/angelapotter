@@ -16,3 +16,6 @@
 /tmp
 
 .sass-cache
+vendor/assets/.*
+app/assets/.*
+app/assets/javascripts/.*

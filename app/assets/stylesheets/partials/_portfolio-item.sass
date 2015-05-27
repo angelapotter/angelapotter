@@ -1,5 +1,5 @@
-$sample-image-properties: ( image-width: 900px, gutter: 40px )
-$sample-width: map-get( $sample-image-properties, image-width ) + map-get( $sample-image-properties, gutter )
+$sample-img-props: ( image-width: 900px, gutter: 40px )
+$sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-props, gutter )
 
 .portfolio-item__samples-container
   position: relative
@@ -33,10 +33,15 @@ $sample-width: map-get( $sample-image-properties, image-width ) + map-get( $samp
     .arrow-next
       opacity: 0.6
 
-$dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
+$dot-props: ( color: map-get( $grays, dark ), size: em( 15px ), gutter: em( 20px ) )
+
+.portfolio-item__match-width--image
+  width: map-get( $sample-img-props, image-width )
+  max-width: 100%
 
 .dot-navigation
   text-align: center
+  margin-top: -1em
 
 .dot-navigation__dots
   position: relative
@@ -93,21 +98,73 @@ $dot-props: ( color: map-get( $grays, dark ), size: 12px, gutter: 16px )
     padding-left: 1%
     padding-right: 1%
 
-+set-aspect-ratio( '.sample__image', ( 605px / map-get( $sample-image-properties, image-width ) ) )
++set-aspect-ratio( '.sample__image', ( 605px / map-get( $sample-img-props, image-width ) ) )
   display: block
   width: 100%
   height: 100%
 
+.sample__image-overlay
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  +linear-gradient( $stop: transparentize( white, 0.2 ), $from: 95% )
+
 .portfolio-item__caption
-  max-width: 45em
-  margin: 1em 1.5% 0.5em
-  font-size: em( 14px )
-  color: map-get( $grays, darkest )
+  display: table
+  width: 100%
+  max-width: 50em
+  min-height: em( 116px )
+  padding: 2% 5%
+  margin: 1em auto 0
+  position: relative
+  z-index: 1
+  background: transparentize( map-get( $grays, pinkish-light ), 0.2 )
+  border: 1px solid darken( map-get( $grays, pinkish-light ), 2% )
   white-space: normal
+  +box-shadow( 1px, 4px, 2px, transparentize( black, 0.9 ) )
+  color: map-get( $grays, darkest )
 
-.portfolio-item__project-links
-  text-align: center
+  p
+    display: table-cell
+    vertical-align: middle
+
+.portfolio-item__heading
+  padding: 3em 0 0
+
+.portfolio-item__title
+  display: inline-block
+  color: map-get( $grays, darkest )
+
+.portfolio-item__subtitle
+  float: right
+  font-size: em( 20px )
+  color: map-get( $grays, medium )
+
+.portfolio-item__description
+  margin: 2em 0
+
+.portfolio-item__links
+  $bp-md: 680px
+  +thrree-cols-fixed-middle( $col-mid-width: 14em )
   margin-top: 40px
+  text-align: center
 
-  a
-    margin: 0 8px
+  .col-left
+    text-align: left
+
+  .col-right
+    text-align: right
+
+  +mq( $bp-md )
+    .link--hidden-md
+      display: none
+
+    .col-left,
+    .col-right
+      width: percentage( 1 / 2 )
+
+  +mq( 420px )
+    .link--hidden-sm
+      display: none

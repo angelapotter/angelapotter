@@ -1,16 +1,21 @@
 =hollow-button( $color: map-get( $grays, dark ) )
-  border: 1px solid $color
+  $transition: map-get( $transitions, md )
+  $border-size: 1px
+  border: $border-size solid $color
   background: transparent
   color: $color
-  +transition( background map-get( $transitions, sm ), color map-get( $transitions, sm ) )
+  +transition( background $transition, color $transition )
 
   &:hover
     background: $color
-    border: 1px solid $color
+    border: $border-size solid $color
     color: white
 
 .btn
-  padding: 10px 14px
+  min-width: em( 130px )
+  padding: em( 12px ) em( 18px )
+  text-align: center
+  font-size: em( 16px )
 
 .btn-default
   +hollow-button

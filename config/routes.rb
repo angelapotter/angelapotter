@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'application#about'
   get '/resume' => 'application#resume'
+  get '/snake' => 'application#snake'
 
   get "/portfolio/:slug" => "portfolio_items#show", as: :portfolio_items
 
