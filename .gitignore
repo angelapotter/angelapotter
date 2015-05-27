@@ -19,3 +19,8 @@
 vendor/assets/.*
 app/assets/.*
 app/assets/javascripts/.*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
