@@ -7,7 +7,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'Goldbely',
       role: 'Design + Front-End Dev',
       timeframe: 'Current Project',
-      blurb: "A website where you can order iconic regional dishes from across the country, shipped to your door.",
+      blurb: "A website where you can order iconic regional dishes from across the country, shipped to your door",
       outbound_link: OpenStruct.new({
         label: 'Visit Goldbely.com',
         url: 'https://goldbely.com',
@@ -15,21 +15,19 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'search-autocomplete',
-          caption: "This is Goldbely's search autocomplete. This view updates with live results as the user types his or her search query.",
+          caption: "<strong>Search autocomplete</strong> updates with live results as you type",
         }),
         OpenStruct.new({
           slug: 'order-status',
-          caption: "This is the customer's order status page. Especially with perishable packages, it's important for customers to feel assured that their package is on schedule.",
+          caption: "<strong>Order status page</strong>",
         }),
         OpenStruct.new({
           slug: 'homepage-carousel',
-          caption: ( "This is the homepage carousel that showcases our featured items.
-            I wanted to avoid many of the common <a href=\"http://www.nngroup.com/articles/designing-effective-carousels/\" class=\"link--text\">carousel usability pitfalls</a>,
-            providing strong click incentives through prominent navigation." ).html_safe,
+          caption: "<strong>Homepage carousel</strong> with strong click incentives and prominent navigation",
         }),
         OpenStruct.new({
           slug: 'delivery-date-calendar',
-          caption: "This calendar allows customers to choose what date they want their packages to be delivered and what the shipping charge is for each day.",
+          caption: "<strong>Delivery date calendar</strong> shows shipping charge for each day.",
         }),
       ],
     },
@@ -37,7 +35,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'Any.do Travel',
       role: 'Design + Front-End Dev',
       timeframe: 'Fall 2013 - Summer 2014',
-      blurb: "A partnership between Any.do and OLSET that allows you to book hotels from the Any.do Android app.",
+      blurb: "A partnership between Any.do and OLSET that allows you to book hotels from the Any.do Android app",
       outbound_link: OpenStruct.new({
         label: 'Download Any.do',
         url: 'https://play.google.com/store/apps/details?id=com.anydo',
@@ -45,6 +43,7 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'three-screens',
+          caption: "Book hotels from the Any.do to-do list app, powered by OLSET",
         }),
       ],
     },
@@ -52,7 +51,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'OLSET',
       role: 'Design + Front-End Dev',
       timeframe: 'Summer 2013 - Summer 2014',
-      blurb: "A website that matches you with your ideal hotel based on your travel history.",
+      blurb: "A website that matches you with your ideal hotel based on your travel history",
       outbound_link: OpenStruct.new({
         label: 'Visit OLSET.com',
         url: 'https://olset.com',
@@ -60,11 +59,11 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'hotel-matches',
-          caption: "These are hotel recommnedations based on the user's travel history and specific preferences. Each hotel has a match rating that indicates how well it fits the traveler's preferences.",
+          caption: "<strong>Hotel search results</strong> with personalized match ratings",
         }),
         OpenStruct.new({
           slug: 'landing-page',
-          caption: "This is the OLSET landing page.",
+          caption: "<strong>Landing page</strong>",
         }),
       ],
     },
@@ -72,10 +71,11 @@ class PortfolioItems < ActiveHash::Base
       name: 'OLSET Biz Cards',
       role: 'Design',
       timeframe: 'Winter 2014',
-      blurb: "Business cards for OLSET, with a hotel key card theme.",
+      blurb: "Business cards for OLSET, with a hotel key card theme",
       samples: [
         OpenStruct.new({
           slug: 'realistic',
+          caption: "<strong>Business cards</strong> with a hotel key card theme",
         }),
       ],
     },
@@ -83,11 +83,12 @@ class PortfolioItems < ActiveHash::Base
       name: 'Music App',
       role: 'Design',
       timeframe: 'Winter 2014',
-      blurb: "A mockup for a music notation app for Android.",
+      blurb: "Mockups or a music notation app for Android",
       samples: [
         OpenStruct.new({
           slug: 'two-screens',
-          caption: "This is a quick mockup I did for an Android music notation app. Above is the main screen, showing the keyboard for inputting individual notes. There are two other keyboards as well: one for phrases and one for playback.",
+          caption:
+          "Mockups for an Android music notation app",
         }),
       ],
     },
@@ -95,7 +96,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'MyFive',
       role: 'UI Design + Prototyping',
       timeframe: 'Summer 2013',
-      blurb: "Designs for a web app that helps freelancers keep track of who's sending them business.",
+      blurb: "Designs for a web app that helps freelancers keep track of who's sending them business",
       outbound_link: OpenStruct.new({
         label: 'Visit MyFive.com',
         url: 'http://myfive.com',
@@ -103,7 +104,7 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'new-gig',
-          caption: "This is a prototype I made for user testing. It takes users through the process of entering a new gig into the web app.",
+          caption: "<strong>Entering a new gig<strong>: a prototype for user testing",
         }),
       ],
     },
@@ -111,7 +112,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'Old Person App',
       role: 'Design + XML',
       timeframe: 'Winter 2013',
-      blurb: "An Android app with a flashlight, magnifying glass, and large print notebook.",
+      blurb: "An Android app with a flashlight, magnifying glass, and large print notebook",
       outbound_link: OpenStruct.new({
         label: 'Download Old Person App',
         url: 'https://play.google.com/store/apps/details?id=com.thirdlayer.oldperson&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS50aGlyZGxheWVyLm9sZHBlcnNvbiJd',
@@ -119,6 +120,7 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'three-screens',
+          caption: "An Android app with a flashlight, magnifying glass, and large print notebook",
         }),
       ],
     },
@@ -126,7 +128,7 @@ class PortfolioItems < ActiveHash::Base
       name: 'Snake',
       role: 'Design + Front-End Dev',
       timeframe: 'Winter 2013',
-      blurb: "My version of the classic game Snake, written in Javascript.",
+      blurb: "My version of the classic game Snake, written in Javascript",
       outbound_link: OpenStruct.new({
         label: 'Play Snake',
         url: '/snake',
@@ -134,6 +136,7 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'snake',
+          caption: "My version of the classic game Snake, written in Javascript",
         }),
       ],
     },

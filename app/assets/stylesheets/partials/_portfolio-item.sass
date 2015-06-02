@@ -1,4 +1,5 @@
-$sample-img-props: ( image-width: 900px, gutter: 40px )
+$sample-img-props: ( image-width: 840px, gutter: 40px )
+$sample-img-height: 605 / 900 * map-get( $sample-img-props, image-width )
 $sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-props, gutter )
 
 .portfolio-item__samples-container
@@ -33,7 +34,7 @@ $sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-
     .arrow-next
       opacity: 0.6
 
-$dot-props: ( color: map-get( $grays, dark ), size: em( 15px ), gutter: em( 20px ) )
+$dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: em( 20px ) )
 
 .portfolio-item__match-width--image
   width: map-get( $sample-img-props, image-width )
@@ -41,7 +42,6 @@ $dot-props: ( color: map-get( $grays, dark ), size: em( 15px ), gutter: em( 20px
 
 .dot-navigation
   text-align: center
-  margin-top: -1em
 
 .dot-navigation__dots
   position: relative
@@ -98,37 +98,27 @@ $dot-props: ( color: map-get( $grays, dark ), size: em( 15px ), gutter: em( 20px
     padding-left: 1%
     padding-right: 1%
 
-+set-aspect-ratio( '.sample__image', ( 605px / map-get( $sample-img-props, image-width ) ) )
++set-aspect-ratio( '.sample__image', ( $sample-img-height / map-get( $sample-img-props, image-width ) ) )
   display: block
   width: 100%
   height: 100%
 
-.sample__image-overlay
-  position: absolute
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  +linear-gradient( $stop: transparentize( white, 0.2 ), $from: 95% )
-
 .portfolio-item__caption
-  display: table
+  $transition: map-get( $transitions, sm )
+  opacity: 0
   width: 100%
   max-width: 50em
-  min-height: em( 116px )
-  padding: 2% 5%
-  margin: 1em auto 0
   position: relative
   z-index: 1
-  background: transparentize( map-get( $grays, pinkish-light ), 0.2 )
-  border: 1px solid darken( map-get( $grays, pinkish-light ), 2% )
-  white-space: normal
-  +box-shadow( 1px, 4px, 2px, transparentize( black, 0.9 ) )
-  color: map-get( $grays, darkest )
+  margin: 0.5em 0 0
+  color: map-get( $grays, medium-dark )
+  text-align: center
+  font-size: em( 18px )
+  +transition( opacity $transition 1s )
 
-  p
-    display: table-cell
-    vertical-align: middle
+  .portfolio-item__sample--active &
+    opacity: 1
+    +transition( opacity $transition 0s )
 
 .portfolio-item__heading
   padding: 3em 0 0
