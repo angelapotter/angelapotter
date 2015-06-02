@@ -16,11 +16,10 @@
 /tmp
 
 .sass-cache
+.DS_Store
 vendor/assets/.*
 app/assets/.*
 app/assets/javascripts/.*
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+app/assets/images/.*
+app/assets/images/portfolio/.*
+app/assets/images/portfolio/covers/.*
