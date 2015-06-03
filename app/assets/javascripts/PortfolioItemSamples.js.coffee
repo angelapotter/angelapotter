@@ -38,7 +38,7 @@ class AP.PortfolioItemSamples
       @dotElms.on 'click.gb', @onDotClick
 
     if Modernizr.touch
-      do @initTouchEvents
+      @initTouchEvents()
 
   initTouchEvents: =>
     @swipeElm.swipe {

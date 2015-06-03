@@ -16,7 +16,7 @@ $brand-colors: (
 );
 
 @function gray( $shade: dark ) {
-  @return gray( $shade );
+  @return map-get( $gray-shades, $shade );
 };
 
 @function brand( $color: primary ) {
