@@ -1,18 +1,26 @@
 .footer--social
   .container.container--page-width
-    .social--contact
-      %a{ href: "malto:#{ contact_info.email }", title: "Email" }
-        .social-icon.social-icon--email
-      %a{ href: "tel:#{ contact_info.phone }", title: "Phone" }
-        .social-icon.social-icon--phone
-    %a{ href: social_urls.linkedin, target: "_blank", title: "LinkedIn"}
-      .social-icon.social-icon--linkedin
-    %a{ href: social_urls.twitter, target: "_blank", title: "Twitter"}
-      .social-icon.social-icon--twitter
-    %a{ href: social_urls.dribbble, target: "_blank", title: "Dribbble"}
-      .social-icon.social-icon--dribbble
-    %a{ href: social_urls.stack_exchange, target: "_blank", title: "UX StackExchange"}
-      .social-icon.social-icon--stack-exchange
-    %a{ href: social_urls.github, target: "_blank", title: "Github"}
-      .social-icon.social-icon--github
+    %ul.list-unstyled.social--contact
+      %li.list-unstyled
+        = mail_to contact_info.email, title: 'Send me an email' do
+          .social-icon.social-icon--email
+      %li.list-unstyled
+        = link_to "tel:#{ contact_info.phone }", title: 'Give me a call' do
+          .social-icon.social-icon--phone
+    %ul.list-unstyled.social--profiles
+      %li.list-unstyled
+        %a{ href: social_urls.linkedin, target: '_blank', title: 'LinkedIn'}
+          .social-icon.social-icon--linkedin
+      %li.list-unstyled
+        %a{ href: social_urls.twitter, target: '_blank', title: 'Twitter'}
+          .social-icon.social-icon--twitter
+      %li.list-unstyled
+        %a{ href: social_urls.dribbble, target: '_blank', title: 'Dribbble'}
+          .social-icon.social-icon--dribbble
+      %li.list-unstyled
+        %a{ href: social_urls.stack_exchange, target: '_blank', title: 'UX StackExchange'}
+          .social-icon.social-icon--stack-exchange
+      %li.list-unstyled
+        %a{ href: social_urls.github, target: '_blank', title: 'Github'}
+          .social-icon.social-icon--github
 

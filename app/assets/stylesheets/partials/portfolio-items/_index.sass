@@ -1,11 +1,11 @@
-$portfolio-card-properties: ( gutter: 10px, width: 502px )
+$portfolio-card-props: ( gutter: 10px, width: 502px )
 
 .portfolio-card
   display: inline-block
   vertical-align: top
   width: percentage( 1 / 2 )
   +box-sizing( border-box )
-  padding: map-get( $portfolio-card-properties, gutter )
+  padding: map-get( $portfolio-card-props, gutter )
 
   &:nth-child( odd )
     padding-left: 0
@@ -53,15 +53,15 @@ $portfolio-card-properties: ( gutter: 10px, width: 502px )
   top: 0
   background: transparentize( black, 0.4 )
   opacity: 0
-  +transition( opacity map-get( $transitions, md ) )
+  +transition( opacity transition( md ) )
 
 .portfolio-card__text
   top: 100%
   margin-top: -2.5em
-  padding: 0 percentage( 25px / map-get( $portfolio-card-properties, width ) )
+  padding: 0 percentage( 25px / map-get( $portfolio-card-props, width ) )
   text-align: center
   color: white
-  +transition( top map-get( $transitions, md ) )
+  +transition( top transition( md ) )
 
 .portfolio-card__name
   font-size: em( 21px )

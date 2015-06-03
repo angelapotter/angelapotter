@@ -1,3 +1,5 @@
+$social-sprite-size: 40px
+
 .footer--social
   color: white
   width: 100%
@@ -14,53 +16,26 @@
     .social--contact
       float: left
 
-  a
+  li
     display: inline-block
     margin: 0 15px 0 0
-    text-transform: lowercase
     vertical-align: middle
 
     &:last-child
       margin-right: 0
 
-  .social-icon
-    background: image-url( "social-icons-retina.png") 0 0 no-repeat
-    background-size: 280px 80px
-    display: inline-block
-    height: 40px
-    width: 40px
+.social-icon
+  background: image-url( "social-icons-retina.png") 0 0 no-repeat
+  background-size: 280px 80px
+  display: inline-block
+  height: $social-sprite-size
+  width: $social-sprite-size
 
-  .social-icon--dribbble
+
+@each $icon, $x-coord in $social-sprites
+  .social-icon--#{ $icon }
+    background-position: #{ $x-coord } 0
+
     &:hover,
     &:active
-      background-position: 0 -40px
-  .social-icon--github
-    background-position: -40px 0
-    &:hover,
-    &:active
-      background-position: -40px -40px
-  .social-icon--stack-exchange
-    background-position: -80px 0
-    &:hover,
-    &:active
-      background-position: -80px -40px
-  .social-icon--twitter
-    background-position: -120px 0
-    &:hover,
-    &:active
-      background-position: -120px -40px
-  .social-icon--linkedin
-    background-position: -160px 0
-    &:hover,
-    &:active
-      background-position: -160px -40px
-  .social-icon--email
-    background-position: -200px 0
-    &:hover,
-    &:active
-      background-position: -200px -40px
-  .social-icon--phone
-    background-position: -240px 0
-    &:hover,
-    &:active
-      background-position: -240px -40px
+      background-position: #{ $x-coord } -#{ $social-sprite-size }

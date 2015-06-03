@@ -1,0 +1,87 @@
+// COLORS
+
+$gray-shades: (
+  darkest: #333,
+  dark: #666,
+  medium-dark: #8a8a8a,
+  medium: #999,
+  light: #aaa,
+  lighter: #ccc,
+  lightest: #f1f1f5,
+  pinkish-light: #f5f0f0
+);
+
+$brand-colors: (
+  primary: #00b8a5
+);
+
+@function gray( $shade: dark ) {
+  @return gray( $shade );
+};
+
+@function brand( $color: primary ) {
+  @return map-get( $brand-colors, $color );
+};
+
+// ALIGNMENT
+
+$padding-sizes: (
+  md: 20px,
+  lg: 50px,
+  xl: 70px
+);
+
+@function padding( $size: md ) {
+  @return map-get( $padding-sizes, $size );
+};
+
+
+// PAGE ELEMENTS
+
+$page-props: (
+  width: 1024px,
+  padding-x: padding( md ),
+  padding-y: padding( lg ),
+  padding-y-mobile: 35px,
+  padding-y-portfolio: 35px
+);
+
+@function page( $prop ) {
+  @return map-get( $page-props, $prop );
+};
+
+$header-props: (
+  nav-primary-height: 75px,
+  nav-secondary-height: 47px
+);
+
+$nav-link-props: (
+  underline-height: 0.3em,
+  padding-x: 12px
+);
+
+
+// EFFECTS
+
+$transition-lengths: (
+  sm: 0.1s,
+  md: 0.3s,
+  lg: 0.5s
+);
+
+@function transition( $length: md ) {
+  @return map-get( $transition-lengths, $length );
+}
+
+
+// SPRITES
+
+$social-sprites: (
+  dribbble: 0,
+  github: -40px,
+  stack-exchange: -80px,
+  twitter: -120px,
+  linkedin: -160px,
+  email: -200px,
+  phone: -240px
+);

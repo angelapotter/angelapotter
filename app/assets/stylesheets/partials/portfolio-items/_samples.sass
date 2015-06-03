@@ -1,7 +1,7 @@
 $sample-img-props: ( image-width: 850px, gutter: 50px )
 $sample-img-height: 605 / 900 * map-get( $sample-img-props, image-width )
 $sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-props, gutter )
-$samples-transition: map-get( $transitions, md )
+$samples-transition: transition( md )
 
 .portfolio-item__samples-container
   position: relative
@@ -9,7 +9,7 @@ $samples-transition: map-get( $transitions, md )
   .arrow-prev,
   .arrow-next
     $size: 1.8em
-    $background: map-get( $grays, dark )
+    $background: gray( dark )
     $color: white
     position: absolute
     top: 45%
@@ -35,7 +35,7 @@ $samples-transition: map-get( $transitions, md )
     .arrow-next
       opacity: 0.6
 
-$dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: em( 20px ) )
+$dot-props: ( color: gray( medium-dark ), size: em( 13px ), gutter: em( 20px ) )
 
 .portfolio-item__match-width--image
   width: map-get( $sample-img-props, image-width )
@@ -87,9 +87,9 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
     overflow: hidden
 
     .arrow-prev
-      left: -5px
+      left: 0
     .arrow-next
-      right: -5px
+      right: 0
 
   .portfolio-item__sample
     padding-right: 0
@@ -105,11 +105,11 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
   height: 100%
 
 .portfolio-item__caption
-  $transition: map-get( $transitions, sm )
+  $transition: transition( sm )
   width: 100%
   max-width: 50em
   margin: 0.8em 0 0
-  color: map-get( $grays, medium-dark )
+  color: gray( medium-dark )
   text-align: center
   font-size: em( 18px )
   white-space: normal

@@ -2,14 +2,14 @@ $header-bps: ( nav-logo-stack: 410px )
 
 .header
   +box-sizing( border-box )
-  padding-top: map-get( $padding-sizes, md )
-  border-bottom: 1px solid map-get( $grays, lighter )
+  padding-top: padding( md )
+  border-bottom: 1px solid gray( lighter )
 
   .container--page-width
     display: table
     position: relative
 
-  +mq( map-get( $page-props, width ) + 16px )
+  +mq( page( width ) + 16px )
     font-size: 95%
 
   +mq( 915px )
@@ -31,7 +31,7 @@ $header-bps: ( nav-logo-stack: 410px )
     height: 39px
     margin-bottom: 0
     font-size: em( 55px )
-    color: map-get( $grays, lighter )
+    color: gray( lighter )
     text-transform: uppercase
     line-height: 0.7
     background: image-url( 'header-logo.png' ) left top no-repeat
@@ -54,7 +54,7 @@ $header-bps: ( nav-logo-stack: 410px )
     vertical-align: middle
     padding: 0 1.2em
 
-    +mq( map-get( $page-props, width ) )
+    +mq( page( width ) )
       padding-left: 1em
       padding-right: 1em
 
@@ -75,7 +75,7 @@ $header-bps: ( nav-logo-stack: 410px )
   .header__home-link
     height: 100%
     padding: 6px 3%
-    background: map-get( $grays, light )
+    background: gray( light )
 
     h1
       width: 49px
@@ -83,14 +83,12 @@ $header-bps: ( nav-logo-stack: 410px )
       background-image: image-url( 'header-logo-mobile.png' )
       margin-top: 0
 
-$nav-link-props: ( underline-height: 0.3em, padding-x: 12px )
-
 .nav__link
   display: block
   position: relative
   padding: 0.7em map-get( $nav-link-props, padding-x )
   overflow: hidden
-  color: map-get( $grays, dark )
+  color: gray( dark )
 
 .nav__link--primary
   $font-size: 19px
@@ -108,7 +106,7 @@ $nav-link-props: ( underline-height: 0.3em, padding-x: 12px )
     height: map-get( $nav-link-props, underline-height )
     background: $link-color
     content: ''
-    +transition( bottom map-get( $transitions, md ) )
+    +transition( bottom transition( md ) )
 
   &:hover,
   &.active
@@ -126,17 +124,17 @@ $nav-link-props: ( underline-height: 0.3em, padding-x: 12px )
   text-align: right
 
   li
-    $padding-horiz: 1.05%
-    padding: 0.7em $padding-horiz
+    $padding-sizes-horiz: 1.05%
+    padding: 0.7em $padding-sizes-horiz
 
     $width: 1000px
-    @while $padding-horiz > 0%
+    @while $padding-sizes-horiz > 0%
       +mq( $width )
-        $padding-horiz: $padding-horiz - 0.05%
+        $padding-sizes-horiz: $padding-sizes-horiz - 0.05%
         $width: $width * 0.99
 
-        padding-left: $padding-horiz
-        padding-right: $padding-horiz
+        padding-left: $padding-sizes-horiz
+        padding-right: $padding-sizes-horiz
 
 
 .nav__link--secondary
