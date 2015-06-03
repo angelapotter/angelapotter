@@ -1,4 +1,5 @@
 #= require modernizr
+#= require jquery.touchSwipe
 
 @AP ?= {}
 
