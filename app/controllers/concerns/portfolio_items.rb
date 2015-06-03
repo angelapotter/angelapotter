@@ -83,12 +83,12 @@ class PortfolioItems < ActiveHash::Base
       name: 'Music App',
       role: 'Design',
       timeframe: 'Winter 2014',
-      blurb: "Mockups or a music notation app for Android",
+      blurb: "Mockups for a music notation app for Android",
       samples: [
         OpenStruct.new({
           slug: 'two-screens',
           caption:
-          "Mockups for an Android music notation app",
+          "Mockups for a music notation app for Android",
         }),
       ],
     },

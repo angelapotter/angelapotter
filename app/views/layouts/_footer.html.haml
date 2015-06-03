@@ -1,18 +1,18 @@
-.contact.footer
-  .container.container--page-width.container--content
-    .left
-      %a{ href: "malto:angelacbpotter@gmail.com", title: "email me"}
-        .social-icon.email
-      %a{ href: "tel:2069498204", title: "call me"}
-        .social-icon.phone
-    %a{ href: "http://www.linkedin.com/in/angelacbpotter/", target: "_blank", title: "LinkedIn"}
-      .social-icon.linkedIn
-    %a{ href: "https://twitter.com/takehypotenuses", target: "_blank", title: "Twitter"}
-      .social-icon.twitter
-    %a{ href: "https://dribbble.com/angelapotter", target: "_blank", title: "Dribbble"}
-      .social-icon.dribbble
-    %a{ href: "http://ux.stackexchange.com/users/27505/angelapotter", target: "_blank", title: "UX StackExchange"}
-      .social-icon.stackExchange
-    %a.margin-right--none{ href: "https://github.com/angelapotter", target: "_blank", title: "Github"}
-      .social-icon.github
+.footer--social
+  .container.container--page-width
+    .social--contact
+      %a{ href: "malto:#{ contact_info.email }", title: "Email" }
+        .social-icon.social-icon--email
+      %a{ href: "tel:#{ contact_info.phone }", title: "Phone" }
+        .social-icon.social-icon--phone
+    %a{ href: social_urls.linkedin, target: "_blank", title: "LinkedIn"}
+      .social-icon.social-icon--linkedin
+    %a{ href: social_urls.twitter, target: "_blank", title: "Twitter"}
+      .social-icon.social-icon--twitter
+    %a{ href: social_urls.dribbble, target: "_blank", title: "Dribbble"}
+      .social-icon.social-icon--dribbble
+    %a{ href: social_urls.stack_exchange, target: "_blank", title: "UX StackExchange"}
+      .social-icon.social-icon--stack-exchange
+    %a{ href: social_urls.github, target: "_blank", title: "Github"}
+      .social-icon.social-icon--github
 

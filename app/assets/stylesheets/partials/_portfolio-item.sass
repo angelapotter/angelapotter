@@ -105,20 +105,23 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
 
 .portfolio-item__caption
   $transition: map-get( $transitions, sm )
-  opacity: 0
   width: 100%
   max-width: 50em
   position: relative
   z-index: 1
-  margin: 0.5em 0 0
+  margin: 0.8em 0 0
   color: map-get( $grays, medium-dark )
   text-align: center
   font-size: em( 18px )
-  +transition( opacity $transition 1s )
+  white-space: normal
 
-  .portfolio-item__sample--active &
-    opacity: 1
-    +transition( opacity $transition 0s )
+  +mq( $sample-width, min-width )
+    opacity: 0
+    +transition( opacity $transition 1s )
+
+    .portfolio-item__sample--active &
+      opacity: 1
+      +transition( opacity $transition 0s )
 
 .portfolio-item__heading
   padding: 3em 0 0
@@ -128,9 +131,11 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
   color: map-get( $grays, darkest )
 
 .portfolio-item__subtitle
-  float: right
   font-size: em( 20px )
   color: map-get( $grays, medium )
+
+  +mq( 760px, min-width )
+    float: right
 
 .portfolio-item__description
   margin: 2em 0

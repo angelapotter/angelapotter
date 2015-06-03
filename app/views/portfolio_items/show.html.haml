@@ -3,7 +3,7 @@
     .portfolio-item__samples-container
       .portfolio-item__samples.js__samples
         - @portfolio_item.samples.each do |sample|
-          .portfolio-item__sample.js__sample{ data: { name: sample.slug } }>
+          .portfolio-item__sample.portfolio-item__sample--active.js__sample{ data: { name: sample.slug } }>
             .sample__image-container
               = image_tag "portfolio/samples/#{ @portfolio_item.slug }/#{ sample.slug }.jpg", class: 'sample__image'
 

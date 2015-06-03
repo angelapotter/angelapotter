@@ -1,39 +1,11 @@
 .container.container--page-width.container--first.container--last.container--content
   %h2.heading--page About
+  = image_tag "angela-profile.jpg", alt: "Angela Potter", class: 'about__headshot'
   %p
     I’m a designer with serious front-end development skills. I specialize in
-    = succeed "," do
-      %strong
-        usability, iterative design,
-        and user testing
+    <strong>usability and interaction design</strong>,
     and am great at distilling complex processes down to simple UI. I have experience
-    with web and mobile design, and I code in
-    = succeed "." do
-      %strong HTML/CSS, JavaScript, and JQuery
+    with web and mobile design, and I code in <strong>HTML/CSS, JavaScript, and JQuery</strong>
   %p
-    Right now I'm the sole designer and front-end developer at
-    = succeed "," do
-      %a{ href: "https://olset.com", title: "OLSET: Get personalized hotel recommendations", class: 'link--text' } OLSET
-    a big data travel startup in San Francisco. Besides my work at OLSET, I design and build
-    %strong mobile apps
-    on the side. You can download my most recent Android app
-    = succeed "." do
-      %a{ href: "https://play.google.com/store/apps/details?id=com.thirdlayer.oldperson&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS50aGlyZGxheWVyLm9sZHBlcnNvbiJd", title: "Old Person App for Android", class: 'link--text' } in the Google Play store
+    Right now I'm a UI/UX designer at #{ link_to 'Goldbely', 'https://goldbely.com', class: 'link--text' }, a website where you can order iconic regional dishes from across the USA, shipped to your door.
 
-  = image_tag "angela-profile.jpg", alt: "Angela Potter", class: 'about__headshot'
-
-  .contact-paragraph
-    %p Feel free to get in touch!
-    %p
-      email:&nbsp;
-      %a{ href: "mailto:angelacbpotter@gmail.com", title: "email", class: 'link--text' } angelacbpotter@gmail.com
-      %br
-      phone:&nbsp;
-      %a{ href: "tel:2069498204", title: "phone", class: 'link--text' } 206.949.8204
-    %p
-      LinkedIn:&nbsp;
-      %a{ href: "http://www.linkedin.com/pub/angela-potter/35/77b/779", title: "LinkedIn", class: 'link--text' } http://www.linkedin.com/pub/angela-potter/35/77b/779
-      %br
-      Twitter:&nbsp;
-      %a{ href: "https://twitter.com/takehypotenuses", title: "Twitter", class: 'link--text'} https://twitter.com/takehypotenuses
-      %br

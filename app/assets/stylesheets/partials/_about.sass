@@ -1,16 +1,15 @@
 // ABOUT
+$about-headshot-size: 218px
 
 .about__headshot
-  $size: 218px
-  float: left
-  margin: 10px 40px 0 0
-  height: $size
-  width: $size
-  border-radius: $size / 2
+  float: right
+  margin-left: 40px
+  height: auto
+  width: $about-headshot-size
+  border-radius: $about-headshot-size / 2
 
-.contact-paragraph
-  margin-top: 50px
-  overflow: hidden
+  $bp: 560px
+  +mq( $bp )
+    width: percentage( $about-headshot-size / $bp )
+    margin-left: percentage( 40px / $bp )
 
-.profile-container
-  padding-bottom: 0
