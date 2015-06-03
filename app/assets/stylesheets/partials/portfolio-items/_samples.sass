@@ -1,6 +1,7 @@
-$sample-img-props: ( image-width: 840px, gutter: 40px )
+$sample-img-props: ( image-width: 850px, gutter: 50px )
 $sample-img-height: 605 / 900 * map-get( $sample-img-props, image-width )
 $sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-props, gutter )
+$samples-transition: map-get( $transitions, md )
 
 .portfolio-item__samples-container
   position: relative
@@ -21,7 +22,7 @@ $sample-width: map-get( $sample-img-props, image-width ) + map-get( $sample-img-
     color: $color
     cursor: pointer
     opacity: 0.2
-    +transition( opacity map-get( $transitions, md ) )
+    +transition( opacity $samples-transition )
 
   .arrow-prev
     left: map-get( $nav-link-props, padding-x )
@@ -66,13 +67,13 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
   top: map-get( $dot-props, gutter ) / 2
   left: map-get( $dot-props, gutter ) / 2
   +circle( map-get( $dot-props, size ), map-get( $dot-props, color ) )
-  +transition( left map-get( $transitions, md ) )
+  +transition( left $samples-transition )
 
 .portfolio-item__samples
   width: 100%
   position: relative
   white-space: nowrap
-  +transition( left map-get( $transitions, md ) )
+  +transition( left $samples-transition )
 
 .portfolio-item__sample
   display: inline-block
@@ -86,9 +87,9 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
     overflow: hidden
 
     .arrow-prev
-      left: 0
+      left: -5px
     .arrow-next
-      right: 0
+      right: -5px
 
   .portfolio-item__sample
     padding-right: 0
@@ -107,8 +108,6 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
   $transition: map-get( $transitions, sm )
   width: 100%
   max-width: 50em
-  position: relative
-  z-index: 1
   margin: 0.8em 0 0
   color: map-get( $grays, medium-dark )
   text-align: center
@@ -117,49 +116,8 @@ $dot-props: ( color: map-get( $grays, medium-dark ), size: em( 13px ), gutter: e
 
   +mq( $sample-width, min-width )
     opacity: 0
-    +transition( opacity $transition 1s )
+    +transition( opacity $transition $samples-transition )
 
     .portfolio-item__sample--active &
       opacity: 1
       +transition( opacity $transition 0s )
-
-.portfolio-item__heading
-  padding: 3em 0 0
-
-.portfolio-item__title
-  display: inline-block
-  color: map-get( $grays, darkest )
-
-.portfolio-item__subtitle
-  font-size: em( 20px )
-  color: map-get( $grays, medium )
-
-  +mq( 760px, min-width )
-    float: right
-
-.portfolio-item__description
-  margin: 2em 0
-
-.portfolio-item__links
-  $bp-md: 680px
-  +thrree-cols-fixed-middle( $col-mid-width: 14em )
-  margin-top: 40px
-  text-align: center
-
-  .col-left
-    text-align: left
-
-  .col-right
-    text-align: right
-
-  +mq( $bp-md )
-    .link--hidden-md
-      display: none
-
-    .col-left,
-    .col-right
-      width: percentage( 1 / 2 )
-
-  +mq( 420px )
-    .link--hidden-sm
-      display: none

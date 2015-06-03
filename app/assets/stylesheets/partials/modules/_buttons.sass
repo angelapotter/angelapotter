@@ -6,14 +6,16 @@
   color: $color
   +transition( background $transition, color $transition )
 
-  &:hover
+  &:hover,
+  &:active
     background: $color
     border: $border-size solid $color
     color: white
 
 .btn
-  min-width: em( 130px )
-  padding: em( 12px ) em( 18px )
+  min-width: em( 140px )
+  padding: em( 14px ) em( 26px )
+  border-radius: 6px
   text-align: center
   font-size: em( 16px )
 
