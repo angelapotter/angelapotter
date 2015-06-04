@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def social_urls
     OpenStruct.new({
-      linkedin: 'http://www.social-icon--linkedin.com/in/angelacbpotter',
+      linkedin: 'http://www.linkedin.com/in/angelacbpotter',
       twitter: 'https://twitter.com/takehypotenuses',
       dribbble: 'https://dribbble.com/angelapotter',
       stack_exchange: 'http://ux.stackexchange.com/users/27505/angelapotter',

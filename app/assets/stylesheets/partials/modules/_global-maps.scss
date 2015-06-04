@@ -1,3 +1,77 @@
+// UTILIES
+
+@function insert-nth($list, $index, $value) {
+  $result: null;
+
+  @if type-of($index) != number {
+    @warn "$index: #{quote($index)} is not a number for `insert-nth`.";
+  }
+
+  @else if $index < 1 {
+    @warn "List index 0 must be a non-zero integer for `insert-nth`";
+  }
+
+  @else if $index > length($list) {
+    @warn "List index is #{$index} but list is only #{length($list)} item long for `insert-nth'.";
+  }
+
+  @else {
+    $result: ();
+
+    @for $i from 1 through length($list) {
+      @if $i == $index {
+        $result: append($result, $value);
+      }
+
+      $result: append($result, nth($list, $i));
+    }
+  }
+
+  @return $result;
+}
+
+@function replace($list, $old-value, $new-value, $recursive: false) {
+  $result: ();
+
+  @for $i from 1 through length($list) {
+    @if type-of(nth($list, $i)) == list and $recursive {
+      $result: append($result, replace(nth($list, $i), $old-value, $new-value, $recursive));
+    }
+
+    @else {
+      @if nth($list, $i) == $old-value {
+        $result: append($result, $new-value);
+      }
+
+      @else {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
+
+  @return $result;
+}
+
+@function map-deep-set($map, $keys.../*, $value */) {
+  $map-list: ($map,);
+  $result: null;
+
+  @if length($keys) == 2 {
+    @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+  }
+
+  @for $i from 1 through length($keys) - 2 {
+    $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+  }
+
+  @for $i from length($map-list) through 1 {
+    $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i == length($map-list), nth($keys, -1), $result)));
+  }
+
+  @return $result;
+}
+
+
 // COLORS
 
 $gray-shades: (
@@ -33,7 +107,7 @@ $padding-sizes: (
 
 @function padding( $size: md ) {
   @return map-get( $padding-sizes, $size );
-};
+}
 
 
 // PAGE ELEMENTS
@@ -48,7 +122,7 @@ $page-props: (
 
 @function page( $prop ) {
   @return map-get( $page-props, $prop );
-};
+}
 
 $header-props: (
   nav-primary-height: 75px,
@@ -76,12 +150,42 @@ $transition-lengths: (
 
 // SPRITES
 
-$social-sprites: (
-  dribbble: 0,
-  github: -40px,
-  stack-exchange: -80px,
-  twitter: -120px,
-  linkedin: -160px,
-  email: -200px,
-  phone: -240px
+$social-sprite-size: 20px;
+
+$social-icons: (
+  (
+    name: dribbble,
+    color: #ee4589
+  ),
+  (
+    name: github,
+    color: #333
+  ),
+  (
+    name: stack-exchange,
+    color: #1e60a1
+  ),
+  (
+    name: twitter,
+    color: #51abf1
+  ),
+  (
+    name: linkedin,
+    color: #0883bd
+  ),
+  (
+    name: email,
+    color: #333
+  ),
+  (
+    name: phone,
+    color: #333
+  )
 );
+
+@for $i from 1 through length( $social-icons ) {
+  $icon-props: nth( $social-icons, $i );
+  $pos-x: -$social-sprite-size * ( $i - 1 );
+  $new-icon-props: map-merge( $icon-props, ( pos-x: $pos-x ) );
+  $social-icons: replace( $social-icons, $icon-props, $new-icon-props);
+}

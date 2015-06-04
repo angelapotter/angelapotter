@@ -1,26 +1,19 @@
 .footer--social
-  .container.container--page-width
+  .container.container--page-width.container--content
     %ul.list-unstyled.social--contact
-      %li.list-unstyled
-        = mail_to contact_info.email, title: 'Send me an email' do
-          .social-icon.social-icon--email
-      %li.list-unstyled
-        = link_to "tel:#{ contact_info.phone }", title: 'Give me a call' do
-          .social-icon.social-icon--phone
+      %li.list-unstyled>
+        = mail_to contact_info.email, '', title: 'Send me an email', class: 'social-link social-link--email'
+      %li.list-unstyled>
+        = link_to '', "tel:#{ contact_info.phone }", title: 'Give me a call', class: 'social-link social-link--phone'
     %ul.list-unstyled.social--profiles
-      %li.list-unstyled
-        %a{ href: social_urls.linkedin, target: '_blank', title: 'LinkedIn'}
-          .social-icon.social-icon--linkedin
-      %li.list-unstyled
-        %a{ href: social_urls.twitter, target: '_blank', title: 'Twitter'}
-          .social-icon.social-icon--twitter
-      %li.list-unstyled
-        %a{ href: social_urls.dribbble, target: '_blank', title: 'Dribbble'}
-          .social-icon.social-icon--dribbble
-      %li.list-unstyled
-        %a{ href: social_urls.stack_exchange, target: '_blank', title: 'UX StackExchange'}
-          .social-icon.social-icon--stack-exchange
-      %li.list-unstyled
-        %a{ href: social_urls.github, target: '_blank', title: 'Github'}
-          .social-icon.social-icon--github
+      %li.list-unstyled>
+        = link_to '', social_urls.linkedin, target: '_blank', title: 'LinkedIn', class: 'social-link social-link--linkedin'
+      %li.list-unstyled>
+        = link_to '', social_urls.twitter, target: '_blank', title: 'Twitter', class: 'social-link social-link--twitter'
+      %li.list-unstyled>
+        = link_to '', social_urls.dribbble, target: '_blank', title: 'Dribbble', class: 'social-link social-link--dribbble'
+      %li.list-unstyled>
+        = link_to '', social_urls.stack_exchange, target: '_blank', title: 'UX StackExchange', class: 'social-link social-link--stack-exchange'
+      %li.list-unstyled>
+        = link_to '', social_urls.github, target: '_blank', title: 'Github', class: 'social-link social-link--github'
 

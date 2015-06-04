@@ -1,5 +1,3 @@
-$social-sprite-size: 40px
-
 .footer--social
   color: white
   width: 100%
@@ -16,6 +14,8 @@ $social-sprite-size: 40px
     .social--contact
       float: left
 
+.social--contact,
+.social--profiles
   li
     display: inline-block
     margin: 0 15px 0 0
@@ -24,18 +24,27 @@ $social-sprite-size: 40px
     &:last-child
       margin-right: 0
 
-.social-icon
-  background: image-url( "social-icons-retina.png") 0 0 no-repeat
-  background-size: 280px 80px
-  display: inline-block
-  height: $social-sprite-size
-  width: $social-sprite-size
+.social-link
+  display: block
+  +circle( 40px, gray( medium-dark ) )
+  padding: 10px
+  text-align: center
+  +transition( background-color transition(md) )
 
+  &:before
+    display: block
+    content: ''
+    height: $social-sprite-size
+    width: $social-sprite-size
+    background: image-url( "social-icons-retina.png") 0 0 no-repeat
+    background-size: ( $social-sprite-size * length($social-icons) ) $social-sprite-size
 
-@each $icon, $x-coord in $social-sprites
-  .social-icon--#{ $icon }
-    background-position: #{ $x-coord } 0
+@each $icon-props in $social-icons
+  .social-link--#{ map-get( $icon-props, name ) }
+    &:before
+      background-position: map-get( $icon-props, pos-x ) 0
 
     &:hover,
     &:active
-      background-position: #{ $x-coord } -#{ $social-sprite-size }
+      background: map-get( $icon-props, color )
+

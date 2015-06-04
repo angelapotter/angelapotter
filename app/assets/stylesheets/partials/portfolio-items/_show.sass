@@ -12,11 +12,13 @@
   +mq( 760px, min-width )
     float: right
 
+  +mq( 600px )
+    font-size: em( 17px )
+
 .portfolio-item__description
   margin: 2em 0
 
 .portfolio-item__links
-  $bp-md: 680px
   +thrree-cols-fixed-middle( $col-mid-width: 14em )
   margin-top: 40px
   text-align: center
@@ -27,7 +29,7 @@
   .col-right
     text-align: right
 
-  +mq( $bp-md )
+  +mq( 680px )
     .link--hidden-md
       display: none
 
@@ -35,6 +37,9 @@
     .col-right
       width: percentage( 1 / 2 )
 
-  +mq( 420px )
+  +mq( 560px )
+    font-size: 90%
+
+  +mq( 370px )
     .link--hidden-sm
       display: none
