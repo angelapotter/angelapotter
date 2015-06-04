@@ -13,10 +13,13 @@ $portfolio-card-props: ( gutter: 10px, width: 502px )
   &:nth-child( even )
     padding-right: 0
 
-  @media ( max-width: 700px )
+  +mq( 700px )
     display: block
     width: auto
     padding: 10px 0
+
+    &:first-child
+      padding-top: 0
 
 +set-aspect-ratio( '.portfolio-card__link', ( 365 / 503 ) )
   display: block

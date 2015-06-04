@@ -45,6 +45,7 @@ $header-bps: ( nav-logo-stack: 380px )
 .header__nav--primary
   height: 100%
   margin-bottom: 0
+  text-align: center
 
   +mq( map-get( $header-bps, nav-logo-stack ), min-width )
     float: right
@@ -130,7 +131,7 @@ $header-bps: ( nav-logo-stack: 380px )
     $width: 1000px
     @while $padding-sizes-horiz > 0%
       +mq( $width )
-        $padding-sizes-horiz: $padding-sizes-horiz - 0.05%
+        $padding-sizes-horiz: $padding-sizes-horiz - 0.06%
         $width: $width * 0.99
 
         padding-left: $padding-sizes-horiz

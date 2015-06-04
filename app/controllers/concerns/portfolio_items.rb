@@ -104,7 +104,11 @@ class PortfolioItems < ActiveHash::Base
       samples: [
         OpenStruct.new({
           slug: 'new-gig',
-          caption: "<strong>Entering a new gig<strong>: a prototype for user testing",
+          caption: "<strong>Entering a new gig</strong>: a prototype for user testing",
+        }),
+        OpenStruct.new({
+          slug: 'gigs-wireframe',
+          caption: "<strong>Gigs dashboard</strong> wireframe",
         }),
       ],
     },
