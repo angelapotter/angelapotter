@@ -1,4 +1,4 @@
-$header-bps: ( nav-logo-stack: 380px )
+$header-bps: ( nav-logo-stack: 355px )
 
 .header
   +box-sizing( border-box )
@@ -21,7 +21,7 @@ $header-bps: ( nav-logo-stack: 380px )
 .header__home-link
   display: block
 
-  +mq( map-get( $header-bps, nav-logo-stack ), min-width )
+  +mq( map-get($header-bps, nav-logo-stack), min-width )
     position: absolute
     bottom: 0
     left: 0
@@ -84,6 +84,16 @@ $header-bps: ( nav-logo-stack: 380px )
       background-image: image-url( 'header-logo-mobile.png' )
       margin-top: 0
 
++mq( 390px )
+  .header__home-link
+    padding: 0 3%
+
+    h1
+      width: 30px
+      height: 32px
+      background-size: contain
+      background-position: left center
+
 .nav__link
   display: block
   position: relative
@@ -107,7 +117,7 @@ $header-bps: ( nav-logo-stack: 380px )
     height: map-get( $nav-link-props, underline-height )
     background: $link-color
     content: ''
-    +transition( bottom transition( md ) )
+    +transition( bottom transition(md) )
 
   &:hover,
   &.active

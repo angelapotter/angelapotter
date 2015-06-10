@@ -13,15 +13,16 @@ $portfolio-card-props: ( gutter: 10px, width: 502px )
   &:nth-child( even )
     padding-right: 0
 
-  +mq( 700px )
+  // Maintain 2 across for mobile landscape
+  @media (max-width: 700px) and (min-height: 420px), (max-width: 500px)
     display: block
     width: auto
-    padding: 10px 0
+    padding: map-get( $portfolio-card-props, gutter ) 0
 
     &:first-child
       padding-top: 0
 
-+set-aspect-ratio( '.portfolio-card__link', ( 365 / 503 ) )
++set-aspect-ratio( '.portfolio-card__link', (365 / 503) )
   display: block
   min-height: 100px
 
@@ -56,15 +57,15 @@ $portfolio-card-props: ( gutter: 10px, width: 502px )
   top: 0
   background: transparentize( black, 0.4 )
   opacity: 0
-  +transition( opacity transition( md ) )
+  +transition( opacity transition(md) )
 
 .portfolio-card__text
   top: 100%
   margin-top: -2.5em
-  padding: 0 percentage( 25px / map-get( $portfolio-card-props, width ) )
+  padding: 0 percentage( 25px / map-get($portfolio-card-props, width) )
   text-align: center
   color: white
-  +transition( top transition( md ) )
+  +transition( top transition(md) )
 
 .portfolio-card__name
   font-size: em( 21px )
