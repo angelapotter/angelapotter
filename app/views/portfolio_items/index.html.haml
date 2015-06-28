@@ -1,15 +1,28 @@
-.container.container--page-width.container--content.container--first
-  %h2.heading--page Portfolio
+.heading--page
+  .heading__background-image
+  %h2 Portfolio
 
-.container.container--page-width.container--last
-  .portfolio-cards
-    - portfolio_items.each do |item|
-      .portfolio-card>
-        .portfolio-card__link-container
-          = link_to portfolio_items_path( item.slug ), class: 'portfolio-card__link' do
-            = image_tag "portfolio/covers/#{ item.slug }.jpg", class: 'portfolio-card__image'
-            .portfolio-card__static-overlay
-            .portfolio-card__hover-overlay
-            .portfolio-card__text
-              .portfolio-card__name= item.name
-              .portfolio-card__blurb= item.blurb
+.content.portfolio-items
+  - portfolio_items.each_with_index do |item, index|
+    .portfolio-item
+      .container.container--page-width.container--content
+        %h3.heading--section.portfolio-item__name= item.name
+
+        .portfolio-item__image-container
+          - if index.even?
+            = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }.jpg", class: 'portfolio-item__image'
+          - else
+            = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }_gray.jpg", class: 'portfolio-item__image'
+        .portfolio-item__info
+          - if item.company
+            .line Company: #{ item.company }
+          - if item.platform
+            .line Platform: #{ item.platform }
+          - if item.role
+            .line Role: #{ item.role }
+
+        .portfolio-item__blurb= item.blurb
+
+        - if item.outbound_link.present?
+          .portfolio-item__link-container
+            = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'link--text'

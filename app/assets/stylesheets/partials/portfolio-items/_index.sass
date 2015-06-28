@@ -1,76 +1,55 @@
-$portfolio-card-props: ( gutter: 10px, width: 502px )
+$portfolio-img-width: 780px
+$portfolio-img-aspect: 605 / 900
+$portfolio-img-height: $portfolio-img-aspect * $portfolio-img-width
+$portfolio-item-gutter: 80px
+$portfolio-text-width: page(width) - $portfolio-img-width - $portfolio-item-gutter
+$portfolio-text-spacing: 60px
 
-.portfolio-card
-  display: inline-block
-  vertical-align: top
-  width: percentage( 1 / 2 )
-  +box-sizing( border-box )
-  padding: map-get( $portfolio-card-props, gutter )
-
-  &:nth-child( odd )
-    padding-left: 0
+.portfolio-item
+  padding: padding( xl ) 0
 
   &:nth-child( even )
-    padding-right: 0
+    background: gray( off-white )
 
-  // Maintain 2 across for mobile landscape
-  @media (max-width: 700px) and (min-height: 420px), (max-width: 500px)
-    display: block
-    width: auto
-    padding: map-get( $portfolio-card-props, gutter ) 0
+.portfolio-item__name,
+.portfolio-item__info,
+.portfolio-item__blurb,
+.portfolio-item__link-container
+  float: right
+  width: percentage( $portfolio-text-width / page(width) )
+  margin-bottom
 
-    &:first-child
-      padding-top: 0
+.portfolio-item__link-container
+  margin-top: 0.8em
 
-+set-aspect-ratio( '.portfolio-card__link', (365 / 503) )
+.portfolio-item__name
+  margin: 0.5em 0
+  color: gray( darkest )
+
+.portfolio-item__info,
+.portfolio-item__blurb,
+.portfolio-item__link-container
+  font-size: em( 17px )
+
+  +mq( 1180px )
+    font-size: em( 15px )
+
+.portfolio-item__info
+  margin-bottom: em( $portfolio-text-spacing, 17px )
+  color: gray( medium )
+
+  +mq( 760px, min-width )
+    float: right
+
+  +mq( 600px )
+    font-size: em( 15px )
+
+.portfolio-item__image-container
+  width: percentage( $portfolio-img-width / page(width) )
+  float: left
+
++set-aspect-ratio( '.portfolio-item__image', $portfolio-img-aspect, $portfolio-img-width )
   display: block
-  min-height: 100px
 
-  &:hover
-    .portfolio-card__hover-overlay
-      opacity: 1
 
-    .portfolio-card__text
-      top: 45%
 
-.portfolio-card__image
-  display: block
-  width: 100%
-  height: 100%
-
-.portfolio-card__static-overlay,
-.portfolio-card__hover-overlay,
-.portfolio-card__text
-  position: absolute
-  left: 0
-  right: 0
-
-.portfolio-card__static-overlay,
-.portfolio-card__hover-overlay,
-  bottom: 0
-
-.portfolio-card__static-overlay,
-  height: 20%
-  +linear-gradient
-
-.portfolio-card__hover-overlay
-  top: 0
-  background: transparentize( black, 0.4 )
-  opacity: 0
-  +transition( opacity transition(md) )
-
-.portfolio-card__text
-  top: 100%
-  margin-top: -2.5em
-  padding: 0 percentage( 25px / map-get($portfolio-card-props, width) )
-  text-align: center
-  color: white
-  +transition( top transition(md) )
-
-.portfolio-card__name
-  font-size: em( 21px )
-  font-weight: bold
-  padding-bottom: 0.5em
-
-.portfolio-card__blurb
-  font-size: em( 16px )

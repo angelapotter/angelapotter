@@ -14,6 +14,7 @@
 
 =aspect-container
   position: relative
+
   &:before
     content: ""
     display: block
@@ -25,12 +26,15 @@
   left: 0
   bottom: 0
   right: 0
+  width: 100%
+  height: 100%
 
-=set-aspect-ratio( $element, $ratio )
+=set-aspect-ratio( $element, $ratio, $width )
   $aspect-ratio: percentage( $ratio )
 
   #{ $element }-container
     +aspect-container
+
     &:before
       padding-top: $aspect-ratio
 

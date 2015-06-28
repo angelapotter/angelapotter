@@ -2,8 +2,9 @@ $header-bps: ( nav-logo-stack: 355px )
 
 .header
   +box-sizing( border-box )
-  padding-top: padding( md )
-  border-bottom: 1px solid gray( lighter )
+  padding: map-get( $header-props, padding-bottom ) 0
+  overflow: hidden
+  background: white
 
   .container--page-width
     display: table
@@ -20,6 +21,8 @@ $header-bps: ( nav-logo-stack: 355px )
 
 .header__home-link
   display: block
+  opacity: 0.6
+  +transition( opacity transition(md) )
 
   +mq( map-get($header-bps, nav-logo-stack), min-width )
     position: absolute
@@ -27,15 +30,12 @@ $header-bps: ( nav-logo-stack: 355px )
     left: 0
 
   h1
-    width: 396px
-    height: 39px
-    margin-bottom: 0
-    font-size: em( 55px )
-    color: gray( lighter )
-    text-transform: uppercase
-    line-height: 0.7
-    background: image-url( 'header-logo.png' ) left top no-repeat
-    background-size: cover
+    padding: map-get( $nav-link-props, padding-y )
+    font-size: em( 24px )
+    color: gray( darkest )
+
+  &:hover
+    opacity: 1
 
 .header__nav--primary,
 .header__nav--secondary
@@ -97,63 +97,27 @@ $header-bps: ( nav-logo-stack: 355px )
 .nav__link
   display: block
   position: relative
-  padding: 0.7em map-get( $nav-link-props, padding-x )
-  overflow: hidden
-  color: gray( dark )
+  padding: map-get( $nav-link-props, padding-y ) map-get( $nav-link-props, padding-x )
+  color: map-get( $nav-link-props, color )
 
 .nav__link--primary
   $font-size: 19px
   font-size: em( $font-size )
-  font-weight: light
   text-transform: uppercase
-  letter-spacing: em( 1px, $font-size )
 
   &:after
     display: block
     position: absolute
-    bottom: map-get( $nav-link-props, underline-height ) * -1
+    bottom: ( map-get($header-props, padding-bottom) + map-get($nav-link-props, underline-height) ) * -1
     left: 0
     right: 0
     height: map-get( $nav-link-props, underline-height )
-    background: $link-color
+    background: map-get( $nav-link-props, color )
     content: ''
     +transition( bottom transition(md) )
 
   &:hover,
   &.active
-    color: $link-color
 
     &:after
       bottom: 0
-
-.header__nav--secondary
-  display: none
-  position: absolute
-  top: 100%
-  left: 0
-  right: 0
-  text-align: right
-
-  li
-    $padding-sizes-horiz: 1.05%
-    padding: 0.7em $padding-sizes-horiz
-
-    $width: 1000px
-    @while $padding-sizes-horiz > 0%
-      +mq( $width )
-        $padding-sizes-horiz: $padding-sizes-horiz - 0.06%
-        $width: $width * 0.99
-
-        padding-left: $padding-sizes-horiz
-        padding-right: $padding-sizes-horiz
-
-
-.nav__link--secondary
-  $font-size: 17px
-  padding: 0.3em map-get( $nav-link-props, padding-x )
-  font-size: em( $font-size )
-
-  &:hover,
-  &.active
-    color: white
-    background: $link-color

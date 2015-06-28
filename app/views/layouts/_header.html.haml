@@ -1,17 +1,14 @@
 .header
-  .container.container--page-width
+  .container.container--page-width.container--content
     .icon-menu
     %a.header__home-link{ href: root_path, title: "Home"}
       %h1
+        %strong Angela Potter
+        is a UX Designer in SF
     %ul.header__nav--primary
       %li>
         %a.nav__link.nav__link--primary{ href: portfolio_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
           Portfolio
-        %ul.header__nav--secondary
-          - portfolio_items.each do |item|
-            %li>
-              %a.nav__link.nav__link--secondary{ href: portfolio_items_path( item.slug ), class: ( 'active' if params[ :slug ] == item.slug ) }
-                = item.name
       %li>
         %a.nav__link.nav__link--primary{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
       %li>

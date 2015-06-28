@@ -81,8 +81,7 @@ $gray-shades: (
   medium: #999,
   light: #aaa,
   lighter: #ccc,
-  lightest: #f1f1f5,
-  pinkish-light: #f5f0f0
+  off-white: #F5F4F1
 );
 
 $brand-colors: (
@@ -113,7 +112,7 @@ $padding-sizes: (
 // PAGE ELEMENTS
 
 $page-props: (
-  width: 1024px,
+  width: 1300px,
   padding-x: padding( md ),
   padding-y: padding( lg ),
   padding-y-mobile: 35px,
@@ -126,12 +125,15 @@ $page-props: (
 
 $header-props: (
   nav-primary-height: 75px,
-  nav-secondary-height: 47px
+  nav-secondary-height: 47px,
+  padding-bottom: padding(md)
 );
 
 $nav-link-props: (
-  underline-height: 0.3em,
-  padding-x: 12px
+  underline-height: 6px,
+  padding-x: 0,
+  padding-y: 18px,
+  color: gray( darkest )
 );
 
 
