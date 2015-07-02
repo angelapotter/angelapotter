@@ -85,7 +85,7 @@ $gray-shades: (
 );
 
 $brand-colors: (
-  primary: #00b8a5
+  primary: darken( #00b8a5, 2% )
 );
 
 @function gray( $shade: dark ) {
