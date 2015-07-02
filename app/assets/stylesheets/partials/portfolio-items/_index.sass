@@ -1,9 +1,5 @@
-$portfolio-img-width: 780px
-$portfolio-img-aspect: 605 / 900
-$portfolio-img-height: $portfolio-img-aspect * $portfolio-img-width
-$portfolio-item-gutter: 80px
-$portfolio-text-width: page(width) - $portfolio-img-width - $portfolio-item-gutter
-$portfolio-text-spacing: 60px
+$portfolio-img-height: portfolio-item(img-aspect) * portfolio-item(img-width)
+$portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(gutter)
 
 .portfolio-item
   padding: padding( xl ) 0
@@ -11,44 +7,73 @@ $portfolio-text-spacing: 60px
   &:nth-child( even )
     background: gray( off-white )
 
+  +mq( 700px )
+    padding:
+      top: padding(lg)
+      bottom: padding(lg)
+
 .portfolio-item__name,
 .portfolio-item__info,
 .portfolio-item__blurb,
 .portfolio-item__link-container
-  float: right
-  width: percentage( $portfolio-text-width / page(width) )
-  margin-bottom
+  text-align: center
+
+  +mq( portfolio-item(img-text-stack-bp), min-width )
+    width: percentage( $portfolio-text-width / page(width) )
+    float: right
+    text-align: left
 
 .portfolio-item__link-container
   margin-top: 0.8em
 
 .portfolio-item__name
-  margin: 0.5em 0
+  margin: 0.4em 0
   color: gray( darkest )
+
+  +mq( portfolio-item(img-text-stack-bp) )
+    margin-bottom: 1.3em
 
 .portfolio-item__info,
 .portfolio-item__blurb,
 .portfolio-item__link-container
   font-size: em( 17px )
 
+.portfolio-item__info
+  color: gray( medium )
+  margin-bottom: 1.5em
+
   +mq( 1180px )
     font-size: em( 15px )
 
-.portfolio-item__info
-  margin-bottom: em( $portfolio-text-spacing, 17px )
-  color: gray( medium )
-
-  +mq( 760px, min-width )
+  +mq( portfolio-item(img-text-stack-bp), min-width )
+    margin-bottom: em( 80px, 17px )
     float: right
 
-  +mq( 600px )
-    font-size: em( 15px )
+  +mq( portfolio-item(img-text-stack-bp) )
+    margin-top: 2em
+
+    .line
+      display: inline
+
+      + .line
+        border-left: 1px solid gray(lighter)
+        padding-left: 0.4em
+        margin-left: 0.1em
+
+.portfolio-item__blurb
+  max-width: em( 650px )
+  margin:
+    left: auto
+    right: auto
 
 .portfolio-item__image-container
-  width: percentage( $portfolio-img-width / page(width) )
-  float: left
+  width: 100%
 
-+set-aspect-ratio( '.portfolio-item__image', $portfolio-img-aspect, $portfolio-img-width )
+  +mq( portfolio-item(img-text-stack-bp), min-width )
+    width: percentage( portfolio-item(img-width) / page(width) )
+    float: left
+
++set-aspect-ratio( '.portfolio-item__image', portfolio-item(img-aspect), portfolio-item(img-width) )
   display: block
 
 

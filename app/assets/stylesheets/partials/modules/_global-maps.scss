@@ -113,6 +113,7 @@ $padding-sizes: (
 
 $page-props: (
   width: 1300px,
+  small-width: 1000px,
   padding-x: padding( md ),
   padding-y: padding( lg ),
   padding-y-mobile: 35px,
@@ -135,6 +136,29 @@ $nav-link-props: (
   padding-y: 18px,
   color: gray( darkest )
 );
+
+$portfolio-item-props: (
+  img-width: 780px,
+  img-aspect: 605 / 900,
+  gutter: 80px,
+  img-text-stack-bp: 850px
+);
+
+@function portfolio-item( $prop ) {
+  @return map-get( $portfolio-item-props, $prop );
+}
+
+$about-props: (
+  headshot-size: 436px,
+  gutter: 50px,
+  bp-xl: 1200px,
+  bp-md: 650px
+);
+
+@function about( $prop ) {
+  @return map-get( $about-props, $prop );
+}
+
 
 
 // EFFECTS

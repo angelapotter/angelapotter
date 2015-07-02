@@ -7,14 +7,23 @@
   z-index: 0
   background: white
 
+.container,
+.container--page-width,
+.container--small-width
+  width: 100%
+
 .container
   +box-sizing( border-box )
   margin: 0 auto
   padding: 0
 
 .container--page-width
-  width: 100%
   max-width: page( width )
+
+  &.container--content
+    +mq ( page( width ) + page( padding-x ) * 2 )
+      padding-left: page( padding-x )
+      padding-right: page( padding-x )
 
 .container--first
   padding-top: page( padding-y )
@@ -28,11 +37,6 @@
     padding-top: page( padding-y-mobile )
   .container--last
     padding-bottom: page( padding-y-mobile )
-
-.container--content
-  @media ( max-width: page( width ) + page( padding-x ) * 2 )
-    padding-left: page( padding-x )
-    padding-right: page( padding-x )
 
 +mq( 810px, min-width )
   .portfolio-items

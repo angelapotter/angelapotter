@@ -1,11 +1,16 @@
-.container.container--page-width.container--first.container--last.container--content
-  %h2.heading--page About
-  = image_tag "angela-profile.jpg", alt: "Angela Potter", class: 'about__headshot'
-  %p
-    I’m a designer with serious front-end development skills. I specialize in
-    <strong>usability and interaction design</strong>,
-    and am great at distilling complex processes down to simple UI. I have experience
-    with web and mobile design, and I code in <strong>HTML/CSS, JavaScript, and JQuery</strong>
-  %p
-    Right now I'm a UI/UX designer at #{ link_to 'Goldbely', 'https://goldbely.com', class: 'link--text' }, a website where you can order iconic regional dishes from across the USA, shipped to your door.
+.heading--page.heading--about
+  .heading__background-image
+  %h2 About
+
+.content
+  .container.container--page-width.container--first.container--last.container--content
+    = image_tag "angela-profile.jpg", alt: "Angela Potter", class: 'about__headshot'
+    .about__text
+      %h4
+        I’m a self-taught UX designer specializing in usability and interaction design.
+      %p
+        I’m passionate about creating simple, frictionless interfaces that make people’s lives easier. I currently work for Goldbely, an e-commerce startup based in San Francisco.
+      %p
+        I’ve worked in startups my whole career, and thrive in a fast-paced environment where I’m constantly iterating. I’m excellent at taking user feedback and turning it into action items.
+
 

@@ -1,15 +1,50 @@
-// ABOUT
-$about-headshot-size: 218px
+.about__text
+  float: left
+  width: 670px
+
+  +mq( about(bp-xl) )
+    width: percentage( ( about(bp-xl) - about(headshot-size) - about(gutter) ) / about(bp-xl) )
+
+  +mq( about(bp-md) )
+    float: none
+    width: 100%
+
+  h4
+    padding-bottom: 0.8em
+    font-size: em( 50px )
+    @extend %font-weight-light
+
+  p
+    font-size: em( 18px )
+
+  +mq( 1100px )
+    h4
+      font-size: em( 38px )
+
+  +mq( 960px )
+    h4
+      font-size: em( 32px )
+
+    p
+      font-size: em( 16px )
+
+  +mq( 780px )
+    h4
+      font-size: em( 28px )
 
 .about__headshot
-  float: right
-  margin-left: 40px
-  height: auto
-  width: $about-headshot-size
-  border-radius: $about-headshot-size / 2
+  float: left
+  display: block
+  width: about(headshot-size)
+  margin-right: about(gutter)
+  border-radius: about(headshot-size) / 2
 
-  $bp: 560px
-  +mq( $bp )
-    width: percentage( $about-headshot-size / $bp )
-    margin-left: percentage( 40px / $bp )
+  +mq( about(bp-xl) )
+    width: percentage( about(headshot-size) / about(bp-xl) )
+    margin-right: percentage( about(gutter) / about(bp-xl) )
 
+  +mq( about(bp-md) )
+    float: none
+    width: 100%
+    max-width: about(headshot-size)
+    margin: 0 auto 35px

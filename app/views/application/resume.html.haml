@@ -1,61 +1,65 @@
-.container.container--page-width.container--first.container--last.container--content
-  %h2.heading--page Skills
-  %div
-    %p
-      %strong UX Design:
-      Efficient at creating wireframes and site maps.
-      Experienced with user testing and iterative design.
-      Skilled at writing personas and user stories.
-      Proficient with Adobe Creative Suite.
-    %p
-      %strong Front-End Development:
-      Excellent with HTML, CSS, SASS, Bootstrap, JavaScript, and JQuery.
-      Adept at coding functional prototypes.
-      Proficient with Python and Django.
-      Experienced with Git.
+.heading--page.heading--resume
+  .heading__background-image
+  %h2 Resume
 
-  %h2.heading--page.heading--resume Experience
-  %div
-    %p
-      %strong UI / UX Designer
-      (June 2014 - present)
-      %br
-      #{ link_to 'Goldbely', 'https://goldbely.com', title: "Goldbely: Get food shipped to you from across the US", class: 'link--text' }, San Francisco
-    %ul
-      %li Enhance UX on Goldbely.com with simple and intuitive user flows.
-      %li Implement designs in HAML/SASS and CoffeeScript.
-      %li Improve front-end analytics to identify dropoff points in the conversion funnel.
-  %div
-    %p
-      %strong UX Designer
-      (July 2013 - June 2014)
-      %br
-      #{ link_to 'OLSET', 'https://olset.com', title: "OLSET: A personalized virtual travel agent", class: 'link--text' }, San Francisco
-    %ul
-      %li In charge of design and front-end development.
-      %li Responsible for metrics, user testing, and landing page optimization.
-      %li OLSET was selected to participate in 500 Startups Batch 7.
+.content
+  .container.container--page-width.container--first.container--last.container--content
+    .resume__body
+      %h3.heading--section Skills
+      .resume__subsection
+        %p
+          %strong UX Design:
+          Efficient at creating wireframes and site maps. Experienced with user testing and iterative design. Excellent with Adobe Creative Suite.
 
-    %p
-      %strong Interaction Designer
-      (Dec 2012 - June 2013)
-      %br
-      = succeed "," do
-        %a{ href: "http://myfive.com",  title: "MyFive: A web app for keeping track of your referrals", class: 'link--text' } MyFive
-      Seattle
-    %ul
-      %li Designed and implemented the company's first ever user testing program.
-      %li Spec'd out entire application with interactive wireframes.
-      %li Coded working prototypes in HTML and JQuery for iterative design process.
+      .resume__subsection
+        %p
+          %strong Front-End Development:
+          Excellent with HTML/CSS and JavaScript. Experienced with Git.
 
-  %h2.heading--page.heading--resume Education
-  %div
-    %p
-      %strong Bachelor of Music in Music Cognition &amp; Flute Performance
-      (June 2012)
-      %br
-      Northwestern University, Evanston, IL
-    %ul
-      %li GPA: 3.7/4.0
-      %li Course highlights: Cognitive Psychology, Perception, Research Methods, Statistics
-      %li Ran an experiment on the effects of syncopation on listeners’ perception of “groove” in short rhythmic sequences.
+      %h2.heading--section.heading--resume Experience
+      .resume__subsection
+        %p
+          %strong UI / UX Designer
+          (June 2014 - present)
+          %br
+          #{ link_to 'Goldbely', 'https://goldbely.com', title: "Goldbely: Get food shipped to you from across the US", class: 'link--text' }, San Francisco
+        %ul
+          %li Enhance UX on Goldbely.com with simple and intuitive user flows.
+          %li Implement designs in HAML/SASS and CoffeeScript.
+          %li Improve front-end analytics to identify dropoff points in the conversion funnel.
+
+      .resume__subsection
+        %p
+          %strong UX Designer
+          (July 2013 - June 2014)
+          %br
+          #{ link_to 'OLSET', 'https://olset.com', title: "OLSET: A personalized virtual travel agent", class: 'link--text' }, San Francisco
+        %ul
+          %li In charge of design and front-end development.
+          %li Responsible for metrics, user testing, and landing page optimization.
+          %li OLSET was selected to participate in 500 Startups Batch 7.
+
+      .resume__subsection
+        %p
+          %strong Interaction Designer
+          (Dec 2012 - June 2013)
+          %br
+          = succeed "," do
+            %a{ href: "http://myfive.com",  title: "MyFive: A web app for keeping track of your referrals", class: 'link--text' } MyFive
+          Seattle
+        %ul
+          %li Designed and implemented the company's first ever user testing program.
+          %li Spec'd out entire application with interactive wireframes.
+          %li Coded working prototypes in HTML and JQuery for iterative design process.
+
+      %h2.heading--section.heading--resume Education
+      .resume__subsection
+        %p
+          %strong Bachelor of Music in Music Cognition &amp; Flute Performance
+          (June 2012)
+          %br
+          Northwestern University, Evanston, IL
+        %ul
+          %li GPA: 3.7/4.0
+          %li Course highlights: Cognitive Psychology, Perception, Research Methods, Statistics
+          %li Ran an experiment on the effects of syncopation on listeners’ perception of “groove” in short rhythmic sequences.

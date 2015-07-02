@@ -1,4 +1,4 @@
-$header-bps: ( nav-logo-stack: 355px )
+$header-bps: ( nav-logo-stack: 750px )
 
 .header
   +box-sizing( border-box )
@@ -6,8 +6,7 @@ $header-bps: ( nav-logo-stack: 355px )
   overflow: hidden
   background: white
 
-  .container--page-width
-    display: table
+  .container
     position: relative
 
   +mq( page( width ) + 16px )
@@ -22,15 +21,14 @@ $header-bps: ( nav-logo-stack: 355px )
 .header__home-link
   display: block
   opacity: 0.6
+  text-align: center
   +transition( opacity transition(md) )
 
   +mq( map-get($header-bps, nav-logo-stack), min-width )
-    position: absolute
-    bottom: 0
-    left: 0
+    float: left
 
   h1
-    padding: map-get( $nav-link-props, padding-y )
+    padding: map-get( $nav-link-props, padding-y ) 0
     font-size: em( 24px )
     color: gray( darkest )
 
@@ -55,13 +53,9 @@ $header-bps: ( nav-logo-stack: 355px )
     vertical-align: middle
     padding: 0 1.2em
 
-    +mq( page( width ) )
+    +mq( 500px )
       padding-left: 1em
       padding-right: 1em
-
-    +mq( 570px )
-      padding-left: 0.1em
-      padding-right: 0.1em
 
     &:first-child
       padding-left: 0
@@ -69,36 +63,14 @@ $header-bps: ( nav-logo-stack: 355px )
     &:last-child
       padding-right: 0
 
-+mq( 840px )
-  .header
-    padding-top: 0
-
-  .header__home-link
-    height: 100%
-    padding: 6px 3%
-    background: gray( light )
-
-    h1
-      width: 49px
-      height: 32px
-      background-image: image-url( 'header-logo-mobile.png' )
-      margin-top: 0
-
-+mq( 390px )
-  .header__home-link
-    padding: 0 3%
-
-    h1
-      width: 30px
-      height: 32px
-      background-size: contain
-      background-position: left center
-
 .nav__link
   display: block
   position: relative
   padding: map-get( $nav-link-props, padding-y ) map-get( $nav-link-props, padding-x )
   color: map-get( $nav-link-props, color )
+
+  &:hover
+    color: map-get( $nav-link-props, color )
 
 .nav__link--primary
   $font-size: 19px
