@@ -22,6 +22,10 @@ class PortfolioItems < ActiveHash::Base
       platform: 'Web',
       slug: 'order-status',
       blurb: "The order status page for Goldbely, where customers can follow the progress of their packages.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit Goldbely.com',
+        url: 'https://www.goldbely.com',
+      }),
     },
     # {
     #   name: 'Homepage Carousel',
