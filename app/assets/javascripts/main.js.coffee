@@ -4,7 +4,7 @@
 
 AP.common =
   init: ->
-    # new AP.SinglePageNav
+    new AP.SinglePageNav
 
 $(document).on 'page:change', =>
   @AP.common.init()
