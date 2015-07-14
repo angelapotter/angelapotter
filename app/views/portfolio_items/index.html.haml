@@ -1,10 +1,12 @@
+= render 'layouts/single_page_nav'
+
 .heading--page
   .heading__background-image
   %h2 Portfolio
 
 .content.portfolio-items
   - portfolio_items.each_with_index do |item, index|
-    .portfolio-item
+    .portfolio-item{ id: "portfolio-item--#{ item.slug }" }
       .container.container--page-width.container--content
         %h3.heading--section.portfolio-item__name= item.name
 

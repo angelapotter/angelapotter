@@ -1,0 +1,4 @@
+.single-page-nav.js__single-page-nav
+  - portfolio_items.each do |item|
+    = link_to "#portfolio-item--#{ item.slug }" do
+      .text= item.name
