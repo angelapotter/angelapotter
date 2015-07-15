@@ -16,6 +16,18 @@ class PortfolioItems < ActiveHash::Base
       }),
     },
     {
+      name: 'E-Commerce Checkout',
+      company: 'Goldbely',
+      role: 'Design + Front-End Dev',
+      platform: 'Web',
+      slug: 'cart',
+      blurb: "The Goldbely checkout experience, when all the required info has been filled in.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit Goldbely.com',
+        url: 'https://www.goldbely.com',
+      }),
+    },
+    {
       name: 'Order Status Page',
       company: 'Goldbely',
       role: 'Design',
