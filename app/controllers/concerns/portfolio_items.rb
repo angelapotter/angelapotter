@@ -21,7 +21,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design + Front-End Dev',
       platform: 'Web',
       slug: 'cart',
-      blurb: "The Goldbely checkout experience, when all the required info has been filled in.",
+      blurb: "The Goldbely checkout experience.",
       outbound_link: OpenStruct.new({
         label: 'Visit Goldbely.com',
         url: 'https://www.goldbely.com',
