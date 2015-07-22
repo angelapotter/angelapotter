@@ -3,10 +3,8 @@
   %head
     = render 'layouts/head'
   %body{ class: body_css_class }
-    = render 'layouts/header'
     .wrapper
+      = render 'layouts/header'
       = yield
 
     = render 'layouts/footer'
-
-    #smallWidth.media-query

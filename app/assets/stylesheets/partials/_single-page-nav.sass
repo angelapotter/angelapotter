@@ -1,42 +1,68 @@
 .single-page-nav
+  $transition: transition(md)
+  $color: gray(dark)
   position: fixed
-  bottom: 13%
-  right: 0
+  top: 25em
+  right: 5px
   z-index: 2
 
   .text
-    display: none
     position: absolute
     right: 100%
     top: 50%
-    margin-top: -0.6em
+    visibility: hidden
+    opacity: 0
+    z-index: -1
+    margin-top: -1em
+    margin-right: 0.4em
+    padding: 0.4em 0.5em
     line-height: 1.2
     white-space: nowrap
+    background: $color
+    +transition( opacity $transition, visibility 0s $transition )
 
   a
-    $color: gray(medium-dark)
     position: relative
     display: block
-    padding: 8px
+    padding: 8px 10px
     font-size: em( 12px )
-    color: $color
+    color: white
     text-align: right
+    opacity: 0.5
+    +transition( opacity $transition )
 
     &:after
       display: block
+      opacity: 0.7
       content: ''
       +circle( 12px, $color )
       border: 2px solid $color
       background: transparent
       color: transparent
       overflow: hidden
-      +box-shadow( 1px, 1px, 2px, transparentize(white, 0.8) )
+      +transition( background $transition )
 
-    &:hover,
-    &.current
+    &.current,
+    &:hover
+      opacity: 1
+
       &:after
         background: $color
+        opacity: 1
+
+      +mq( page(width) + 200px, min-width )
+        .text
+          visibility: visible
+          opacity: 1
+          +transition-delay( 0s )
+
 
     &:hover
       .text
-        display: block
+        visibility: visible
+        opacity: 1
+        +transition-delay( 0s )
+
+  +mq( 700px, max-height )
+    top: auto
+    bottom: 10px

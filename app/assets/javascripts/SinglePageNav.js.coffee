@@ -9,9 +9,12 @@ class AP.SinglePageNav
 
   constructor: ( options ) ->
     options ?= {}
-    @contextElm = $ options.context || DEFAULTS.context
-    @navElm = @contextElm.find '.js__single-page-nav'
+    @contextElm        = $ options.context || DEFAULTS.context
+    @navElm            = @contextElm.find('.js__single-page-nav').first()
+    @portfolioItemElms = @contextElm.find '.js__portfolio-item'
+
     @initContent()
 
   initContent: ->
-    @navElm?.singlePageNav()
+    @navElm?.singlePageNav
+      threshold: @portfolioItemElms.first().outerHeight() * (2/3)

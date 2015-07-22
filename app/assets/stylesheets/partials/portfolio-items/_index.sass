@@ -1,5 +1,11 @@
 $portfolio-img-height: portfolio-item(img-aspect) * portfolio-item(img-width)
-$portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(gutter)
+$portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(gutter-lg)
+$portfolio-text-width-wide: page(width) - portfolio-item(img-width) - portfolio-item(gutter)
+
+.portfolio-items
+  .single-page-nav
+    +mq( portfolio-item(img-text-stack-bp) )
+      display: none
 
 .portfolio-item
   padding: padding( xl ) 0
@@ -13,18 +19,25 @@ $portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(
       bottom: padding(lg)
 
 .portfolio-item__name,
-.portfolio-item__info,
-.portfolio-item__blurb,
-.portfolio-item__link-container
+.portfolio-item__text-content
   text-align: center
 
+  @media ( max-width: page(width) + page(padding-x) * 5 ) and ( min-width: portfolio-item(img-text-stack-bp) )
+    padding-right: 35px
+
   +mq( portfolio-item(img-text-stack-bp), min-width )
-    width: percentage( $portfolio-text-width / page(width) )
+    width: percentage( $portfolio-text-width-wide / page(width) )
     float: right
     text-align: left
 
+  +mq( page(width), min-width )
+    width: percentage( $portfolio-text-width / page(width) )
+
 .portfolio-item__link-container
   margin-top: 0.8em
+
+  +mq ( portfolio-item(img-text-stack-bp) )
+    margin-top: 0.4em
 
 .portfolio-item__name
   margin: 0.4em 0
@@ -33,9 +46,7 @@ $portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(
   +mq( portfolio-item(img-text-stack-bp) )
     margin-bottom: 1.3em
 
-.portfolio-item__info,
-.portfolio-item__blurb,
-.portfolio-item__link-container
+.portfolio-item__text-content
   font-size: em( 17px )
 
 .portfolio-item__info
@@ -46,8 +57,10 @@ $portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(
     font-size: em( 15px )
 
   +mq( portfolio-item(img-text-stack-bp), min-width )
+    margin-bottom: em( 50px, 17px )
+
+  +mq( 1100px, min-width )
     margin-bottom: em( 80px, 17px )
-    float: right
 
   +mq( portfolio-item(img-text-stack-bp) )
     margin-top: 2em
@@ -76,5 +89,7 @@ $portfolio-text-width: page(width) - portfolio-item(img-width) - portfolio-item(
 +set-aspect-ratio( '.portfolio-item__image', portfolio-item(img-aspect), portfolio-item(img-width) )
   display: block
 
+.back-to-top
+  text-align: center
 
 

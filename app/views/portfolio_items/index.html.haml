@@ -1,4 +1,4 @@
-=# render 'layouts/single_page_nav'
+= render 'layouts/single_page_nav'
 
 .heading--page
   .heading__background-image
@@ -6,7 +6,7 @@
 
 .content.portfolio-items
   - portfolio_items.each_with_index do |item, index|
-    .portfolio-item{ id: "portfolio-item--#{ item.slug }" }
+    .portfolio-item.js__portfolio-item{ id: "portfolio-item--#{ item.slug }" }
       .container.container--page-width.container--content
         %h3.heading--section.portfolio-item__name= item.name
 
@@ -15,16 +15,18 @@
             = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }.jpg", class: 'portfolio-item__image'
           - else
             = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }_gray.jpg", class: 'portfolio-item__image'
-        .portfolio-item__info
-          - if item.company
-            .line Company: #{ item.company }
-          - if item.platform
-            .line Platform: #{ item.platform }
-          - if item.role
-            .line Role: #{ item.role }
 
-        .portfolio-item__blurb= item.blurb
+        .portfolio-item__text-content
+          .portfolio-item__info
+            - if item.company
+              .line Company: #{ item.company }
+            - if item.platform
+              .line Platform: #{ item.platform }
+            - if item.role
+              .line Role: #{ item.role }
 
-        - if item.outbound_link.present?
-          .portfolio-item__link-container
-            = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'link--text'
+          .portfolio-item__blurb= item.blurb
+
+          - if item.outbound_link.present?
+            .portfolio-item__link-container
+              = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'text-link--primary'

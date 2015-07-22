@@ -2,11 +2,8 @@
   display: block
   clear: both
   width: 100%
-  height: 100%
-  padding-bottom: 0
-  margin: 30px 0
+  padding: 30px 0
   color: white
-  font-size: 1.2em
 
   +mq( 500px, min-width )
     text-align: right
@@ -28,24 +25,24 @@
 
 .social-link
   display: block
-  +circle( 40px, gray( medium ) )
-  padding: 10px
+  +circle( em(40px), gray( medium ) )
   text-align: center
+  color: white
+  +transition( background transition(md) )
 
   &:before
     display: block
     content: ''
-    height: $social-sprite-size
-    width: $social-sprite-size
-    background: image-url( "social-icons-retina.png") 0 0 no-repeat
-    background-size: ( $social-sprite-size * length($social-icons) ) $social-sprite-size
+    position: relative
+    top: 50%
+    font-size: em(20px)
+    margin-top: -0.5em
+    line-height: 1
 
-@each $icon-props in $social-icons
-  .social-link--#{ map-get( $icon-props, name ) }
-    &:before
-      background-position: map-get( $icon-props, pos-x ) 0
-
-    &:hover,
-    &:active
-      background: map-get( $icon-props, color )
+  @each $icon-props in $social-icons
+    &.fa-#{ map-get( $icon-props, name ) }
+      &:hover,
+      &:active
+        background: map-get( $icon-props, color )
+        color: white
 

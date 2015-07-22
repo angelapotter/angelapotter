@@ -23,7 +23,7 @@ class PortfolioItems < ActiveHash::Base
       slug: 'cart',
       blurb: "The Goldbely checkout experience.",
       outbound_link: OpenStruct.new({
-        label: 'Visit Goldbely.com',
+        label: 'View live on Goldbely.com',
         url: 'https://www.goldbely.com',
       }),
     },

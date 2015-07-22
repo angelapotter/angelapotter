@@ -1,6 +1,13 @@
 .wrapper
   width: 100%
+  min-height: 100%
   overflow: hidden
+  margin-bottom: page(footer-height) * -1
+
+  &:after
+    display: block
+    content: ''
+    height: page(footer-height)
 
 .content
   position: relative

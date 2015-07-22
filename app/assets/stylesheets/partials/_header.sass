@@ -84,12 +84,14 @@ $header-bps: ( nav-logo-stack: 750px )
     left: 0
     right: 0
     height: map-get( $nav-link-props, underline-height )
+    opacity: 0
     background: map-get( $nav-link-props, color )
     content: ''
-    +transition( bottom transition(md) )
+    +transition( bottom transition(md), opacity transition(md) )
 
   &:hover,
   &.active
 
     &:after
       bottom: 0
+      opacity: 1

@@ -117,7 +117,8 @@ $page-props: (
   padding-x: padding( md ),
   padding-y: padding( lg ),
   padding-y-mobile: 35px,
-  padding-y-portfolio: 35px
+  padding-y-portfolio: 35px,
+  footer-height: 124px
 );
 
 @function page( $prop ) {
@@ -140,8 +141,9 @@ $nav-link-props: (
 $portfolio-item-props: (
   img-width: 780px,
   img-aspect: 605 / 900,
-  gutter: 80px,
-  img-text-stack-bp: 850px
+  gutter-lg: 80px,
+  gutter: 60px,
+  img-text-stack-bp: 900px
 );
 
 @function portfolio-item( $prop ) {
@@ -184,7 +186,7 @@ $social-icons: (
     color: #ee4589
   ),
   (
-    name: github,
+    name: github-alt,
     color: #333
   ),
   (
@@ -200,7 +202,7 @@ $social-icons: (
     color: #0883bd
   ),
   (
-    name: email,
+    name: envelope,
     color: #333
   ),
   (
