@@ -1,23 +1,21 @@
-.footer--social
+$footer-main-bg: gray(off-white)
+
+.footer
   display: block
   clear: both
   width: 100%
-  padding: 30px 0
+  padding-top: 30px
   color: white
+  text-align: center
 
-  +mq( 500px, min-width )
-    text-align: right
-
-  +mq( 410px, min-width )
-    .social--contact
-      float: left
-
-.social--contact,
-.social--profiles
   li
     display: inline-block
-    margin: 0 15px 0 0
+    padding: 20px 8px
     vertical-align: middle
+
+.footer__main
+  border-top: 1px solid gray(lightest)
+  padding-bottom: 30px
 
 .social--profiles
   li:last-child
@@ -25,17 +23,16 @@
 
 .social-link
   display: block
-  +circle( em(40px), gray( medium ) )
+  +circle( em(36px), gray(medium) )
   text-align: center
-  color: white
-  +transition( background transition(md) )
+  color: $footer-main-bg
 
   &:before
     display: block
     content: ''
     position: relative
     top: 50%
-    font-size: em(20px)
+    font-size: em(19px)
     margin-top: -0.5em
     line-height: 1
 
@@ -46,3 +43,5 @@
         background: map-get( $icon-props, color )
         color: white
 
+.byline
+  font-size: em( 13px )

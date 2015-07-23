@@ -1,13 +1,10 @@
-= render 'layouts/back_to_top'
+.footer
+  .container.container--content
+    = render 'layouts/back_to_top'
 
-.footer--social
-  .container.container--page-width.container--content
-    %ul.list-unstyled.social--contact
+    .footer__main
       %li.list-unstyled>
         = mail_to contact_info.email, '', title: 'Send me an email', class: 'social-link fa fa-envelope'
-      %li.list-unstyled>
-        = link_to '', "tel:#{ contact_info.phone }", title: 'Give me a call', class: 'social-link fa fa-phone'
-    %ul.list-unstyled.social--profiles
       %li.list-unstyled>
         = link_to '', social_urls.linkedin, target: '_blank', title: 'LinkedIn', class: 'social-link fa fa-linkedin'
       %li.list-unstyled>
@@ -15,6 +12,11 @@
       %li.list-unstyled>
         = link_to '', social_urls.dribbble, target: '_blank', title: 'Dribbble', class: 'social-link fa fa-dribbble'
       %li.list-unstyled>
+        = link_to '', social_urls.behance, target: '_blank', title: 'Behance', class: 'social-link fa fa-behance'
+      %li.list-unstyled>
         = link_to '', social_urls.stack_exchange, target: '_blank', title: 'UX StackExchange', class: 'social-link fa fa-stack-exchange'
       %li.list-unstyled>
         = link_to '', social_urls.github, target: '_blank', title: 'Github', class: 'social-link fa fa-github-alt'
+
+      .byline
+        = link_to 'Site Design + Development by Angela Potter', source_code_url, title: 'View Source on Github', class: 'text-link--muted'

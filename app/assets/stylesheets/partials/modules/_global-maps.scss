@@ -81,6 +81,7 @@ $gray-shades: (
   medium: #999,
   light: #aaa,
   lighter: #ccc,
+  lightest: #eee,
   off-white: #F5F4F1
 );
 
@@ -184,6 +185,10 @@ $social-icons: (
   (
     name: dribbble,
     color: #ee4589
+  ),
+  (
+    name: behance,
+    color: #1769ff
   ),
   (
     name: github-alt,

@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
       linkedin: 'http://www.linkedin.com/in/angelacbpotter',
       twitter: 'https://twitter.com/takehypotenuses',
       dribbble: 'https://dribbble.com/angelapotter',
+      behance: 'https://www.behance.net/angelapotter',
       stack_exchange: 'http://ux.stackexchange.com/users/27505/angelapotter',
       github: 'https://github.com/angelapotter'
     })
