@@ -1,15 +1,15 @@
-%title Angela Potter
-%meta{content: "Interaction designer in the Bay Area.", name: "description"}
-  %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
-  %meta{content: "width=device-width", name: "viewport"}
+%title= "#{yield( :title )} | Angela Potter Design" || "Angela Potter Design"
 
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-  = stylesheet_link_tag '//fonts.googleapis.com/css?family=Raleway:400,200,600'
-  = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+%meta{ charset: 'utf-8' }
+%meta{ name: "viewport", content: "width=device-width" }
 
-  = javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js"
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+= stylesheet_link_tag '//fonts.googleapis.com/css?family=Raleway:400,200,600'
+= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
 
-  = csrf_meta_tags
+= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js"
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
 
-  = favicon_link_tag 'favicon.png', type: 'image/png'
+= csrf_meta_tags
+
+= favicon_link_tag 'favicon.png', type: 'image/png'

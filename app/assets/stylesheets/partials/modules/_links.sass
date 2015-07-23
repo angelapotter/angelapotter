@@ -1,18 +1,24 @@
 $link-color: brand( primary )
 
+=active-link-states
+  &:hover,
+  &:active,
+  &:focus
+    @content
+
 =text-link-hover-style( $color )
   color: $color
   border-bottom: 2px solid $color
 
 =text-link( $color, $color-hover: $color, $color-visited: $color )
   color: $color
+  border-bottom: 2px solid transparent
+  +transition( border transition(md) )
 
   &:visited
     color: $color-visited
 
-  &:hover,
-  &:active,
-  &:focus
+  +active-link-states
     +text-link-hover-style( $color-hover )
 
 

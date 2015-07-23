@@ -1,12 +1,29 @@
-.resume__body
-  max-width: em( 800px )
+.resume__section
+  + .resume__section
+    margin-top: 2em
+
+  +mq( resume(bp-stack), min-width )
+    width: 48%
+
+    &:first-child,
+    &:last-child
+      float: left
+
+    &:nth-child(2)
+      float: right
+      margin-top: 0
+
+  @media ( max-width: resume(bp-stack) ) and ( min-width: resume(max-width) + 100px )
+    max-width: resume(max-width)
+    margin:
+      left: auto
+      right: auto
 
 .resume__subsection
   margin-top: 1.3em
 
-.heading--section.heading--resume
-  margin-top: 1.2em
-  padding-bottom: 0.2em
 
-  &.heading--first
-    margin-top: 0
++mq( resume(bp-stack), min-width )
+  .resume
+    .back-to-top
+      display: none
