@@ -14,9 +14,9 @@
 
         .portfolio-item__image-container
           - if index.even?
-            = image_tag "#{ item.sample_image_path }cover.jpg", class: 'portfolio-item__image'
+            = image_tag "#{ item.sample_image_path }cover.jpg", class: 'portfolio-item__image', alt: item.name
           - else
-            = image_tag "#{ item.sample_image_path }cover_gray.jpg", class: 'portfolio-item__image'
+            = image_tag "#{ item.sample_image_path }cover_gray.jpg", class: 'portfolio-item__image', alt: item.name
 
         .portfolio-item__text-content
           = render 'portfolio_items/partials/item_info', { item: item }

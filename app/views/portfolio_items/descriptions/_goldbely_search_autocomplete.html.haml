@@ -18,14 +18,14 @@
     %h3.heading--section.portfolio-item__section-name
       The Mockup
   .container.container--page-width
-    = image_tag "#{ item.sample_image_path }mockup.jpg"
+    = image_tag "#{ item.sample_image_path }mockup.jpg", alt: "#{ item.name } Mockup"
 
 .portfolio-item__section
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
       The Final Product
   .container.container--page-width
-    = image_tag "#{ item.sample_image_path }final-product.jpg"
+    = image_tag "#{ item.sample_image_path }final-product.jpg", alt: "#{ item.name } Final Product"
   .container.container--page-width.container--content
     %br
     %p
