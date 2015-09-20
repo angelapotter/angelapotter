@@ -1,0 +1,32 @@
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Problem
+    %p
+      When I started work on this feature, Goldbely’s search autocomplete was a small list view. We knew that we wanted to improve our search, both from personal experience as well as from emails from our users. These are the problems we wanted to solve:
+
+    %ol
+      %li
+        The search experience was okay if you knew exactly what you were looking for, but it was not very useful for browsing. Since photos are a huge selling point for food, I wanted to bring those forward and make it fun to look through search results.
+      %li
+        There was no way to see all the results for your search query. Users were stuck with the first 8 results of the search, and there was no page for them to view more.
+      %li
+        There was no way to go directly to a shop from the search. I wanted users to be able to type in the name of a shop and go directly there, rather than just going directly to a product.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Mockup
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }mockup.jpg"
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Final Product
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }final-product.jpg"
+  .container.container--page-width.container--content
+    %br
+    %p
+      Above is the final mockup. Due to time constraints in development, we only included products (and not shops or collections) in search results. As a compromise, we added a link to the shop on each product, so users can still get to the shop page directly from search.

@@ -14,6 +14,7 @@ class PortfolioItems < ActiveHash::Base
         label: 'View live on Goldbely.com',
         url: 'https://www.goldbely.com',
       }),
+      show_case_study: true,
     },
     {
       name: 'E-Commerce Checkout',
@@ -33,11 +34,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design',
       platform: 'Web',
       slug: 'order-status',
-      blurb: "The order status page for Goldbely, where customers can follow the progress of their packages.",
-      outbound_link: OpenStruct.new({
-        label: 'Visit Goldbely.com',
-        url: 'https://www.goldbely.com',
-      }),
+      blurb: "The order status page for Goldbely, where customers can follow the progress of their packages."
     },
     # {
     #   name: 'Homepage Carousel',
@@ -82,10 +79,10 @@ class PortfolioItems < ActiveHash::Base
       platform: 'Web',
       slug: 'hotel-matches',
       blurb: "The hotel search results for OLSET, a hotel booking site. Each hotel has a personalized match rating based on the customer's preferences and travel history.",
-      outbound_link: OpenStruct.new({
-        label: 'Visit OLSET.com',
-        url: 'https://olset.com',
-      }),
+      # outbound_link: OpenStruct.new({
+      #   label: 'Visit OLSET.com',
+      #   url: 'https://olset.com',
+      # }),
     },
     {
       name: 'Hotel Site Landing Page',
@@ -109,7 +106,7 @@ class PortfolioItems < ActiveHash::Base
       slug: 'old-person',
       blurb: "An Android app with a flashlight, magnifying glass, and large print notebook",
       outbound_link: OpenStruct.new({
-        label: 'Download Old Person App for Android',
+        label: 'View in the Google Play store',
         url: 'https://play.google.com/store/apps/details?id=com.thirdlayer.oldperson&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS50aGlyZGxheWVyLm9sZHBlcnNvbiJd',
       }),
     },
@@ -119,11 +116,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'UI Design + Prototyping',
       platform: 'Web',
       slug: 'new-gig',
-      blurb: "A user testing prototype for MyFive, a web app that helps freelancers keep track of who sends them the most business.",
-      outbound_link: OpenStruct.new({
-        label: 'Visit MyFive.com',
-        url: 'http://myfive.com',
-      }),
+      blurb: "A user testing prototype for MyFive, a web app that helps freelancers keep track of who sends them the most business."
     },
   ]
 
@@ -136,7 +129,19 @@ class PortfolioItems < ActiveHash::Base
   end
 
   def description_partial_path
-    "portfolio_items/descriptions/#{ slug.gsub('-', '_') }"
+    "portfolio_items/descriptions/#{ company_slug.gsub('-', '_') }_#{ slug.gsub('-', '_') }"
+  end
+
+  def sample_image_path
+    "portfolio/samples/#{ company_slug }-#{ slug }/"
+  end
+
+  def sample_heading_image_path
+    "#{ sample_image_path }heading.jpg"
+  end
+
+  def show_case_study?
+    return show_case_study.present?
   end
 
   private

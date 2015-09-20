@@ -1,0 +1,18 @@
+- content_for :title, @item.name
+
+.heading--portfolio-item
+  .heading__background-image{ style: "background-image: url( #{ image_url @item.sample_heading_image_path } );" }
+  = link_to portfolio_path, class: 'portfolio-item__all-projects-link' do
+    %i.fa.fa-chevron-left
+    All Projects
+
+  .container.container--page-width.container--content
+    %h2= @item.name
+    = render 'portfolio_items/partials/item_info', { item: @item }
+
+.content.portfolio-item__show
+  = render @item.description_partial_path, { item: @item }
+
+  - if @item.outbound_link.present?
+    .portfolio-item__link-container
+      = link_to @item.outbound_link.label, @item.outbound_link.url, target: '_blank', class: 'btn btn-lg btn-primary'

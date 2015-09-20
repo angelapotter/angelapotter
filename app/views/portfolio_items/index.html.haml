@@ -14,21 +14,18 @@
 
         .portfolio-item__image-container
           - if index.even?
-            = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }.jpg", class: 'portfolio-item__image'
+            = image_tag "#{ item.sample_image_path }/cover.jpg", class: 'portfolio-item__image'
           - else
-            = image_tag "portfolio/samples/#{ item.company_slug }/#{ item.slug }_gray.jpg", class: 'portfolio-item__image'
+            = image_tag "#{ item.sample_image_path }/cover_gray.jpg", class: 'portfolio-item__image'
 
         .portfolio-item__text-content
-          .portfolio-item__info
-            - if item.company
-              .line Company: #{ item.company }
-            - if item.platform
-              .line Platform: #{ item.platform }
-            - if item.role
-              .line Role: #{ item.role }
+          = render 'portfolio_items/partials/item_info', { item: item }
 
           .portfolio-item__blurb= item.blurb
 
-          - if item.outbound_link.present?
-            .portfolio-item__link-container
-              = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'text-link--primary'
+          .portfolio-item__link-container
+            - if item.show_case_study?
+              = link_to 'Read case study', portfolio_items_path( item.slug ), class: 'btn btn-sm btn-primary'
+
+            - if item.outbound_link.present?
+              = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm btn-default'
