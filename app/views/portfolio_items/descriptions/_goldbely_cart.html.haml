@@ -19,10 +19,16 @@
 .portfolio-item__section
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
-      The Mockup
+      The Mockups
   .container.container--page-width
     %p
-    = image_tag "#{ item.sample_image_path }mockup.jpg", alt: "#{ item.name } Mockup"
+    = image_tag "#{ item.sample_image_path }mockup.jpg", alt: "#{ item.name } Mockup (Filled State)"
+
+    %br
+    %p
+      If payment info or shipping info has not been filled out, the user will see the next step in the process in place of the "Complete Order" button:
+
+    = image_tag "#{ item.sample_image_path }mockup-empty.jpg", alt: "#{ item.name } Mockup (Empty State)"
 
 .portfolio-item__section
   .container.container--page-width.container--content
