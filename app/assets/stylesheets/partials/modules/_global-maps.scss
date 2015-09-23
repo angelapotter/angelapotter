@@ -70,7 +70,7 @@ $portfolio-item-props: (
   img-aspect: 605 / 900,
   gutter-lg: 80px,
   gutter: 60px,
-  img-text-stack-bp: 900px
+  img-text-stack-bp: 1050px
 );
 
 @function portfolio-item( $prop ) {

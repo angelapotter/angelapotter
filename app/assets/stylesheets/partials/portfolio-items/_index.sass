@@ -37,8 +37,17 @@ $portfolio-text-width-wide: page(width) - portfolio-item(img-width) - portfolio-
     margin-top: 1.5em
     font-size: em( 16px, 18px )
 
+    a
+      margin-bottom: 8px
+
+      &:first-child
+        margin-right: 6px
+
     +mq ( portfolio-item(img-text-stack-bp) )
-      margin-top: 0.4em
+      margin-top: 0.8em
+
+      a:first-child
+        margin-right: 0
 
   .portfolio-item__name
     margin: 0.4em 0
