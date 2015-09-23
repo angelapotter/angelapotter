@@ -12,7 +12,7 @@
 
     %ol
       %li
-        Users were often confused about how to proceed to the next step. We found this in user testing, and occasionally had customers emailing in asking how to finish their purchase. With the existing checkout, each time a user wanted to move to the next step, he had to find the correct button and click it, wherever it was on the screen. To fix this I wanted to provide a clear direction and keep the button for the next step in a consistent location.
+        Users were often confused about how to proceed to the next step. We found this in user testing, and occasionally had customers emailing in asking how to finish their purchase. Each time a user wanted to move to the next step, he had to find the correct button and click it, wherever it was on the screen. To fix this I wanted to provide a clear direction and keep the button for the next step in a consistent location.
       %li
         Users did not notice that they could change their delivery date at checkout — and then they emailed us later asking to change it. One of our coolest features is the ability to schedule orders to arrive at a future date, so I wanted to make it a central part of the checkout experience.
 
@@ -40,3 +40,25 @@
     %br
     %p
       This is what the cart looks like now. I made a few tweaks during implementation, and have also made some changes since the initial redesign.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Future
+  .container.container--page-width.container--content
+    %p
+      Ultimately, I want to move the shipping and billing forms inline, so they're right on the page instead of popping up in modals as they currently do. This removes the need for the user to find the next stage of checkout at all, since they are immediately taken to a shipping form as soon as they hit "Check Out." It also creates a much smoother experience, because it allows the user to see their entire cart and what's left to fill out, throughout the entire process.
+
+    %p
+      Below is sneak peek of what's to come. This is what the cart will look like to a user checking out for the first time:
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }preview-empty.jpg", alt: "#{ item.name } Preview"
+
+  .container.container--page-width.container--content
+    %br
+    %p
+      Once the required info has been filled out, the cart will look like this. The shipping address is in a <em>focus</em> state — it's been clicked on to reveal other saved addresses:
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }preview-filled.jpg", alt: "#{ item.name } Preview (Filled Out)"
