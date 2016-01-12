@@ -37,6 +37,8 @@ class PortfolioItems < ActiveHash::Base
       slug: 'order-status',
       blurb: "The order status page for Goldbely, where customers can follow the progress of their packages."
     },
+    # Maybe add the order feedback experience here
+    #
     # {
     #   name: 'Homepage Carousel',
     #   company: 'Goldbely',

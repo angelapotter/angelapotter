@@ -1,12 +1,14 @@
 .portfolio-items.show
-  $page-heading-padding-top: 23%
 
   .heading--portfolio-item
     @extend .heading--page
+    display: table
+    width: 100%
 
     .container
       position: relative
-      top: $page-heading-padding-top
+      display: table-cell
+      vertical-align: middle
 
     .heading__background-image
       &:before
@@ -16,20 +18,25 @@
       position: static
       margin-top: 0
       text-transform: none
-      text-align: left
 
     +mq( 680px )
       h2
         font-size: em( 60px )
 
+    +mq( 650px, min-width )
+      h2,
+      .portfolio-item__info
+        text-align: left
+
     +mq( 550px )
-      .container
-        top: 15%
+      h2
+        font-size: em( 50px )
 
   .portfolio-item__info
     margin-top: 0.7em
     color: gray( off-white )
     font-size: em(20px)
+    text-align: center
 
     .line
       display: inline
@@ -44,7 +51,7 @@
     position: absolute
     right: 0
     // Offset for H2 line height
-    top: $page-heading-padding-top
+    top: 25%
     z-index: 1
     padding: em( 12px, $font-size ) em( 26px, $font-size )
     margin-top: 0.7em

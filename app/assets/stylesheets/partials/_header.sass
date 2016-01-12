@@ -18,6 +18,9 @@ $header-bps: ( nav-logo-stack: 750px )
   +mq( 460px )
     font-size: 80%
 
+  +mq( map-get($header-bps, nav-logo-stack) )
+    padding: 5px 0 10px
+
 .header__home-link
   display: block
   opacity: 0.6
@@ -71,6 +74,9 @@ $header-bps: ( nav-logo-stack: 750px )
 
   &:hover
     color: map-get( $nav-link-props, color )
+
+  +mq( map-get($header-bps, nav-logo-stack) )
+    padding-bottom: 8px
 
 .nav__link--primary
   $font-size: 19px

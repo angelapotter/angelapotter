@@ -5,8 +5,10 @@
     %p
       This is what the Goldbely checkout experience looked like when I started redesigning it:
 
+  .container.container--page-width
     = image_tag "#{ item.sample_image_path }before.jpg", alt: "#{ item.name } Before"
 
+  .container.container--page-width.container--content
     %p
       There were two main problems with the existing checkout flow that we wanted to solve:
 
@@ -23,8 +25,9 @@
   .container.container--page-width
     %p
     = image_tag "#{ item.sample_image_path }mockup.jpg", alt: "#{ item.name } Mockup (Filled State)"
-
     %br
+
+  .container.container--page-width.container--content
     %p
       If payment info or shipping info has not been filled out, the user will see the next step in the process in place of the "Complete Order" button:
 
