@@ -6,9 +6,10 @@
     %i.fa.fa-chevron-left
     All Projects
 
-  .container.container--page-width.container--content
-    %h2= @item.name
-    = render 'portfolio_items/partials/item_info', { item: @item }
+  .heading__text
+    .container.container--page-width.container--content
+      %h2= @item.name
+      = render 'portfolio_items/partials/item_info', { item: @item }
 
 .content.portfolio-item__show
   = render @item.description_partial_path, { item: @item }
