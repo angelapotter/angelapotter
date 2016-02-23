@@ -26,6 +26,7 @@ $brand-colors: (
 // ALIGNMENT
 
 $padding-sizes: (
+  sm: 10px,
   md: 20px,
   lg: 50px,
   xl: 70px
@@ -55,14 +56,15 @@ $page-props: (
 $header-props: (
   nav-primary-height: 75px,
   nav-secondary-height: 47px,
-  padding-bottom: padding(md)
+  padding-top: padding(md),
+  color-default: white,
+  color-dark: gray( darkest )
 );
 
 $nav-link-props: (
-  underline-height: 6px,
+  underline-height: 4px,
   padding-x: 0,
-  padding-y: 18px,
-  color: gray( darkest )
+  padding-y: 0.5em
 );
 
 $portfolio-item-props: (

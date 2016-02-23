@@ -3,14 +3,13 @@
     margin-top: 2em
 
   +mq( resume(bp-stack), min-width )
+    float: right
     width: 48%
 
     &:first-child,
-    &:last-child
       float: left
 
     &:nth-child(2)
-      float: right
       margin-top: 0
 
   @media ( max-width: resume(bp-stack) ) and ( min-width: resume(max-width) + 100px )

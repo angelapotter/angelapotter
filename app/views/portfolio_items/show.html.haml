@@ -1,11 +1,11 @@
 - content_for :title, @item.name
 
 .heading--portfolio-item
-  .heading__background-image{ style: "background-image: url( #{ image_url @item.sample_heading_image_path } );" }
   = link_to root_path, class: 'portfolio-item__all-projects-link' do
     %i.fa.fa-chevron-left
     All Projects
 
+  .heading__background-image{ style: "background-image: url( '#{ image_url( @item.sample_heading_image_path ) }' )"}
   .heading__text
     .container.container--page-width.container--content
       %h2= @item.name

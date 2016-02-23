@@ -5,14 +5,14 @@
     display: table
     width: 100%
 
+    .heading__background-image
+      &:before
+        background: transparentize( black, 0.4 )
+
     .heading__text
       position: relative
       display: table-cell
       vertical-align: middle
-
-    .heading__background-image
-      &:before
-        background: transparentize( black, 0.25 )
 
     h2
       position: static
@@ -23,18 +23,13 @@
       h2
         font-size: em( 60px )
 
-    +mq( 650px, min-width )
-      h2,
-      .portfolio-item__info
-        text-align: left
-
     +mq( 550px )
       h2
         font-size: em( 50px )
 
   .portfolio-item__info
-    margin-top: 0.7em
-    color: gray( off-white )
+    margin-top: 0.3em
+    color: white
     font-size: em(20px)
     text-align: center
 
@@ -42,33 +37,26 @@
       display: inline
 
       + .line
-        border-left: 1px solid gray(lighter)
-        padding-left: 0.4em
-        margin-left: 0.1em
+        border-left: 1px solid gray( light )
+        padding-left: 0.5em
+        margin-left: 0.2em
 
   .portfolio-item__all-projects-link
     $font-size: 18px
+    @extend .btn-primary
     position: absolute
-    right: 0
-    // Offset for H2 line height
-    top: 25%
+    left: 0
+    bottom: 0
     z-index: 1
-    padding: em( 12px, $font-size ) em( 26px, $font-size )
+    padding: em( 10px, $font-size ) em( 26px, $font-size )
     margin-top: 0.7em
     font-size: em( $font-size )
-    background: transparentize( white, 0.1 )
-    color: $link-color
-    +transition( background transition(md), color transition(md) )
 
     i
       display: inline-block
       vertical-align: middle
       margin-right: 0.4em
       font-size: 1.4em
-
-    &:hover
-      background: white
-      color: darken( $link-color, 6% )
 
     +mq( 780px )
       display: none

@@ -2,9 +2,8 @@ $header-bps: ( nav-logo-stack: 750px )
 
 .header
   +box-sizing( border-box )
-  padding: map-get( $header-props, padding-bottom ) 0
-  overflow: hidden
-  background: white
+  padding-top: map-get( $header-props, padding-top)
+  overflow: visible
 
   .container
     position: relative
@@ -23,20 +22,23 @@ $header-bps: ( nav-logo-stack: 750px )
 
 .header__home-link
   display: block
-  opacity: 0.6
+  float: left
   text-align: center
   +transition( opacity transition(md) )
 
-  +mq( map-get($header-bps, nav-logo-stack), min-width )
-    float: left
+  +mq( map-get($header-bps, nav-logo-stack) )
+    display: none
 
   h1
     padding: map-get( $nav-link-props, padding-y ) 0
     font-size: em( 24px )
-    color: gray( darkest )
+    font-weight: bold
+    color: map-get( $header-props, color-default )
 
-  &:hover
-    opacity: 1
+  img
+    display: block
+    width: 317px
+    height: 48px
 
 .header__nav--primary,
 .header__nav--secondary
@@ -66,14 +68,26 @@ $header-bps: ( nav-logo-stack: 750px )
     &:last-child
       padding-right: 0
 
+.header--dark
+  .header__home-link h1,
+  .nav__link
+    color: map-get( $header-props, color-dark )
+
+  .nav__link
+    &:hover
+      color: map-get( $header-props, color-dark )
+
+    &:after
+      background: map-get( $header-props, color-dark )
+
 .nav__link
   display: block
   position: relative
   padding: map-get( $nav-link-props, padding-y ) map-get( $nav-link-props, padding-x )
-  color: map-get( $nav-link-props, color )
+  color: map-get( $header-props, color-default )
 
   &:hover
-    color: map-get( $nav-link-props, color )
+    color: map-get( $header-props, color-default )
 
   +mq( map-get($header-bps, nav-logo-stack) )
     padding-bottom: 8px
@@ -86,12 +100,12 @@ $header-bps: ( nav-logo-stack: 750px )
   &:after
     display: block
     position: absolute
-    bottom: ( map-get($header-props, padding-bottom) + map-get($nav-link-props, underline-height) ) * -1
+    bottom: ( padding(sm) + map-get( $nav-link-props, underline-height ) ) * -1
     left: 0
     right: 0
     height: map-get( $nav-link-props, underline-height )
     opacity: 0
-    background: map-get( $nav-link-props, color )
+    background: map-get( $header-props, color-default )
     content: ''
     +transition( bottom transition(md), opacity transition(md) )
 

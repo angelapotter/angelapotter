@@ -6,7 +6,7 @@
   .heading__background-image
   %h2 Portfolio
 
-.content.portfolio-items
+.content
   - portfolio_items.each_with_index do |item, index|
     .portfolio-item.js__portfolio-item{ id: "portfolio-item--#{ item.slug }" }
       .container.container--page-width.container--content

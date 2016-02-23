@@ -5,65 +5,74 @@
   %h2 Resume
 
 .content
+
   .container.container--page-width.container--first.container--last.container--content
-    .resume__section
-      %h3.heading--section Skills
-      .resume__subsection
-        %p
-          %strong UX Design:
-          Efficient at creating wireframes and site maps. Experienced with user testing and iterative design. Excellent with Adobe Creative Suite.
-
-      .resume__subsection
-        %p
-          %strong Front-End Development:
-          Excellent with HTML/CSS and JavaScript. Experienced with Git.
-
     .resume__section
       %h2.heading--section Experience
       .resume__subsection
         %p
-          %strong UI/UX Designer
-          (June 2014–present)
+          %strong UI/UX Designer &nbsp;|&nbsp; #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--default' }
           %br
-          #{ link_to 'Goldbely', 'https://goldbely.com', title: "Goldbely: Get food shipped to you from across the US", class: 'text-link--primary' }, San Francisco
+          June 2014–present in San Francisco
         %ul
-          %li Enhance UX on Goldbely.com with simple and intuitive user flows.
-          %li Implement designs in HAML/SASS and CoffeeScript.
-          %li Improve front-end analytics to identify dropoff points in the conversion funnel.
+          %li Manage the full web design lifecycle, from concept through implementation
+          %li Code in HAML/SASS and CoffeeScript
+          %li Conduct user testing and translate notes into design priorities
+          %li Improve front-end analytics to identify funnel dropoff points
 
       .resume__subsection
         %p
-          %strong UX Designer
-          (July 2013-June 2014)
+          %strong UX Designer &nbsp;|&nbsp; #{ link_to 'OLSET', 'https://olset.com', class: 'text-link--default' }
           %br
-          #{ link_to 'OLSET', 'https://olset.com', title: "OLSET: A personalized virtual travel agent", class: 'text-link--primary' }, San Francisco
+          July 2013-June 2014 in San Francisco
         %ul
-          %li In charge of design and front-end development.
-          %li Responsible for metrics, user testing, and landing page optimization.
-          %li OLSET was selected to participate in 500 Startups Batch 7.
+          %li Sole designer and front-end developer
+          %li Responsible for metrics, user testing, and landing page optimization
+          %li OLSET was selected to participate in 500 Startups Batch 7
 
       .resume__subsection
         %p
-          %strong Interaction Designer
-          (Dec 2012–June 2013)
+          %strong Interaction Designer &nbsp;|&nbsp; MyFive
           %br
-          = succeed "," do
-            %a{ href: "http://myfive.com",  title: "MyFive: A web app for keeping track of your referrals", class: 'text-link--primary' } MyFive
-          Seattle
+          Dec 2012–June 2013 in Seattle
         %ul
-          %li Designed and implemented the company's first ever user testing program.
-          %li Spec'd out entire application with interactive wireframes.
-          %li Coded working prototypes in HTML and JQuery for iterative design process.
+          %li Designed and implemented the company's first ever user testing program
+          %li Spec'd out new application with interactive wireframes
+          %li Coded working prototypes in HTML and JQuery
+
+    .resume__section
+      %h3.heading--section Skills
+      .resume__subsection
+        %p
+          %strong Design
+          %br
+          Interaction design, wireframing, user testing, responsive mockups
+
+        %p
+          %strong Software
+          %br
+          Sketch, Balsamiq, Adobe Photoshop
+
+        %p
+          %strong Web Development
+          %br
+          HTML, CSS, Javascript, Git
 
     .resume__section
       %h2.heading--section Education
       .resume__subsection
         %p
-          %strong Bachelor of Music in Music Cognition &amp; Flute Performance
-          (June 2012)
+          Bachelor of Music in Music Cognition &amp; Flute Performance
           %br
-          Northwestern University, Evanston, IL
-        %ul
-          %li GPA: 3.7/4.0
-          %li Course highlights: Cognitive Psychology, Perception, Research Methods, Statistics
-          %li Ran an experiment on the effects of syncopation on listeners’ perception of “groove” in short rhythmic sequences.
+          %strong Northwestern University
+          &nbsp;|&nbsp; June 2012 in Evanston, IL
+
+    .resume__section
+      %h2.heading--section Contact
+      .resume__subsection
+        %ul.list-unstyled
+          %li
+            = link_to social_urls.linkedin, target: '_blank', class: 'text-link--default' do
+              <strong>linkedin</strong>.com/in/angelacbpotter
+          %li
+            = mail_to contact_info.email, contact_info.email, class: 'text-link--default'

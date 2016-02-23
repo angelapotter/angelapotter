@@ -87,14 +87,14 @@ class PortfolioItems < ActiveHash::Base
       #   url: 'https://olset.com',
       # }),
     },
-    {
-      name: 'Hotel Site Landing Page',
-      company: 'OLSET',
-      role: 'Design + Front-End Dev',
-      platform: 'Web',
-      slug: 'landing-page',
-      blurb: "The homepage for OLSET, a hotel booking site.",
-    },
+    # {
+    #   name: 'Hotel Site Landing Page',
+    #   company: 'OLSET',
+    #   role: 'Design + Front-End Dev',
+    #   platform: 'Web',
+    #   slug: 'landing-page',
+    #   blurb: "The homepage for OLSET, a hotel booking site.",
+    # },
     {
       name: 'Music App',
       role: 'Design',
