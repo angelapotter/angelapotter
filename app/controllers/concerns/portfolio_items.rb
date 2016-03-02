@@ -4,19 +4,6 @@ class PortfolioItems < ActiveHash::Base
 
   self.data = [
     {
-      name: 'Search Autocomplete',
-      company: 'Goldbely',
-      role: 'Design',
-      platform: 'Web',
-      slug: 'search-autocomplete',
-      blurb: "The search autocomplete for Goldbely, an e-commerce website where you can order food shipped from shops across the country. It updates with the top search results for your query as you type.",
-      outbound_link: OpenStruct.new({
-        label: 'View live on Goldbely.com',
-        url: 'https://www.goldbely.com',
-      }),
-      show_case_study: true,
-    },
-    {
       name: 'E-Commerce Checkout',
       company: 'Goldbely',
       role: 'Design + Front-End Dev',
@@ -30,6 +17,19 @@ class PortfolioItems < ActiveHash::Base
       }),
     },
     {
+      name: 'Search Autocomplete',
+      company: 'Goldbely',
+      role: 'Design',
+      platform: 'Web',
+      slug: 'search-autocomplete',
+      blurb: "The search autocomplete for Goldbely, an e-commerce website where you can order food shipped from shops across the country. It updates with the top search results for your query as you type.",
+      outbound_link: OpenStruct.new({
+        label: 'View live on Goldbely.com',
+        url: 'https://www.goldbely.com',
+      }),
+      show_case_study: true,
+    },
+    {
       name: 'Order Status Page',
       company: 'Goldbely',
       role: 'Design',
@@ -39,18 +39,18 @@ class PortfolioItems < ActiveHash::Base
     },
     # Maybe add the order feedback experience here
     #
-    # {
-    #   name: 'Homepage Carousel',
-    #   company: 'Goldbely',
-    #   role: 'Design + Front-End Dev',
-    #   platform: 'Web',
-    #   slug: 'homepage-carousel',
-    #   blurb: "The rotating carousel on the Goldbely homepage, featuring our current sales and promotions.",
-    #   outbound_link: OpenStruct.new({
-    #     label: 'Visit Goldbely.com',
-    #     url: 'https://www.goldbely.com',
-    #   }),
-    # },
+    {
+      name: 'Homepage Carousel',
+      company: 'Goldbely',
+      role: 'Design + Front-End Dev',
+      platform: 'Web',
+      slug: 'homepage-carousel',
+      blurb: "The rotating carousel on the Goldbely homepage, featuring our current sales and promotions.",
+      outbound_link: OpenStruct.new({
+        label: 'Visit Goldbely.com',
+        url: 'https://www.goldbely.com',
+      }),
+    },
     # {
     #   name: 'Shipment Delivery Date Calendar',
     #   company: 'Goldbely',

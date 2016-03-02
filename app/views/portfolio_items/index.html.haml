@@ -13,10 +13,7 @@
         %h3.heading--section.portfolio-item__name= item.name
 
         .portfolio-item__image-container
-          - if index.even?
-            = image_tag "#{ item.sample_image_path }cover.jpg", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
-          - else
-            = image_tag "#{ item.sample_image_path }cover_gray.jpg", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
+          = image_tag "#{ item.sample_image_path }cover.png", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
 
         .portfolio-item__text-content
           = render 'portfolio_items/partials/item_info', { item: item }

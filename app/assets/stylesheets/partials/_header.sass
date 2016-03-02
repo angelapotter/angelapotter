@@ -86,7 +86,7 @@ $header-bps: ( nav-logo-stack: 750px )
   padding: map-get( $nav-link-props, padding-y ) map-get( $nav-link-props, padding-x )
   color: map-get( $header-props, color-default )
 
-  &:hover
+  +active-link-states
     color: map-get( $header-props, color-default )
 
   +mq( map-get($header-bps, nav-logo-stack) )
