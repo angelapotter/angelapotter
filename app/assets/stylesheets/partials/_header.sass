@@ -10,7 +10,7 @@
   left: 0
   right: 0
   z-index: z-index( header )
-  padding: map-get( $header-props, padding-y ) 0
+  padding: map-get( $header-props, padding-y ) page( padding-y )
   overflow: visible
   background: map-get( $header-props, background-opaque )
   line-height: 1.6
@@ -26,6 +26,8 @@
 
   +mq( 460px )
     font-size: 80%
+    padding-left: 0
+    padding-right: 0
 
   +mq( map-get($header-bps, nav-logo-stack) )
     padding: 5px 0 10px
@@ -76,11 +78,11 @@
   height: 100%
   padding-left: 0
   margin: 0
-  margin-bottom: 0
   text-align: center
 
   +mq( map-get( $header-bps, nav-logo-stack ), min-width )
     float: right
+    margin-right: -1em
 
   li
     display: inline-block
