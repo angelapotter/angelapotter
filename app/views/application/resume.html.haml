@@ -1,14 +1,14 @@
 - content_for :title, 'Resume'
 
-.heading--page.heading--resume
+.heading--page-with-background-image.heading--resume
   .heading__background-image
-  %h2 Resume
+  %h1 Resume
 
 .content
 
   .container.container--page-width.container--first.container--last.container--content
     .resume__section
-      %h2.heading--section Experience
+      %h3.heading--section Experience
       .resume__subsection
         %p
           %strong UI/UX Designer &nbsp;|&nbsp; #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--default' }
@@ -59,7 +59,7 @@
           HTML, CSS, Javascript, Git
 
     .resume__section
-      %h2.heading--section Education
+      %h3.heading--section Education
       .resume__subsection
         %p
           Bachelor of Music in Music Cognition &amp; Flute Performance
@@ -68,7 +68,7 @@
           &nbsp;|&nbsp; June 2012 in Evanston, IL
 
     .resume__section
-      %h2.heading--section Contact
+      %h3.heading--section Contact
       .resume__subsection
         %ul.list-unstyled
           %li
@@ -76,3 +76,5 @@
               <strong>linkedin</strong>.com/in/angelacbpotter
           %li
             = mail_to contact_info.email, contact_info.email, class: 'text-link--default'
+
+  = render 'layouts/back_to_top'

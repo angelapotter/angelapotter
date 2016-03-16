@@ -1,0 +1,57 @@
+$portfolio-item-cover-props: (
+  gutter: 1em,
+  blurb-height: 90px,
+  content-padding-x: 8%,
+  fg-translate-offset: 34px,
+  transition: 0.4s ease-in-out
+);
+
+@function portfolio-item-cover( $prop ) {
+  @return map-get( $portfolio-item-cover-props, $prop );
+}
+
+
+$portfolio-item-sample-props: (
+  progress-float-bp: 600px,
+  transition: 0.6s
+);
+
+@function portfolio-item-sample( $prop ) {
+  @return map-get( $portfolio-item-sample-props, $prop );
+}
+
+
+$portfolio-items: (
+  (
+    slug: 'goldbely-checkout',
+    color: #F37170
+  ),
+  (
+    slug: 'goldbely-search-autocomplete',
+    color: #EDAE5F
+  ),
+  (
+    slug: 'goldbely-order-history',
+    color: #5AB3BA
+  ),
+  (
+    slug: 'anydo-hotel-matches',
+    color: #5DA8C1
+  ),
+  (
+    slug: 'olset-hotel-matches',
+    color: #6CA56B
+  ),
+  (
+    slug: 'music-notation-app',
+    color: #5D8ED2
+  ),
+  (
+    slug: 'old-person-app',
+    color: #B672BB
+  ),
+  (
+    slug: 'myfive',
+    color: #53ADD0
+  )
+);

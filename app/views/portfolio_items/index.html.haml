@@ -1,28 +1,14 @@
-- content_for :title, 'Portfolio'
+- content_for :title, 'Work'
 
-= render 'layouts/single_page_nav'
+.header-push
+.content.clearfix
+  %ul.portfolio-item-covers
+    - portfolio_items.each do |item|
+      = render partial: 'portfolio_items/index/cover', locals: { item: item }
 
-.heading--page
-  .heading__background-image
-  %h2 Portfolio
-
-.content
   - portfolio_items.each_with_index do |item, index|
-    .portfolio-item.js__portfolio-item{ id: "portfolio-item--#{ item.slug }" }
-      .container.container--page-width.container--content
-        %h3.heading--section.portfolio-item__name= item.name
+    = render partial: 'portfolio_items/index/sample', locals: { item: item, index: index }
 
-        .portfolio-item__image-container
-          = image_tag "#{ item.sample_image_path }cover.png", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
+  .portfolio-item-sample.js__portfolio-item-sample
 
-        .portfolio-item__text-content
-          = render 'portfolio_items/partials/item_info', { item: item }
-
-          .portfolio-item__blurb= item.blurb
-
-          .portfolio-item__link-container
-            - if item.show_case_study?
-              = link_to 'Read case study', portfolio_items_path( item.slug ), class: 'btn btn-sm btn-primary'
-
-            - if item.outbound_link.present?
-              = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm btn-default'
+= render 'layouts/back_to_top'

@@ -1,0 +1,50 @@
+$heading-page-height: 320px
+
+%heading--page
+  h1
+    font-size: em( 70px )
+    font-weight: 800
+    line-height: 1.1
+
+.heading--page-with-background-image
+  @extend %heading--page
+  position: relative
+  display: table
+  width: 100%
+  height: em( $heading-page-height )
+
+  .heading__background-image
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: em( $heading-page-height )
+    background: black image-url( 'headings/portfolio.jpg' ) center center no-repeat
+    background-size: cover
+    z-index: z-index( page ) - 1
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      z-index: z-index( page )
+      display: block
+      content: ''
+      width: 100%
+      height: 100%
+      background: transparentize( black, 0.6 )
+
+  h1
+    display: table-cell
+    vertical-align: middle
+    padding-top: 0.5em
+    text-align: center
+    color: white
+    letter-spacing: 0.02em
+
+.heading--section
+  font-size: em( 40px )
+  font-weight: bold
+
+  +mq( 1100px )
+    font-size: em( 30px )

@@ -2,19 +2,19 @@
 
 class AP.BackToTop
 
-  DEFAULTS =
-    context: 'body'
+  CONTEXT_SELECTORS = 'html, body'
+  TRIGGER_SELECTOR  = '.js__back-to-top'
 
-  constructor: ( options ) ->
-    options ?= {}
-    @contextElm        = $ options.context || DEFAULTS.context
-    @backToTopElm = @contextElm.find('.js__back-to-top').first()
+  constructor: ->
+    @contextElms = $ CONTEXT_SELECTORS
+    @triggerElm  = @contextElms.find( TRIGGER_SELECTOR ).first()
 
     @initEvents()
 
   initEvents: ->
-    @backToTopElm?.on 'click', @onClick
+    @triggerElm?.on 'click.ap', @onClick
 
-  onClick: (event) ->
+  onClick: ( event ) =>
     event.preventDefault()
-    $('html, body').animate {scrollTop: 0}
+    @contextElms.animate
+      scrollTop: 0

@@ -1,3 +1,18 @@
+$heading-resume-height: 25em
+
+.heading--resume
+  height: $heading-resume-height
+
+  .heading__background-image
+    height: $heading-resume-height
+    background-image: image-url( 'headings/resume.jpg' )
+
+  +mq( 800px )
+    font-size: 85%
+
+  +mq( 600px )
+    font-size: 75%
+
 .resume__section
   + .resume__section
     margin-top: 2em
@@ -20,9 +35,3 @@
 
 .resume__subsection
   margin-top: 1.3em
-
-
-+mq( resume(bp-stack), min-width )
-  .resume
-    .back-to-top
-      display: none

@@ -1,21 +1,86 @@
-.about__text
-  float: left
-  width: 670px
+$heading-about-height: 40em
+$about-accent-color: #E57892
 
-  +mq( about(bp-xl) )
-    width: percentage( ( about(bp-xl) - about(headshot-size) - about(gutter) ) / about(bp-xl) )
+.about
+  .back-to-top
+    a
+      @extend .text-link--white
 
-  +mq( about(bp-md) )
-    float: none
+  .headroom--top
+    +linear-gradient-vertical( $start: transparentize( black, 0.7 ), $stop: transparent )
+
+.content--about
+  background: $about-accent-color
+  color: white
+
+.heading--about
+  height: 100vh
+
+  .heading__background-image
+    height: 100%
+    background-image: image-url( 'headings/about.jpg' )
+
+    &:before
+      background: transparent
+
+    +mq( 800px )
+      background-position: 80% center
+
+.about__gradient
+  +linear-gradient-horizontal( $start: transparentize( black, 0.5 ), $stop: transparent )
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  width: 72%
+  z-index: z-index( page )
+
+  +mq( 700px )
     width: 100%
 
+.about__hero-text
+  position: relative
+  display: table-cell
+  height: 100vh
+  z-index: z-index( page ) + 1
+  vertical-align: middle
+  margin: 0 auto
+  color: white
+
   h4
-    padding-bottom: 0.8em
-    font-size: em( 50px )
     @extend %font-weight-light
+    margin: 0 0 8vh 0
+    font-size: em( 56px )
+    line-height: 1.25
+    text-shadow: 0 0 0.6em transparentize( black, 0.1 )
+
+    +mq( 800px )
+      font-size: em( 48px )
+
+    +mq( 600px, min-width )
+      width: 11em
+
+  +mq( 1100px )
+    font-size: 90%
+
+  +mq( 500px )
+    font-size: 75%
+
+  +mq( 350px )
+    font-size: 65%
+
+.about__view-work
+  +solid-button( $bg: white, $fg: $about-accent-color )
+
+.about__content
 
   p
-    font-size: em( 18px )
+    font-size: em( 20px )
+
+  +mq( 800px, min-width )
+    padding: padding( lg ) 0
+    margin: 0 auto
+    max-width: 600px
 
   +mq( 1100px )
     h4
@@ -31,25 +96,3 @@
   +mq( 780px )
     h4
       font-size: em( 28px )
-
-.about__headshot
-  float: left
-  display: block
-  width: about(headshot-size)
-  margin-right: about(gutter)
-  border-radius: about(headshot-size) / 2
-
-  +mq( about(bp-xl) )
-    width: percentage( about(headshot-size) / about(bp-xl) )
-    margin-right: percentage( about(gutter) / about(bp-xl) )
-
-  +mq( about(bp-md) )
-    float: none
-    width: 100%
-    max-width: about(headshot-size)
-    margin: 0 auto 35px
-
-+mq( about(bp-md), min-width )
-  .about
-    .back-to-top
-      display: none

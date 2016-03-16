@@ -11,9 +11,9 @@ $link-color: brand( primary )
   border-bottom: 2px solid $color
 
 =text-link( $color, $color-hover: $color, $color-visited: $color )
+  +transition( border-color transition( md ) ease-in-out )
   color: $color
   border-bottom: 2px solid transparent
-  +transition( border transition(md) )
 
   &:visited
     color: $color-visited
@@ -30,4 +30,27 @@ $link-color: brand( primary )
 
 .text-link--muted
   +text-link( gray(light) )
+
+.text-link--white
+  +text-link( white )
+
+
+// IN PAGE
+
+.scroll-past
+  position: absolute
+  bottom: 1.5%
+  left: 0
+  right: 0
+  text-align: center
+  z-index: z-index( page ) + 2
+
+  a
+    @extend .fa
+    @extend .fa-angle-down
+    @extend %button-hover-effect
+    display: inline-block
+    font-size: em( 85px )
+    color: white
+
 

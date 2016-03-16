@@ -16,17 +16,21 @@
 .portfolio-item__section
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
-      The Mockup
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }mockup.jpg", alt: "#{ item.name } Mockup"
-
-.portfolio-item__section
-  .container.container--page-width.container--content
-    %h3.heading--section.portfolio-item__section-name
-      The Final Product
+      The "Final" Product
   .container.container--page-width
     = image_tag "#{ item.sample_image_path }final-product.jpg", alt: "#{ item.name } Final Product"
   .container.container--page-width.container--content
     %br
     %p
-      Above is a screenshot of the final product. Due to time constraints in development, we only included products (and not shops or collections) in search results. As a compromise, we added a link to the shop on each product, so users can still get to the shop page directly from search.
+      Above is a screenshot of the final product. Users can click on a product, or go to a shop by clicking the shop name.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Future
+  .container.container--page-width.container--content
+    %p
+      I want to add a wider variety of items to our searcn results (we haven't due to development constraints). Ideally we would show not only products, but also our curated collections, food categories, and regions (e.g. "Food from New York"). This would allow users to browse much more effectively through our search. We see them entering vague search terms like "cake," and we have a cake category — unfortunately it is not hooked up to our search results.
+
+    %p Adding these other categories would mean we need a slightly more complex search UI, with a sections for: "Products matching [query]," "Collections matching [query]," "Regions matching [query]," etc.
+

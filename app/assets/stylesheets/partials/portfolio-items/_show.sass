@@ -1,56 +1,17 @@
+.heading--portfolio-item
+  @extend %heading--page
+  padding: 1em 0
+
 .portfolio-items.show
-
-  .heading--portfolio-item
-    @extend .heading--page
-    display: table
-    width: 100%
-
-    .heading__background-image
-      &:before
-        background: transparentize( black, 0.4 )
-
-    .heading__text
-      position: relative
-      display: table-cell
-      vertical-align: middle
-
-    h2
-      position: static
-      margin-top: 0
-      text-transform: none
-
-    +mq( 680px )
-      h2
-        font-size: em( 60px )
-
-    +mq( 550px )
-      h2
-        font-size: em( 50px )
-
-  .portfolio-item__info
-    margin-top: 0.3em
-    color: white
-    font-size: em(20px)
-    text-align: center
-
-    .line
-      display: inline
-
-      + .line
-        border-left: 1px solid gray( light )
-        padding-left: 0.5em
-        margin-left: 0.2em
 
   .portfolio-item__all-projects-link
     $font-size: 18px
-    @extend .btn-primary
-    position: absolute
-    left: 0
-    bottom: 0
-    z-index: 1
-    padding: em( 10px, $font-size ) em( 26px, $font-size )
-    margin-top: 0.7em
+    @extend %button-hover-effect
+    float: right
+    padding: em( 3px, $font-size ) 0
+    margin-top: 1.2em
     font-size: em( $font-size )
+    color: $link-color
 
     i
       display: inline-block

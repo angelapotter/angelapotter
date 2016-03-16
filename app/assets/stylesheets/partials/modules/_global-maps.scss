@@ -12,7 +12,8 @@ $gray-shades: (
 );
 
 $brand-colors: (
-  primary: darken( #00b8a5, 2% )
+  primary: #00B890,
+  primary-dark: #00AE88
 );
 
 @function gray( $shade: dark ) {
@@ -37,12 +38,23 @@ $padding-sizes: (
 }
 
 
+$z-indexes: (
+  page: 0,
+  header: 10,
+  modal:  100,
+);
+
+@function z-index( $layer ) {
+  @return map-get( $z-indexes, $layer );
+}
+
+
 // PAGE ELEMENTS
 
 $page-props: (
-  width: 1300px,
+  width: 1200px,
   small-width: 1000px,
-  padding-x: padding( md ),
+  padding-x: padding( lg ),
   padding-y: padding( lg ),
   padding-y-mobile: 35px,
   padding-y-portfolio: 35px,
@@ -54,30 +66,16 @@ $page-props: (
 }
 
 $header-props: (
-  nav-primary-height: 75px,
-  nav-secondary-height: 47px,
-  padding-top: padding(md),
+  height: 4.3em,
+  height-mobile: 3.7em,
+  padding-y: 0,
   color-default: white,
-  color-dark: gray( darkest )
+  background-opaque: brand( primary-dark ),
 );
 
-$nav-link-props: (
-  underline-height: 4px,
-  padding-x: 0,
-  padding-y: 0.5em
+$header-bps: (
+  nav-logo-stack: 750px
 );
-
-$portfolio-item-props: (
-  img-width: 780px,
-  img-aspect: 605 / 900,
-  gutter-lg: 80px,
-  gutter: 60px,
-  img-text-stack-bp: 1050px
-);
-
-@function portfolio-item( $prop ) {
-  @return map-get( $portfolio-item-props, $prop );
-}
 
 $about-props: (
   headshot-size: 436px,
@@ -106,7 +104,8 @@ $resume-props: (
 $transition-lengths: (
   sm: 0.1s,
   md: 0.3s,
-  lg: 0.5s
+  lg: 0.5s,
+  xl: 0.8s
 );
 
 @function transition( $length: md ) {
@@ -114,9 +113,7 @@ $transition-lengths: (
 }
 
 
-// SPRITES
-
-$social-sprite-size: 20px;
+// ICONS
 
 $social-icons: (
   (
@@ -152,10 +149,3 @@ $social-icons: (
     color: #333
   )
 );
-
-@for $i from 1 through length( $social-icons ) {
-  $icon-props: nth( $social-icons, $i );
-  $pos-x: -$social-sprite-size * ( $i - 1 );
-  $new-icon-props: map-merge( $icon-props, ( pos-x: $pos-x ) );
-  $social-icons: replace( $social-icons, $icon-props, $new-icon-props);
-}

@@ -1,34 +1,32 @@
-=hollow-button( $color: gray( dark ), $hover-color: $link-color )
-  $transition: transition(md)
+$button-transition: transition( md ) ease-in-out
+
+%button-hover-effect
+  +transition( transform $button-transition )
+
+  +active-link-states
+    +transform( scale( 1.1, 1.1 ) )
+
+=hollow-button( $color: gray( dark ) )
   $border-size: 2px
   border: $border-size solid $color
   background: transparent
   color: $color
-  +transition( border $transition, color $transition )
 
-  +active-link-states
-    background: transparent
-    border: $border-size solid $hover-color
-    color: $hover-color
-
-=solid-button( $color: $link-color, $hover-color: darken( $color, 6% ) )
-  $transition: transition(md)
+=solid-button( $bg: $link-color, $fg: white )
   $border-size: 2px
-  border: $border-size solid $color
-  background: $color
-  color: white
-  +transition( background $transition, border $transition )
-
-  +active-link-states
-    border-color: $hover-color
-    background: $hover-color
+  border: $border-size solid $bg
+  background: $bg
+  color: $fg
 
 .btn
+  @extend %button-hover-effect
+  display: inline-block
   min-width: em( 140px )
   padding: em( 15px ) em( 26px )
   border-radius: 6px
   text-align: center
   font-size: em( 16px )
+  font-weight: bold
 
 .btn-sm
   font-size: em( 14px )
@@ -38,6 +36,9 @@
 
 .btn-default
   +hollow-button
+
+.btn-primary-hollow
+  +hollow-button( $color: $link-color )
 
 .btn-primary
   +solid-button

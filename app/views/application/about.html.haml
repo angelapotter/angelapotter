@@ -1,19 +1,25 @@
 - content_for :title, 'About'
 
-.heading--page.heading--about
+.heading--page-with-background-image.heading--about.js__scroll-past-container
+  .scroll-past
+    = link_to '', '#', class: 'js__scroll-past-trigger'
   .heading__background-image
-  %h2 About
-
-.content
-  .container.container--page-width.container--first.container--last.container--content
-    = image_tag "angela-profile.jpg", alt: 'Angela Potter, UX Designer, San Francisco', class: 'about__headshot'
-    .about__text
+  .about__gradient
+  .container.container--page-width.container--content
+    .about__hero-text
       %h4
-        I’m a self-taught UX designer specializing in usability and interaction design.
+        I’m a designer specializing in usability and interaction design.
 
+      = link_to 'View My Work', work_path, class: 'btn btn-lg about__view-work'
+
+.content.content--about
+  .container.container--page-width.container--first.container--last.container--content
+    .about__content
       %p
         I’m passionate about creating simple, frictionless interfaces that make people’s lives easier. I’ve worked in startups my whole career, and thrive in a fast-paced environment where I’m constantly iterating. I’m excellent at taking user feedback and turning it into action items.
       %p
-        I currently work at Goldbely, an e-commerce startup in San Francisco. Send me a note at #{ mail_to 'angelacbpotter@gmail.com', 'angelacbpotter@gmail.com', class: 'text-link--primary' } if you want to get in touch!
+        I currently work at Goldbely, an e-commerce startup in San Francisco. Send me a note at #{ mail_to 'angelacbpotter@gmail.com', 'angelacbpotter@gmail.com', class: 'text-link--white' } if you want to get in touch!
+
+  = render 'layouts/back_to_top'
 
 

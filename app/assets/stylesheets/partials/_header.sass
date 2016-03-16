@@ -1,9 +1,19 @@
-$header-bps: ( nav-logo-stack: 750px )
+%nav__link--active
+  &:after
+    +transform( scaleX( 1 ) )
+    background: white
 
 .header
   +box-sizing( border-box )
-  padding-top: map-get( $header-props, padding-top)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: z-index( header )
+  padding: map-get( $header-props, padding-y ) 0
   overflow: visible
+  background: map-get( $header-props, background-opaque )
+  line-height: 1.6
 
   .container
     position: relative
@@ -20,33 +30,52 @@ $header-bps: ( nav-logo-stack: 750px )
   +mq( map-get($header-bps, nav-logo-stack) )
     padding: 5px 0 10px
 
+.headroom
+  +transition( transform transition( lg ), background transition( lg ) )
+
+.headroom--pinned
+  +transform( translateY( 0% ) )
+
+.headroom--unpinned
+  +transform( translateY( -100% ) )
+
+.headroom--top
+  background: transparent
+
+  &.header--portfolio-items
+    background: map-get( $header-props, background-opaque )
+
+.headroom--not-top
+  background: map-get( $header-props, background-opaque )
+
+.header__home-link h2,
+.nav__link
+  padding-top: 1em
+  padding-bottom: 0.8em
+
 .header__home-link
   display: block
   float: left
   text-align: center
-  +transition( opacity transition(md) )
 
-  +mq( map-get($header-bps, nav-logo-stack) )
+  +mq( map-get( $header-bps, nav-logo-stack ) )
     display: none
 
-  h1
-    padding: map-get( $nav-link-props, padding-y ) 0
-    font-size: em( 24px )
+  h2
+    font-size: em( 23px )
     font-weight: bold
     color: map-get( $header-props, color-default )
 
   img
     display: block
-    width: 317px
-    height: 48px
-
-.header__nav--primary,
-.header__nav--secondary
-  list-style: none
-  padding-left: 0
+    width: 262px
+    height: 30px
 
 .header__nav--primary
+  list-style-type: none
   height: 100%
+  padding-left: 0
+  margin: 0
   margin-bottom: 0
   text-align: center
 
@@ -56,11 +85,7 @@ $header-bps: ( nav-logo-stack: 750px )
   li
     display: inline-block
     vertical-align: middle
-    padding: 0 1.2em
 
-    +mq( 500px )
-      padding-left: 1em
-      padding-right: 1em
 
     &:first-child
       padding-left: 0
@@ -68,50 +93,39 @@ $header-bps: ( nav-logo-stack: 750px )
     &:last-child
       padding-right: 0
 
-.header--dark
-  .header__home-link h1,
-  .nav__link
-    color: map-get( $header-props, color-dark )
-
-  .nav__link
-    &:hover
-      color: map-get( $header-props, color-dark )
-
-    &:after
-      background: map-get( $header-props, color-dark )
-
 .nav__link
+  $transition: transition( md ) ease-in-out
+  $font-size: 19px
   display: block
   position: relative
-  padding: map-get( $nav-link-props, padding-y ) map-get( $nav-link-props, padding-x )
+  padding-left: 1em
+  padding-right: 1em
   color: map-get( $header-props, color-default )
-
-  +active-link-states
-    color: map-get( $header-props, color-default )
-
-  +mq( map-get($header-bps, nav-logo-stack) )
-    padding-bottom: 8px
-
-.nav__link--primary
-  $font-size: 19px
   font-size: em( $font-size )
   text-transform: uppercase
 
   &:after
+    +transform( scaleX( 0 ) )
+    +transition( background-color $transition, transform $transition )
     display: block
-    position: absolute
-    bottom: ( padding(sm) + map-get( $nav-link-props, underline-height ) ) * -1
-    left: 0
-    right: 0
-    height: map-get( $nav-link-props, underline-height )
-    opacity: 0
-    background: map-get( $header-props, color-default )
     content: ''
-    +transition( bottom transition(md), opacity transition(md) )
+    height: 0.2em
+    margin: 0 auto
+    background: transparent
 
-  &:hover,
+  +active-link-states
+    @extend %nav__link--active
+
   &.active
+    @extend %nav__link--active
 
-    &:after
-      bottom: 0
-      opacity: 1
+  +mq( map-get( $header-bps, nav-logo-stack ) )
+    padding-top: 0.7em
+    padding-bottom: 0.4em
+
+.header-push
+  height: map-get( $header-props, height )
+  background: map-get( $header-props, background-opaque )
+
+  +mq( map-get( $header-bps, nav-logo-stack ) )
+    height: map-get( $header-props, height-mobile )

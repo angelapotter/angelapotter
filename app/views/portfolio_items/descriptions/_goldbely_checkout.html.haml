@@ -1,0 +1,48 @@
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Objective
+    %p
+      This is what the Goldbely checkout experience looked like when I started redesigning it:
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }before.jpg", alt: "#{ item.name } Before"
+
+  .container.container--page-width.container--content
+    %p
+      There were two main problems with the existing checkout flow that we wanted to solve:
+
+    %ol
+      %li
+        %strong Users were often confused about how to proceed to the next step.
+        We found this in user testing, and occasionally had customers emailing in asking how to finish their purchase. Each time a user wanted to move to the next step, he had to find the correct button and click it, wherever it was on the screen. To fix this I wanted to provide a clear direction and keep the button for the next step in a consistent location.
+      %li
+        %strong Users didn't notice that they could change their delivery date at checkout
+        — and then they emailed us later asking to change it. Often there is a shipping upgrade available and the user can receive their item sooner for an extra fee; but users did not realize this was an option, assuming that the default selected date was the soonest one. One of our coolest features is the ability to schedule orders to arrive at a future date, so I wanted to make it a central part of the checkout experience.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The "Final" Product
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }final-product.jpg", alt: "#{ item.name } Final Product"
+  .container.container--page-width.container--content
+    %br
+    %p
+      This is what the cart looks like now. The biggest changes are:
+
+      %ol
+        %li
+          %strong The next step button always appears on the righthand side under the order totals;
+          so if the user still needs to enter an address in order to proceed, that button says "Add Shipping Address." This was a major change I made so that the user always knows where to look to continue in the checkout process
+        %li
+          %strong The shipping options are shown in radio buttons, with "Schedule for later" listed as a separate option.
+          This makes it really clear to users when expedited shipping is available. Scheduling shipments for future delivery is a really cool feature that the company wanted to highlight, but many users just want to receive their item ASAP. Requiring users to pick their arrival date from a calendar was just adding extra friction to the checkout process for many customers.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Future
+  .container.container--page-width.container--content
+    %p
+      Ultimately, I want to make this more of a step-by-step process, so there is no question in the user's mind what they should do next. I want to move the shipping and billing forms inline, so they're right on the page instead of popping up in modals as they currently do. This way the user is immediately shown the form they need to fill out, and doesn't have to take additional actions to get to the next step.

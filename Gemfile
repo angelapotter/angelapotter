@@ -22,5 +22,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'font-awesome-sass', '~> 4.5.0'
+
 ruby "2.0.0"
 

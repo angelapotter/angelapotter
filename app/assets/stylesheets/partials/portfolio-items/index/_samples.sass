@@ -1,0 +1,163 @@
+.portfolio-item-sample
+  +transform( translateY( -100% ) )
+  +transition( transform portfolio-item-sample( transition ) )
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: z-index( modal )
+
+  img
+    display: block
+    clear: both
+    width: auto
+    height: auto
+    max-width: 100%
+    max-height: 65vh
+    margin: 4vh auto
+
+    +mq-aspect-less-than-square
+      margin: 7vh auto
+
+  &.open
+    +transform( translateY( 0 ) )
+
+.portfolio-item-sample__background
+  height: 100%
+  background: transparentize( brand( primary ), 0.05 )
+  color: white
+
+.portfolio-item-sample__content
+  padding: 5vh 10vh
+
+  +mq-aspect-less-than-square
+    padding: 10vh 5vh
+
+@each $item-props in $portfolio-items
+  .portfolio-item-cover--#{ map-get( $item-props, slug ) }
+    .porfolio-item-cover__content
+      background: map-get( $item-props, color )
+
+  .portfolio-item-sample__background--#{ map-get( $item-props, slug ) }
+    background: transparentize( map-get( $item-props, color ), 0.02 )
+
+    .link--case-study
+      +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
+
+.portfolio-item-sample__nav
+  @extend %button-hover-effect
+  cursor: pointer
+
+.portfolio-item-sample__close
+  $size: 2.5em
+  position: absolute
+  top: 1em
+  right: 1em
+  width: $size
+  height: $size
+
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    right: 0
+    width: 100%
+    height: 2px
+    background: white
+
+  &:before
+    +transform( rotate( 45deg ) )
+
+  &:after
+    +transform( rotate( -45deg ) )
+
+  +mq( 480px )
+    width: 1.8em
+    height: 1.8em
+
+.portfolio-item-sample__prev,
+.portfolio-item-sample__next
+  $padding-y: 0.1em
+  $padding-x: 0.1em
+  @extend .fa
+  position: absolute
+  top: 50%
+  margin-top: ( 0.5em + $padding-y ) * -1
+  padding: $padding-y $padding-x
+  font-size: em( 90px )
+  line-height: 1
+  z-index: z-index( page ) + 1
+
+  +mq-aspect-less-than-square
+    top: auto
+    bottom: 1vh
+    font-size: em( 70px )
+
+.portfolio-item-sample__prev
+  @extend .fa-angle-left
+  left: 1vh
+
+.portfolio-item-sample__next
+  @extend .fa-angle-right
+  right: 1vh
+
+.portfolio-item-sample__title
+  display: inline-block
+  font-size: em( 32px )
+
+  +mq( 440px )
+    font-size: em( 30px )
+
+  +mq( 350px )
+    font-size: em( 26px )
+
+.portfolio-item-sample__blurb
+  margin-top: 1em
+
+  +mq( 600px, max-height )
+    display: none
+
+  +mq( 350px )
+    display: none
+
+.portfolio-item-sample__links
+  text-align: right
+
+  a + a
+    margin-left: 0.8em
+
+  .link--outbound
+    +hollow-button( $color: white )
+
+  +mq( 500px )
+    a
+      display: block
+      + a
+        margin-left: 0
+        margin-top: 0.8em
+
+  +mq-aspect-less-than-square
+    text-align: center
+
++mq( portfolio-item-sample( progress-float-bp ) )
+  .portfolio-item-sample__progress
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    padding-bottom: 1.7em
+    text-align: center
+
++mq( portfolio-item-sample( progress-float-bp ) + 1, min-width )
+  .portfolio-item-sample__blurb
+    margin-top: 0
+    font-size: em( 18px)
+
+  .portfolio-item-sample__progress
+    float: left
+    padding-top: 0.8em
+
+  .portfolio-item-sample__links
+    float: right
