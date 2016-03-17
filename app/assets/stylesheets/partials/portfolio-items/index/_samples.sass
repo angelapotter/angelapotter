@@ -17,8 +17,13 @@
     max-height: 65vh
     margin: 4vh auto
 
-    +mq-aspect-less-than-square
-      margin: 7vh auto
+    +mq-aspect-greater-than-usual
+      margin: 2vh auto
+
+    +mq-aspect-greater-than-double
+      float: left
+      width: 50vw
+      margin: 6vh 2vw 0 5vw
 
   &.open
     +transform( translateY( 0 ) )
@@ -32,7 +37,7 @@
   padding: 5vh 10vh
 
   +mq-aspect-less-than-square
-    padding: 10vh 5vh
+    padding: 5vh
 
 @each $item-props in $portfolio-items
   .portfolio-item-cover--#{ map-get( $item-props, slug ) }
@@ -104,7 +109,6 @@
   right: 1vh
 
 .portfolio-item-sample__title
-  display: inline-block
   font-size: em( 32px )
 
   +mq( 440px )
@@ -116,10 +120,7 @@
 .portfolio-item-sample__blurb
   margin-top: 1em
 
-  +mq( 600px, max-height )
-    display: none
-
-  +mq( 350px )
+  @media ( max-height: 600px ), ( max-width: 350px )
     display: none
 
 .portfolio-item-sample__links
@@ -131,7 +132,10 @@
   .link--outbound
     +hollow-button( $color: white )
 
-  +mq( 500px )
+  +mq( portfolio-item-sample( progress-float-bp ) + 1, min-width )
+    float: right
+
+  @media ( max-width: 500px ), ( #{ $mq-aspect-greater-than-double } )
     a
       display: block
       + a
@@ -141,14 +145,24 @@
   +mq-aspect-less-than-square
     text-align: center
 
-+mq( portfolio-item-sample( progress-float-bp ) )
-  .portfolio-item-sample__progress
+  +mq-aspect-greater-than-double
+    float: left
+    min-width: 30vw
+    margin-top: 6vh
+    text-align: left
+    font-size: 90%
+
+.portfolio-item-sample__progress
+  +mq( portfolio-item-sample( progress-float-bp ) )
     position: absolute
     left: 0
     right: 0
     bottom: 0
     padding-bottom: 1.7em
     text-align: center
+
+  +mq-aspect-greater-than-double
+    margin-top: 4vh
 
 +mq( portfolio-item-sample( progress-float-bp ) + 1, min-width )
   .portfolio-item-sample__blurb
@@ -158,6 +172,3 @@
   .portfolio-item-sample__progress
     float: left
     padding-top: 0.8em
-
-  .portfolio-item-sample__links
-    float: right

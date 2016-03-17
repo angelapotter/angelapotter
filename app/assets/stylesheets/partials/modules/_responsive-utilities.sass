@@ -1,11 +1,19 @@
+$mq-aspect-less-than-square:    'max-aspect-ratio: 1/1'
+$mq-aspect-greater-than-usual:  'min-aspect-ratio: 7/4'
+$mq-aspect-greater-than-double: 'min-aspect-ratio: 2/1'
+
 =mq( $bp, $type: max-width )
   @media ( #{ $type }: $bp )
     @content
 
 =mq-aspect-less-than-square
-  @media ( max-aspect-ratio: 1/1 )
+  @media ( #{ $mq-aspect-less-than-square } )
     @content
 
 =mq-aspect-greater-than-usual
-  @media ( max-aspect-ratio: 2/1 )
+  @media ( #{ $mq-aspect-greater-than-usual } )
+    @content
+
+=mq-aspect-greater-than-double
+  @media ( #{ $mq-aspect-greater-than-double } )
     @content

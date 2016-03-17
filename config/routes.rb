@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   root 'application#about'
-  get '/about', :to => redirect( '/' )
-
   get '/resume' => 'application#resume'
+  get '/work'   => 'portfolio_items#index'
+  get "/:slug"  => "portfolio_items#show", as: :portfolio_items
 
-  get '/work' => 'portfolio_items#index'
-  get '/portfolio', :to => redirect( '/work' )
-
-  get "/:slug" => "portfolio_items#show", as: :portfolio_items
-  get "/work/:slug", :to => redirect( '/work' )
+  get '/about',           :to => redirect( '/' )
+  get '/portfolio',       :to => redirect( '/work' )
+  get "/work/:slug",      :to => redirect( '/work' )
   get "/portfolio/:slug", :to => redirect( '/work' )
 
   # The priority is based upon order of creation: first created -> highest priority.
