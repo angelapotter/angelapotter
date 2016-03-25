@@ -30,7 +30,7 @@
 
 .portfolio-item-sample__background
   height: 100%
-  background: transparentize( brand( primary ), 0.05 )
+  background: transparentize( brand( primary ), 0.04 )
   color: white
 
 .portfolio-item-sample__content
@@ -45,7 +45,7 @@
       background: map-get( $item-props, color )
 
   .portfolio-item-sample__background--#{ map-get( $item-props, slug ) }
-    background: transparentize( map-get( $item-props, color ), 0.02 )
+    background: transparentize( map-get( $item-props, color ), 0.04 )
 
     .link--case-study
       +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
