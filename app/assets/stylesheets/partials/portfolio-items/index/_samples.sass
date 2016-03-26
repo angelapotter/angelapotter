@@ -1,4 +1,4 @@
-.portfolio-item-sample
+.portfolio-item-samples
   +transform( translateY( -100% ) )
   +transition( transform portfolio-item-sample( transition ) )
   position: fixed
@@ -7,6 +7,24 @@
   bottom: 0
   left: 0
   z-index: z-index( modal )
+  color: white
+
+  &.opening
+    .portfolio-item-sample
+      +transition( transform 0s )
+
+  &.open
+    +transform( translateY( 0 ) )
+
+.portfolio-item-sample
+  +transform( translateX( 100% ) )
+  +transition( transform 0.3s )
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  background: transparentize( brand( primary ), 0.03 )
 
   img
     display: block
@@ -25,13 +43,11 @@
       width: 50vw
       margin: 6vh 2vw 0 5vw
 
-  &.open
-    +transform( translateY( 0 ) )
+  &.left-of-active
+    +transform( translateX( -100% ) )
 
-.portfolio-item-sample__background
-  height: 100%
-  background: transparentize( brand( primary ), 0.04 )
-  color: white
+  &.active
+    +transform( translateX( 0 ) )
 
 .portfolio-item-sample__content
   padding: 5vh 10vh
@@ -44,14 +60,15 @@
     .porfolio-item-cover__content
       background: map-get( $item-props, color )
 
-  .portfolio-item-sample__background--#{ map-get( $item-props, slug ) }
-    background: transparentize( map-get( $item-props, color ), 0.04 )
+  .portfolio-item-sample--#{ map-get( $item-props, slug ) }
+    background: transparentize( map-get( $item-props, color ), 0.03 )
 
     .link--case-study
       +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
 
 .portfolio-item-sample__nav
   @extend %button-hover-effect
+  z-index: z-index( modal ) + 1
   cursor: pointer
 
 .portfolio-item-sample__close

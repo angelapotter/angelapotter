@@ -1,25 +1,26 @@
-%script.js__portfolio-item-sample-template{ type: 'text/template', data: { sample: item.slug } }
-  .portfolio-item-sample__background{ class: "portfolio-item-sample__background--#{ item.slug }" }
-    %i.portfolio-item-sample__nav.portfolio-item-sample__close.js__close
+.portfolio-item-sample.js__portfolio-item-sample{ class: "portfolio-item-sample--#{ item.slug }", data: { sample: item.slug } }
+
+  - unless index == 0
     %i.portfolio-item-sample__nav.portfolio-item-sample__prev.js__previous
+  - unless index == length - 1
     %i.portfolio-item-sample__nav.portfolio-item-sample__next.js__next
 
-    .portfolio-item-sample__content
-      %h3.portfolio-item-sample__title
-        = item.name
+  .portfolio-item-sample__content
+    %h3.portfolio-item-sample__title
+      = item.name
 
-      .portfolio-item-sample__blurb
-        = item.blurb
+    .portfolio-item-sample__blurb
+      = item.blurb
 
-      = image_tag "#{ item.sample_image_path }sample.png", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
+    = image_tag "#{ item.sample_image_path }sample.png", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
 
-      .portfolio-item-sample__links
+    .portfolio-item-sample__links
 
-        - if item.outbound_link.present?
-          = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm link--outbound'
+      - if item.outbound_link.present?
+        = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm link--outbound'
 
-        - if item.show_case_study?
-          = link_to 'Read case study', portfolio_items_path( item.slug ), class: 'btn btn-sm link--case-study'
+      - if item.show_case_study?
+        = link_to 'Read case study', portfolio_items_path( item.slug ), class: 'btn btn-sm link--case-study'
 
-      .portfolio-item-sample__progress
-        Project #{ index + 1 } of #{ portfolio_items.size }
+    .portfolio-item-sample__progress
+      Project #{ index + 1 } of #{ portfolio_items.size }

@@ -6,9 +6,10 @@
     - portfolio_items.each do |item|
       = render partial: 'portfolio_items/index/cover', locals: { item: item }
 
-  - portfolio_items.each_with_index do |item, index|
-    = render partial: 'portfolio_items/index/sample', locals: { item: item, index: index }
+  .portfolio-item-samples.js__portfolio-item-samples
+    %i.portfolio-item-sample__nav.portfolio-item-sample__close.js__close
 
-  .portfolio-item-sample.js__portfolio-item-sample
+    - portfolio_items.each_with_index do |item, index|
+      = render partial: 'portfolio_items/index/sample', locals: { item: item, index: index, length: portfolio_items.length }
 
 = render 'layouts/back_to_top'
