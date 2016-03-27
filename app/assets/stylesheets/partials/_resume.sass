@@ -1,11 +1,23 @@
-$heading-resume-height: 25em
+$resume-accent-color: darken( #789AC8, 5% )
+
+.resume
+  .back-to-top
+    a
+      @extend .text-link--white
+
+  .container--first
+    padding-top: 20vh
 
 .heading--resume
-  height: $heading-resume-height
+  min-height: 100vh
 
   .heading__background-image
-    height: $heading-resume-height
+    height: 100%
     background-image: image-url( 'headings/resume.jpg' )
+
+    &:before
+      background: transparentize( $resume-accent-color, 0.1 )
+
 
   +mq( 800px )
     font-size: 85%
@@ -14,6 +26,9 @@ $heading-resume-height: 25em
     font-size: 75%
 
 .resume__section
+  color: white
+  text-shadow: 0 0 0.7em $resume-accent-color
+
   + .resume__section
     margin-top: 2em
 

@@ -2,16 +2,13 @@
 
 .heading--page-with-background-image.heading--resume
   .heading__background-image
-  %h1 Resume
-
-.content
 
   .container.container--page-width.container--first.container--last.container--content
     .resume__section
       %h3.heading--section Experience
       .resume__subsection
         %p
-          %strong UI/UX Designer &nbsp;|&nbsp; #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--default' }
+          %strong UI/UX Designer &nbsp;|&nbsp; #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--white' }
           %br
           June 2014–present in San Francisco
         %ul
@@ -22,13 +19,13 @@
 
       .resume__subsection
         %p
-          %strong UX Designer &nbsp;|&nbsp; #{ link_to 'OLSET', 'https://olset.com', class: 'text-link--default' }
+          %strong UX Designer &nbsp;|&nbsp; #{ link_to 'OLSET', 'https://olset.com', class: 'text-link--white' }
           %br
           July 2013-June 2014 in San Francisco
         %ul
           %li Sole designer and front-end developer
           %li Responsible for metrics, user testing, and landing page optimization
-          %li OLSET was selected to participate in 500 Startups Batch 7
+          %li Participated in 500 Startups Batch 7 with OLSET
 
       .resume__subsection
         %p
@@ -72,9 +69,9 @@
       .resume__subsection
         %ul.list-unstyled
           %li
-            = link_to social_urls.linkedin, target: '_blank', class: 'text-link--default' do
+            = link_to social_urls.linkedin, target: '_blank', class: 'text-link--white' do
               <strong>linkedin</strong>.com/in/angelacbpotter
           %li
-            = mail_to contact_info.email, contact_info.email, class: 'text-link--default'
+            = mail_to contact_info.email, contact_info.email, class: 'text-link--white'
 
   = render 'layouts/back_to_top'
