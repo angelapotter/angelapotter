@@ -8,7 +8,7 @@
   .container.container--page-width.container--content
     .about__hero-text
       %h4
-        I’m a designer specializing in usability and interaction design.
+        I design simple, intuitive interfaces that make people’s lives easier.
 
       = link_to 'View My Work', work_path, class: 'btn btn-lg about__view-work'
 
@@ -16,9 +16,15 @@
   .container.container--page-width.container--first.container--last.container--content
     .about__content
       %p
-        I’m passionate about creating simple, frictionless interfaces that make people’s lives easier. I’ve worked in startups my whole career, and thrive in a fast-paced environment where I’m constantly iterating. I’m excellent at taking user feedback and turning it into action items.
+        I’ve worked in startups my whole career, and thrive in a fast-paced environment where I’m constantly iterating. I'm used to taking ownership of everything I design, and seeing it through from ideation through implementation. I'm excellent at translating user feedback into design priorities. I have lots of experience running <strong>user tests</strong>, identifying funnel drop-off points, and coding in <strong>HTML/CSS & JavaScript</strong>.
+
       %p
-        I currently work at Goldbely, an e-commerce startup in San Francisco. Send me a note at #{ mail_to 'angelacbpotter@gmail.com', 'angelacbpotter@gmail.com', class: 'text-link--white' } if you want to get in touch!
+        I'm a design generalist, but I'm especially focused on <strong>usability and interaction design</strong>. I approach design by finding points of a friction and eliminating them. Users have a limited supply of cognitive resources which are used up any time they encounter something difficult or confusing. As these resources are depleted, the user is more likely to become frustrated and leave. This affects not only their experience on your site or app, but also the rest of their day and week. When they've expended so precious cognitive resources on your app, they become worse at handling the challenges they face in their daily lives.
+        %strong
+          Good design has a huge impact on users' quality of life.
+
+      %p
+        Right now I'm a UI/UX designer at #{ link_to 'Goldbely', 'https://www.goldbely.com', class: 'text-link--white' }, an e-commerce startup in San Francisco. Send me a note at #{ mail_to 'angelacbpotter@gmail.com', 'angelacbpotter@gmail.com', class: 'text-link--white' } if you want to get in touch!
 
   = render 'layouts/back_to_top'
 

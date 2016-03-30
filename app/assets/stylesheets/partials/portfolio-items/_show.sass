@@ -48,6 +48,15 @@
     text-align: center
     margin-bottom: 50px
 
+    .link--outbound
+      @extend .btn
+      @extend .btn-primary-hollow
+
+  @each $item-props in $portfolio-items
+    .portfolio-item__link-container--#{ map-get( $item-props, slug ) }
+      .link--outbound
+        +hollow-button( map-get( $item-props, color ) )
+
   p
     + ol,
     + ul

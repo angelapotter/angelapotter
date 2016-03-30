@@ -9,7 +9,10 @@ $resume-accent-color: darken( #789AC8, 5% )
       display: none
 
   .container--first
-    padding-top: 20vh
+    padding-top: 18vh
+
+    +mq( 1600px )
+      padding-top: 16vh
 
     +mq( 800px )
       padding-top: 10vh
@@ -56,3 +59,15 @@ $resume-accent-color: darken( #789AC8, 5% )
 
 .resume__subsection
   margin-top: 1.3em
+
+.resume__view-pdf
+  clear: both
+  padding-top: 2.5em
+  text-align: center
+
+  a
+    @extend .btn
+    @extend .btn-default
+
+  +mq( 800px )
+    display: none

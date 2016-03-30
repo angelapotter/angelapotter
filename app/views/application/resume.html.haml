@@ -74,4 +74,7 @@
           %li
             = mail_to contact_info.email, contact_info.email, class: 'text-link--white'
 
+    .resume__view-pdf
+      = link_to 'View Resume PDF', asset_path( 'resume.pdf' )
+
   = render 'layouts/back_to_top'

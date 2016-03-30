@@ -13,7 +13,7 @@
   = render @item.description_partial_path, { item: @item }
 
   - if @item.outbound_link.present?
-    .portfolio-item__link-container
-      = link_to @item.outbound_link.label, @item.outbound_link.url, target: '_blank', class: 'btn btn-primary-hollow'
+    .portfolio-item__link-container{ class: "portfolio-item__link-container--#{ @item.slug }" }
+      = link_to @item.outbound_link.label, @item.outbound_link.url, target: '_blank', class: 'link--outbound'
 
   = render 'layouts/back_to_top'
