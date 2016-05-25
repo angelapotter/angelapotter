@@ -1,4 +1,5 @@
 #= require hammer
+#= require mousetrap
 
 @AP ?= {}
 
@@ -56,18 +57,35 @@ class AP.PortfolioItemSamples
       slug = sampleElm.data DATA_ATTR
 
       if slug is targetSlug
-        @contextElm.addClass BODY_OPEN_CLASS
-        @samplesElm
-          .addClass OPEN_CLASS
-          .addClass OPENING_CLASS
-
-        @goToSample sampleElm, coverElm
-
-        @openingTimer = setTimeout =>
-          @samplesElm.removeClass OPENING_CLASS
-        , OPENING_TIME
+        @openSample sampleElm, coverElm
 
   onCloseClick: ( event ) =>
+    @closeSamples()
+
+  onNextClick: ( event ) =>
+    @goToNext()
+
+  onPrevClick: ( event ) =>
+    @goToPrev()
+
+
+  # FUNCTIONALITY
+
+  openSample: ( sampleElm, coverElm ) ->
+    @contextElm.addClass BODY_OPEN_CLASS
+    @samplesElm
+      .addClass OPEN_CLASS
+      .addClass OPENING_CLASS
+
+    @goToSample sampleElm, coverElm
+
+    @openingTimer = setTimeout =>
+      @samplesElm.removeClass OPENING_CLASS
+    , OPENING_TIME
+
+    @bindKeyboardEvents()
+
+  closeSamples: ->
     @samplesElm
       .removeClass OPEN_CLASS
       .removeClass OPENING_CLASS
@@ -78,14 +96,15 @@ class AP.PortfolioItemSamples
 
     clearTimeout @openingTimer
 
-  onNextClick: ( event ) =>
-    @goToNext()
+    @unbindKeyboardEvents()
 
-  onPrevClick: ( event ) =>
-    @goToPrev()
+  bindKeyboardEvents: ->
+    Mousetrap.bind 'left', @onPrevClick
+    Mousetrap.bind 'right', @onNextClick
+    Mousetrap.bind 'esc', @onCloseClick
 
-
-  # FUNCTIONALITY
+  unbindKeyboardEvents: ->
+    Mousetrap.reset()
 
   goToSample: ( sampleElm, sampleElms, coverElm ) ->
     @openCoverElm = coverElm
@@ -127,5 +146,3 @@ class AP.PortfolioItemSamples
      nextArrow.removeClass HIDDEN_CLASS
    else
      nextArrow.addClass HIDDEN_CLASS
-
-
