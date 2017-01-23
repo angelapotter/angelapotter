@@ -24,5 +24,5 @@ gem 'spring',        group: :development
 
 gem 'font-awesome-sass', '~> 4.5.0'
 
-ruby "2.0.0"
+ruby "2.3.0"
 

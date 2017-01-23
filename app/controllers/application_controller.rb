@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :portfolio_items
   helper_method :social_urls
   helper_method :contact_info
+  helper_method :current_job
 
   def snake
     render layout: false
@@ -32,6 +33,14 @@ class ApplicationController < ActionController::Base
     OpenStruct.new({
       email: 'angelacbpotter@gmail.com',
       phone: '206-949-8204',
+    })
+  end
+
+  def current_job
+    OpenStruct.new({
+      position: 'Product Designer',
+      company: 'DoubleDutch',
+      website: 'http://doubledutch.me'
     })
   end
 

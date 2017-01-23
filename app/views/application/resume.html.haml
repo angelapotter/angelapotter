@@ -8,9 +8,15 @@
       %h3.heading--section Experience
       .resume__subsection
         %p
+          %strong #{ current_job.position } &nbsp;|&nbsp; #{ link_to current_job.company, current_job.website, class: 'text-link--white' }
+          %br
+          May 2016–present in San Francisco
+
+      .resume__subsection
+        %p
           %strong UI/UX Designer &nbsp;|&nbsp; #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--white' }
           %br
-          June 2014–present in San Francisco
+          June 2014–April 2016 in San Francisco
         %ul
           %li Manage the full web design lifecycle, from concept through implementation
           %li Code in HAML/SASS and CoffeeScript
