@@ -1,19 +1,15 @@
 - content_for :title, 'Home'
 
 .heading--page-with-background-image.heading--about.js__scroll-past-container
-  .scroll-past
-    = link_to '', '#', class: 'js__scroll-past-trigger'
   .heading__background-image
-  .about__gradient
-  .container.container--page-width.container--content
+
+  .container.container--page-width.container--first.container--last.container--content
     .about__hero-text
       %h4
         I design simple, intuitive interfaces that make people’s lives easier.
 
       = link_to 'View My Work', work_path, class: 'btn btn-lg about__view-work'
 
-.content.content--about
-  .container.container--page-width.container--first.container--last.container--content
     .about__content
       %p
         I’ve worked in startups my whole career, and thrive in a fast-paced environment where I’m constantly iterating. I'm used to taking ownership of everything I design, and seeing it through from ideation through implementation. I'm excellent at translating user feedback into design priorities. I have lots of experience running <strong>user tests</strong>, identifying funnel drop-off points, and coding in <strong>HTML/CSS & JavaScript</strong>.
@@ -27,5 +23,3 @@
         Right now I'm a #{ current_job.position } at #{ link_to current_job.company, current_job.website, class: 'text-link--white' }, an event tech startup in San Francisco. Send me a note at #{ mail_to contact_info.email, contact_info.email, class: 'text-link--white' } if you want to get in touch!
 
   = render 'layouts/back_to_top'
-
-

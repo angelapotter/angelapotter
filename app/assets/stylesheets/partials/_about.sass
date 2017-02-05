@@ -5,54 +5,32 @@ $about-accent-color: #E57892
     a
       @extend .text-link--white
 
-  .headroom--top
-    +linear-gradient-vertical( $start: transparentize( black, 0.85 ), $stop: transparent )
-    text-shadow: 0 0 0.7em transparentize( black, 0.8 )
-
-.content--about
-  background: $about-accent-color
-  color: white
-
 .heading--about
-  height: 100vh
+  min-height: 100vh
 
   .heading__background-image
     height: 100%
-    background-image: image-url( 'headings/about.jpg' )
+    background: gray( off-white) image-url( 'headings/about.jpg' ) right top no-repeat
+    background-size: auto 100%
 
     &:before
-      background: transparentize( $about-accent-color, 0.9 )
+      background: transparentize( $about-accent-color, 0.1 )
 
-    +mq( 800px )
-      background-position: 80% center
+    +mq( 700px )
+      background-image: none
 
-.about__gradient
-  +linear-gradient-horizontal( $start: transparentize( black, 0.6 ), $stop: transparent )
-  position: absolute
-  left: 0
-  top: 0
-  bottom: 0
-  width: 72%
-  z-index: z-index( page )
-
-  +mq( 700px )
-    width: 100%
+.about__hero-text,
+.about__content
+  color: white
 
 .about__hero-text
-  position: relative
-  display: table-cell
-  height: 100vh
-  z-index: z-index( page ) + 1
-  vertical-align: middle
-  margin: 0 auto
-  color: white
+  padding: 13vh 0
 
   h4
     @extend %font-weight-light
-    margin: 0 0 8vh 0
+    margin: 0 0 4vh
     font-size: em( 56px )
     line-height: 1.25
-    text-shadow: 0 0 0.3em transparentize( black, 0.3 )
 
     +mq( 1300px )
       font-size: em( 52px )
@@ -61,12 +39,14 @@ $about-accent-color: #E57892
       font-size: em( 48px )
 
     +mq( 600px, min-width )
-      width: 11em
+      max-width: 17em
 
   +mq( 1100px )
     font-size: 90%
 
   +mq( 500px )
+    padding-top: 8vh
+    padding-bottom: 8vh
     font-size: 75%
 
   +mq( 350px )
@@ -82,8 +62,6 @@ $about-accent-color: #E57892
 
   +mq( 1000px, min-width )
     padding: padding( lg ) 0
-    margin: 0 auto
-    max-width: 900px
 
   +mq( 1100px )
     h4
