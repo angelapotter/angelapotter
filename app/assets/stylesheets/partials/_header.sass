@@ -3,19 +3,13 @@
     +transform( scaleX( 1 ) )
     background: white
 
+.header-push,
 .header
   +box-sizing( border-box )
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  z-index: z-index( header )
-  padding: map-get( $header-props, padding-y ) page( padding-y )
-  overflow: visible
-  line-height: 1.6
+  height: map-get( $header-props, height )
 
-  .container
-    position: relative
+  +mq( map-get( $header-bps, nav-logo-stack ) )
+    height: map-get( $header-props, height-mobile )
 
   +mq( page( width ) + 16px )
     font-size: 95%
@@ -30,6 +24,19 @@
 
   +mq( map-get($header-bps, nav-logo-stack) )
     padding: 5px 0
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: z-index( header )
+  padding: map-get( $header-props, padding-y ) page( padding-y )
+  overflow: visible
+  line-height: 1.6
+
+  .container
+    position: relative
 
 .headroom
   +transition( transform transition( lg ), background transition( lg ) )
@@ -121,9 +128,3 @@
   +mq( map-get( $header-bps, nav-logo-stack ) )
     padding-top: 0.7em
     padding-bottom: 0.4em
-
-.header-push
-  height: map-get( $header-props, height )
-
-  +mq( map-get( $header-bps, nav-logo-stack ) )
-    height: map-get( $header-props, height-mobile )

@@ -5,12 +5,11 @@
 .portfolio-item-covers
   @extend .clearfix
   list-style-type: none
-  margin: 0
-  padding: portfolio-item-cover( gutter ) / 2
+  margin: 0 ( portfolio-item-cover( gutter ) / 2 ) * -1
+  padding: portfolio-item-cover( gutter ) / 2 0
   background: white
 
 .portfolio-item-cover
-  $gutter: 0.8em
   +box-sizing( border-box )
   padding: portfolio-item-cover( gutter ) / 2
 

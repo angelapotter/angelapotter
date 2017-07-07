@@ -4,6 +4,14 @@ class PortfolioItems < ActiveHash::Base
 
   self.data = [
     {
+      name: 'DoubleDutch Edit App',
+      company: 'DoubleDutch',
+      role: 'Design',
+      platform: 'Web',
+      slug: 'doubledutch-edit-app',
+      blurb: "A step-by-step workflow for editing and submitting your mobile event app.",
+    },
+    {
       name: 'Goldbely Checkout',
       company: 'Goldbely',
       role: 'Design + Front-End Dev',
