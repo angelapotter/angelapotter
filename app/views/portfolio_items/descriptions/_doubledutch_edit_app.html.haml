@@ -1,0 +1,42 @@
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Objective
+    %p
+      Event organizers create their own apps for their events, so their attendees can have a full customized and branded experience at their events. Any time an organizer wants to make a change to an app-level details, like an image assets or the app description that appears in the app store, they have to resubmit their app for publication.
+
+    %p
+      There was a lot of confusion throughout this process, including:
+
+    %ol
+      %li
+        %strong Event organizers had trouble understanding what all the various names, descriptions, and media assets were for.
+        Customers had many help pages walking them through what every app-level field was &mdash; but they still emailed and called us every time they wanted to update their app asking us to explain. There are so many different fields with specific requirements, and even if they get all the hard requirements right like word counts and image dimensions, they might realize when they see it in the app store that their entry doesn't make sense for where it appears. For example, they might create a detailed image for their app icon before realizing how small it appears on attendees' phones. The cost of these mistakes is high, as the organizer then has to make changes, resubmit their app, and wait for the app stores to approve their newest revision, which can take weeks.
+      %li
+        %strong Event organizers didn't realize that every app edit kicks off an approval and publication process, and that their changes can take up to a month to appear in app stores.
+        They would make an edit, check on their app, and then contact us asking why their change isn't there. They would make changes very casually, often submitting multiple changes over the course of an hour. This caused the DoubleDutch ops team to have to parse out which is the latest version before reviewing it and sending it off to the app stores for publication.
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The New Edit App Experience
+
+    %p
+      I added phone previews for each field that update live as the event organizer types their details. As they move through the different fields, the phone preview changes to show where this field will appear to attendees.
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }1-app-details.png", alt: "#{ item.name }: App Details"
+
+  .container.container--page-width.container--content
+    %p
+      The event organizer can click through the different media assets and see where each will appear to the attendee.
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }2-app-media-assets.png", alt: "#{ item.name }: App Media Assets"
+
+  .container.container--page-width.container--content
+    %p
+      Event organizers used to just submit their app in a modal and clicking a "Save" button would submit it. This really didn't indicate the importance of this action and what it entails. I added a Review & Submit screen where the event organizer can see all their changes and get an explanation of what will happen when they submit their app.
+
+  .container.container--page-width
+    = image_tag "#{ item.sample_image_path }3-review-submit-app.png", alt: "#{ item.name }: Review & Submit App"

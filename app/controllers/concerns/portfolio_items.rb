@@ -10,6 +10,7 @@ class PortfolioItems < ActiveHash::Base
       platform: 'Web',
       slug: 'doubledutch-edit-app',
       blurb: "A step-by-step workflow for editing and submitting your mobile event app.",
+      show_case_study: true,
     },
     {
       name: 'Goldbely Checkout',
