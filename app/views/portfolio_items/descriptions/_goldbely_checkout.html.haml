@@ -5,10 +5,8 @@
     %p
       This is what the Goldbely checkout experience looked like when I started redesigning it:
 
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }before.jpg", alt: "#{ item.name } Before"
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'before.jpg', desc: 'Before' }
 
-  .container.container--page-width.container--content
     %p
       There were two main problems with the existing checkout flow that we wanted to solve:
 
@@ -24,9 +22,9 @@
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
       The "Final" Product
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }final-product.png", alt: "#{ item.name } Final Product"
-  .container.container--page-width.container--content
+
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'final-product.png', desc: 'Final Product' }
+
     %br
     %p
       This is what the cart looks like now. The biggest changes are:

@@ -1,0 +1,54 @@
+$device-button-color: transparentize( white, 0.4 )
+$browser-button-padding: em( 24px )
+$browser-border-radius: em( 10px )
+
+.browser-frame
+  +box-shadow( em( 12px ), em( 12px ), em( 16px ), transparentize( black, 0.8 ) )
+  border-radius: $browser-border-radius
+  overflow: hidden
+
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.browser-frame_chrome
+  +flexbox
+  +align-items( center )
+  +justify-content( space-between )
+  height: em( 62px )
+  padding: 0 em( 24px )
+  background: #444444
+
+.browser-frame_buttons
+  +flexbox
+  +align-items( center )
+  +justify-content( space-between )
+  width: em( 72px )
+
+.browser-frame_round-button
+  +circle( em( 15px ), $device-button-color )
+
+.menu-icon_line
+  width: em( 30px )
+  height: em( 5px )
+  margin: em( 5px ) 0
+  border-radius: em( 2px )
+  background: $device-button-color
+
+.browser-frame_screen
+  position: relative
+
+.screen_border
+  position: absolute
+  top: 0
+  right: 0
+  bottom:  0
+  left: 0
+  border-radius: 0 0 $browser-border-radius $browser-border-radius
+  border:
+    right: 1px solid transparentize( black, 0.9 )
+    bottom: 1px solid transparentize( black, 0.9 )
+    left: 1px solid transparentize( black, 0.9 )
+
+

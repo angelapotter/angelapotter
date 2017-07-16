@@ -1,7 +1,26 @@
+@each $item-props in $portfolio-items
+  .show--#{ map-get( $item-props, slug ) }
+
+    .headroom--pinned,
+    .headroom--top,
+    .headroom--not-top
+      background-color: map-get( $item-props, color )
+
+    .portfolio-item__all-projects-link
+      color: map-get( $item-props, color )
+
+    .btn-primary
+      +solid-button( $bg: map-get( $item-props, color ) )
+
+    .btn-primary-hollow
+      +hollow-button( $color: map-get( $item-props, color ) )
+
+
 .heading--portfolio-item
   @extend %heading--page
-  padding: 1em 0
+  padding: 0.5em 0
   font-size: 90%
+  background: transparent
 
   +mq( 700px )
     font-size: 80%
@@ -18,13 +37,11 @@
     padding: em( 3px, $font-size ) 0
     margin-top: 1.2em
     font-size: em( $font-size )
-    color: $link-color
 
     i
       display: inline-block
       vertical-align: middle
       margin-right: 0.4em
-      font-size: 1.4em
 
     +mq( 780px )
       display: none
@@ -32,30 +49,18 @@
   .portfolio-item__section
     margin-bottom: 70px
 
-    img
-      display: block
-      width: 100%
-      height: auto
-      margin-bottom: 15px
-
     &:last-child
       margin-bottom: 0
 
+  .browser-frame
+    font-size: 90%
+    margin-bottom: 40px
+
+    +mq( page( width ) + page( padding-x ) * 2 )
+      font-size: 1.1vw
+
   .portfolio-item__section-name
     margin-bottom: 0.6em
-
-  .portfolio-item__link-container
-    text-align: center
-    margin-bottom: 50px
-
-    .link--outbound
-      @extend .btn
-      @extend .btn-primary-hollow
-
-  @each $item-props in $portfolio-items
-    .portfolio-item__link-container--#{ map-get( $item-props, slug ) }
-      .link--outbound
-        +hollow-button( map-get( $item-props, color ) )
 
   p
     + ol,
@@ -69,3 +74,17 @@
 
       li
         margin-bottom: 10px
+
+.portfolio-item-show__nav
+  text-align: center
+
+  .btn--nav,
+  .btn--outbound
+    @extend .btn
+    @extend .btn-sm
+
+  .btn--nav
+    @extend .btn-primary-hollow
+
+  .btn--outbound
+    @extend .btn-primary

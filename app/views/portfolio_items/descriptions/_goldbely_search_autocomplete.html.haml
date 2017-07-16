@@ -18,7 +18,7 @@
     %h3.heading--section.portfolio-item__section-name
       The "Final" Product
   .container.container--page-width
-    = image_tag "#{ item.sample_image_path }final-product.png", alt: "#{ item.name } Final Product"
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'final-product.png', desc: 'Final Product' }
   .container.container--page-width.container--content
     %br
     %p

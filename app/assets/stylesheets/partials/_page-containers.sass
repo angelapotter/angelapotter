@@ -15,7 +15,6 @@ body
 
 .content
   position: relative
-  background: white
 
 .container,
 .container--page-width
@@ -34,6 +33,7 @@ body
     +mq( page( width ) + page( padding-x ) * 2 )
       padding-left: page( padding-x )
       padding-right: page( padding-x )
+      max-width: 100%
 
     +mq( 700px )
       padding-left: padding( md )

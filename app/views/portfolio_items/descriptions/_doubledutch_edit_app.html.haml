@@ -3,10 +3,13 @@
     %h3.heading--section.portfolio-item__section-name
       The Objective
     %p
-      Event organizers create their own apps for their events, so their attendees can have a full customized and branded experience at their events. Any time an organizer wants to make a change to an app-level details, like an image assets or the app description that appears in the app store, they have to resubmit their app for publication.
+      DoubleDutch customers create their own custom mobile event app, so their attendees can have a fully customized and branded experience when they attend an event. Any time an customer wants to change to an app-level detail, like an image assets or their app description, they have to resubmit their app for publication.
 
     %p
-      There was a lot of confusion throughout this process, including:
+      Once the app changes are submitted, the DoubleDutch ops team reviews the app, builds it, and sends it to the App Store and Google Play for review. Once it’s in the hands of the app stores, the publication process can take several weeks.
+
+    %p
+      There was lot of confusion around this process. The two main problems that I wanted to solve were:
 
     %ol
       %li
@@ -19,24 +22,19 @@
 .portfolio-item__section
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
-      The New Edit App Experience
+      The "Final" Product
 
     %p
-      I added phone previews for each field that update live as the event organizer types their details. As they move through the different fields, the phone preview changes to show where this field will appear to attendees.
+      I added phone previews for each field that update live as the event organizer types their details. As they move through the different fields, the phone changes to show where this field will appear to attendees.
 
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }1-app-details.png", alt: "#{ item.name }: App Details"
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: '1-app-details.png', desc: 'App Details' }
 
-  .container.container--page-width.container--content
     %p
       The event organizer can click through the different media assets and see where each will appear to the attendee.
 
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }2-app-media-assets.png", alt: "#{ item.name }: App Media Assets"
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: '2-app-media-assets.png', desc: 'App Media Assets' }
 
-  .container.container--page-width.container--content
     %p
-      Event organizers used to just submit their app in a modal and clicking a "Save" button would submit it. This really didn't indicate the importance of this action and what it entails. I added a Review & Submit screen where the event organizer can see all their changes and get an explanation of what will happen when they submit their app.
+      Before this design, event organizers edited their app in a modal and clicked a "Save" button to submit it. This really didn't indicate the importance of this action and what it entails. I added a Review & Submit screen where the event organizer can see all their changes and get an explanation of what will happen when they submit their app.
 
-  .container.container--page-width
-    = image_tag "#{ item.sample_image_path }3-review-submit-app.png", alt: "#{ item.name }: Review & Submit App"
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: '3-review-submit-app.png', desc: 'Review & Submit App' }

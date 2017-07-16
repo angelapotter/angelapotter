@@ -78,6 +78,39 @@
   // fallback: truncate without ellipses
   max-height: #{ $line-height * $max-lines-fallback }em
 
+
+// FLEXBOX
+
+=flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+=flex( $values )
+  -webkit-box-flex: $values
+  -moz-box-flex:  $values
+  -webkit-flex:  $values
+  -ms-flex:  $values
+  flex:  $values
+
+=order( $val )
+  -webkit-box-ordinal-group: $val
+  -moz-box-ordinal-group: $val
+  -ms-flex-order: $val
+  -webkit-order: $val
+  order: $val
+
+=align-items( $value )
+  -webkit-align-items: $value
+  align-items: $value
+
+=justify-content( $value )
+  -webkit-justify-content: $value
+  justify-content: $value
+
+
 // LAYOUTS
 
 =thrree-cols-fixed-middle( $col-mid-width )
