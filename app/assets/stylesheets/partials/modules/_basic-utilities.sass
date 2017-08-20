@@ -113,7 +113,7 @@
 
 // LAYOUTS
 
-=thrree-cols-fixed-middle( $col-mid-width )
+=three-cols-fixed-middle( $col-mid-width )
   .col-left,
   .col-right
     width: percentage( 1 / 2 )
@@ -130,6 +130,33 @@
   .col-mid
     float: left
     width: $col-mid-width
+
+=three-cols-fluid-middle( $col-left-width, $col-right-width )
+  .col-left,
+  .col-right,
+  .col-mid
+    display: table-cell
+    vertical-align: top
+
+  .col-left
+    width: $col-left-width
+
+  .col-right
+    width: $col-right-width
+
+=two-cols-fixed-right( $col-right-width )
+  .col-left-wrapper
+    float: left
+    width: 100%
+    margin-right: $col-right-width * -1
+
+  .col-left
+    margin-right: $col-right-width
+
+  .col-right
+    float: right
+    width: $col-right-width
+
 
 // SHAPES
 

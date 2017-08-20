@@ -51,9 +51,21 @@
     &:last-child
       margin-bottom: 0
 
+  .browser-frame,
+  .portfolio-item__image
+    display: block
+    max-width: 100%
+    height: auto
+
+  .portfolio-item__image--solo
+    @extend .portfolio-item__image
+
+  .portfolio-item__image--solo,
+  .browser-frame
+    margin-bottom: 40px
+
   .browser-frame
     font-size: 90%
-    margin-bottom: 40px
 
     +mq( page( width ) + page( padding-x ) * 2 )
       font-size: 1.1vw
@@ -96,3 +108,26 @@
 
 .changes--gb-checkout
   +ordered-list-circles( gb-checkout-changes )
+
+
+.dd-unified-messaging__before-section
+  +mq( 1100px, min-width )
+    +two-cols-fixed-right( 407px )
+
+    .col-left
+      padding-right: padding( md )
+
+.dd-unified-messaging__ios-final-designs
+  padding-bottom: 40px
+  +three-cols-fluid-middle( 407px, 407px )
+
+  .aside--left,
+  .aside--right
+    max-width: 360px
+    padding: 3em 0
+
+  .aside--left
+    float: left
+
+  .aside--right
+    float: right

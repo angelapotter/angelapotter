@@ -1,0 +1,72 @@
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      Discovery & Background
+    %p
+      We’ve heard lots of feedback—from customers, attendees, and internal employees alike—that our messaging features are hard to use, and that attendees don’t always know when someone’s trying to get in touch with them. We knew it was time for a change; but there were so many problems to address and we needed to scope them down to the most important ones.
+    %p
+      My product manager and I kicked off the project with some discovery and brainstorming sessions with internal stakeholders in different departments of the company. We started by creating empathy maps for several different user types who are typically at an event: Novice Attendee, Expert Attendee, Exhibitor, and Event Planner. Many of our team members are remote, so we used a tool called Realtime Board to capture everyone’s ideas. We left this exercise pretty open ended, as we wanted to get everything up on the board before narrowing it down. Here’s a snippet from our Novice Attendee board:
+
+    = image_tag "#{ item.sample_image_path }messaging-empathy-map.png", alt: "#{ item.name }: Messaging Empathy Map", class: 'portfolio-item__image--solo'
+
+    %p
+      Next we compiled the biggest problems related to networking, messaging, and notifications that we’ve heard from our different user types. We grouped them by themes and each set our top priorities by putting dots on the themes and individual problems we thought were most important.
+
+    = image_tag "#{ item.sample_image_path }messaging-problems.png", alt: "#{ item.name }: Messaging Problems", class: 'portfolio-item__image--solo'
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    .dd-unified-messaging__before-section
+      .col-left-wrapper
+        .col-left
+          %h3.heading--section.portfolio-item__section-name
+            The Objective
+          %p
+            We have several different messaging features that live in different sections of the app: Direct Messages, Topic Channels, and Session Channels. Event organizers can toggle each of these features on or off on a per-event basis. Topic Channels are group chatrooms based on topics that the event organizer sets up in advance, and that attendees can browse and join. Session Channels are a chatroom for every session, which you can find by going to the session in the Agenda section.
+          %p
+            We decided that the main issues we wanted to address were related to missing notifiations and ease of use. This was also confirmed by the metrics we were seeing around out messaging usage. The two biggest metrics we wanted to move were:
+
+          %ol.objectives--dd-unified-messaging
+            %li
+              %strong Attendee adoption & engagement.
+              We have very low percentages of attendees using these messaging features and really want to see this go up. We think there are a variety of reasons for this, including: attendees not knowing that the features exist to begin with; not noticing when they receive a message; and not understanding how they should use Topic Channels and Session Channels.
+            %li
+              %strong Event organizer adoption.
+              Many event organizers did not enable these features for their events at all. There were many reasons cited for this, but two big ones were: they didn’t know the features existed or how to use them; or they tried them at one event and didn’t see a lot of attendees using them, so it didn’t seem worth setting them up again.
+
+      .col-right
+        = image_tag "#{ item.sample_image_path }before_more-menu.png", alt: "#{ item.name }: Before: Messaging in App Menu", class: 'portfolio-item__image'
+
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The "Final" Designs
+    %p
+      I looked at bunch of different social and messaging apps, and decided to have a Messages tab that is separate from the non-messaging-related notifications. This seemed to be the most common schema, and also allows messaging to be highlighted in its own section.
+    %p
+      Before we started development, we held a bunch of calls with different types of customers to walk through designs and get their reactions. For the most part they were really excited and positive, and could clearly understand what was going on in the workflow we showed them; but one of things we learned was that the phrase “Topic Channels” is not very clear. Customers who had not used this feature before weren’t sure what they were for, so I adjusted the language a bit.
+    %p
+      We decided not to make any changes to Session Channels, and instead to focus on Direct Messages and Topic Channels for V1. We wanted to keep our scope really small, and Session Channels don’t have a super clear or cohesive use case for our customers.
+    %p
+      This project is currently in development. Here are the mockups that are being implemented for out first iteration.
+
+    .dd-unified-messaging__ios-final-designs
+      .col-left
+        = image_tag "#{ item.sample_image_path }ios_messages--empty.png", alt: "#{ item.name }: iOS: Messages (Empty)", class: 'portfolio-item__image'
+
+      .col-mid
+        %p.aside--right
+          Direct messages are more important than new topic chat messages, so unread DMs always appear on top. Push notifications will only be sent for direct messages, but the red dot will appear on the Messages section for everything.
+        %p.aside--left
+          I wanted attendees to be able to start browsing as soon as they get to the Messages tab. Horiziontal scrolling carousels allow for more recommendations to be addded later.
+
+      .col-right
+        = image_tag "#{ item.sample_image_path }ios_messages--unread.png", alt: "#{ item.name }: iOS: Messages (Unread)", class: 'portfolio-item__image'
+
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'studio_messages.png', desc: 'CMS: Messages' }
+
+    = image_tag "#{ item.sample_image_path }android_messages--empty.png", alt: "#{ item.name }: Android: Messages (Empty)", class: 'portfolio-item__image--solo left'
+
+    = image_tag "#{ item.sample_image_path }android_messages--unread.png", alt: "#{ item.name }: Android: Messages (Unread)", class: 'portfolio-item__image--solo'
+
+
+
