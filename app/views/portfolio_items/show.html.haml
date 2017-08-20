@@ -3,11 +3,12 @@
 .header-push
 .container.container--page-width.container--first.container--content
   .heading--portfolio-item
+    %h1= @item.name
+    %h4.subheading= @item.blurb
     = link_to work_path, class: 'portfolio-item__all-projects-link' do
       %i.fa.fa-arrow-left
       All Projects
 
-    %h1= @item.name
 
 .content
   = render @item.description_partial_path, { item: @item }

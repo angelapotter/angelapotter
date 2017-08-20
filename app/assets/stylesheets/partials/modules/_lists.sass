@@ -1,0 +1,31 @@
+=ordered-list-circles( $list-name, $circle-color: gray( medium-dark ), $circle-size: 32px, $font-size: 16px )
+  counter-reset: $list-name
+  padding-left: 0
+
+  li
+    font-size: em( $font-size )
+    margin-bottom: 1em
+    padding-left: 3.5em
+    position: relative
+    list-style: none
+
+    &:before
+      +box-sizing( border-box )
+      @extend %font-weight-semibold
+      content: counter( $list-name )
+      counter-increment: $list-name
+      display: inline-block
+      position: absolute
+      left: 0
+      top: -2px
+      height: $circle-size
+      width: $circle-size
+      padding: $circle-size / 30
+      border: 2px solid $circle-color
+      font-size: 1.1em
+      text-align: center
+      border-radius: $circle-size / 2
+      color: $circle-color
+
+    +mq( 650px )
+      padding-left: 3em

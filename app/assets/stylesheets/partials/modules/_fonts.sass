@@ -4,14 +4,29 @@
 @function em( $target, $context: 16px )
   @return ( strip($target) / strip($context) ) * 1em
 
-%font-weight-light
-  font-family: "Raleway", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
-  font-weight: 200
 
-%content-font-style
-  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+%font-weight-light
+  font-family: "OpenSansLight", "OpenSans-Light", "Open Sans Light", "Open Sans", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  font-weight: 300
+
+%font-weight-normal
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
   line-height: 1.5
+
+%font-weight-semibold
+  font-family: "OpenSansSemibold", "OpenSans-Semibold", "Open Sans Semibold", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  font-weight: 600
+
+%font-weight-bold
+  font-family: "OpenSansBold", "OpenSans-Bold", "Open Sans Bold", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif
+  font-weight: 700
 
 %header-font-style
   @extend %font-weight-light
+
+%content-font-style
+  @extend %font-weight-normal
+
+strong, b
+  @extend %font-weight-bold
 

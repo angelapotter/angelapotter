@@ -52,9 +52,9 @@ $z-indexes: (
 // PAGE ELEMENTS
 
 $page-props: (
-  width: 1200px,
+  width: 1248px,
   small-width: 1000px,
-  padding-x: padding( lg ),
+  padding-x: 35px,
   padding-y: padding( lg ),
   padding-y-mobile: 35px,
   padding-y-portfolio: 35px,
@@ -89,8 +89,8 @@ $about-props: (
 }
 
 $resume-props: (
-  bp-stack: 1050px,
-  max-width: 740px
+  bp-stack: 1150px,
+  max-width: 800px
 );
 
 @function resume( $prop ) {

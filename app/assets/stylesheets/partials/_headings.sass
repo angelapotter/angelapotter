@@ -6,6 +6,10 @@ $heading-page-height: 320px
     font-weight: 300
     line-height: 1.1
 
+h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+
 .heading--page-with-background-image
   @extend %heading--page
   position: relative
@@ -40,11 +44,17 @@ $heading-page-height: 320px
     padding-top: 0.5em
     text-align: center
     color: white
-    letter-spacing: 0.02em
 
 .heading--section
-  font-size: em( 32px )
+  font-size: em( 22px )
   font-weight: bold
+  text-transform: uppercase
+  color: gray( medium-dark )
 
   +mq( 1100px )
-    font-size: em( 30px )
+    font-size: em( 20px )
+
+.subheading
+  font-size: em( 26px )
+  padding: em( 5px ) 0
+  font-weight: normal

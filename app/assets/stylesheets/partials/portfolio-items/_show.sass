@@ -20,7 +20,7 @@
   @extend %heading--page
   padding: 0.5em 0
   font-size: 90%
-  background: transparent
+  text-align: center
 
   +mq( 700px )
     font-size: 80%
@@ -33,9 +33,8 @@
   .portfolio-item__all-projects-link
     $font-size: 18px
     @extend %button-hover-effect
-    float: right
-    padding: em( 3px, $font-size ) 0
-    margin-top: 1.2em
+    display: block
+    padding: em( 4px, $font-size ) 0
     font-size: em( $font-size )
 
     i
@@ -72,9 +71,6 @@
     ol
       margin-bottom: 0
 
-      li
-        margin-bottom: 10px
-
 .portfolio-item-show__nav
   text-align: center
 
@@ -88,3 +84,15 @@
 
   .btn--outbound
     @extend .btn-primary
+
+.objectives--dd-edit-app
+  +ordered-list-circles( dd-edit-app-objectives )
+
+.objectives--gb-checkout
+  +ordered-list-circles( gb-checkout-objectives )
+
+.objectives--gb-search
+  +ordered-list-circles( gb-search-objectives )
+
+.changes--gb-checkout
+  +ordered-list-circles( gb-checkout-changes )

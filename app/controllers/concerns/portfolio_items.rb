@@ -9,7 +9,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design',
       platform: 'Web & Mobile',
       slug: 'doubledutch-unified-messaging',
-      blurb: "A messaging center for attendees to see all their chat activity in one place.",
+      blurb: "A messaging center for event attendees to see all their chat activity in one place.",
       # show_case_study: true,
     },
     {
