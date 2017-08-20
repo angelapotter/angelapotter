@@ -3,7 +3,7 @@
     %h3.heading--section.portfolio-item__section-name
       Discovery & Background
     %p
-      We’ve heard lots of feedback—from customers, attendees, and internal employees alike—that our messaging features are hard to use, and that attendees don’t always know when someone’s trying to get in touch with them. We knew it was time for a change; but there were so many problems to address and we needed to scope them down to the most important ones.
+      We’ve heard feedback—from customers, attendees, and internal employees alike—that our messaging features are hard to use, and that attendees don’t always know when someone’s trying to get in touch with them. We knew it was time for a change; but there were several potential problems to dig into we needed to scope them down to the most important ones.
     %p
       My product manager and I kicked off the project with some discovery and brainstorming sessions with internal stakeholders in different departments of the company. We started by creating empathy maps for several different user types who are typically at an event: Novice Attendee, Expert Attendee, Exhibitor, and Event Planner. Many of our team members are remote, so we used a tool called Realtime Board to capture everyone’s ideas. We left this exercise pretty open ended, as we wanted to get everything up on the board before narrowing it down. Here’s a snippet from our Novice Attendee board:
 
@@ -22,9 +22,9 @@
           %h3.heading--section.portfolio-item__section-name
             The Objective
           %p
-            We have several different messaging features that live in different sections of the app: Direct Messages, Topic Channels, and Session Channels. Event organizers can toggle each of these features on or off on a per-event basis. Topic Channels are group chatrooms based on topics that the event organizer sets up in advance, and that attendees can browse and join. Session Channels are a chatroom for every session, which you can find by going to the session in the Agenda section.
+            We have several different messaging features that live in different sections of the app: Direct Messages, Topic Channels, and Session Channels. (At the time this made sense with the general schema we use, since event organizers can show and hide app sections to toggle these features on or off individually.) Topic Channels are group chatrooms based on topics that the event organizer sets up in advance, and that attendees can browse and join. Session Channels are a chatroom for every session, which you can find by going to the session in the Agenda section.
           %p
-            We decided that the main issues we wanted to address were related to missing notifiations and ease of use. This was also confirmed by the metrics we were seeing around out messaging usage. The two biggest metrics we wanted to move were:
+            We decided that the main issues we wanted to address were related to missing notifiations and ease of use. This was also confirmed by the metrics we were seeing around our messaging usage. The two biggest metrics we wanted to move were:
 
           %ol.objectives--dd-unified-messaging
             %li
@@ -41,15 +41,22 @@
 
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
+      Weighing Navigation Options
+    %p
+      I looked other social apps with messaging features to see what users are used to. They all seemed to handle messaging in one of few different ways: separate sectons for messaging and notifications; or a single notifications tab with Activity and Messaging notifications in subtabs. Within messaging, some apps had different subtabs for different types of messaging. I did some rough sketches of what these options would look like in our app:
+
+    = image_tag "#{ item.sample_image_path }messaging-nav-sketches.png", alt: "#{ item.name }: Messaging Navigation Sketches", class: 'portfolio-item__image'
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
       The "Final" Designs
     %p
-      I looked at bunch of different social and messaging apps, and decided to have a Messages tab that is separate from the non-messaging-related notifications. This seemed to be the most common schema, and also allows messaging to be highlighted in its own section.
+      Before we started development, we had calls with different types of customers to walk through designs and get their reactions. For the most part they were really excited and positive, and could clearly understand what was going on in the workflow we showed them. One of things we learned was that the phrase “Topic Channels” is not very clear. Customers who had not used this feature before weren’t sure what they were for, so I adjusted the language a bit.
     %p
-      Before we started development, we held a bunch of calls with different types of customers to walk through designs and get their reactions. For the most part they were really excited and positive, and could clearly understand what was going on in the workflow we showed them; but one of things we learned was that the phrase “Topic Channels” is not very clear. Customers who had not used this feature before weren’t sure what they were for, so I adjusted the language a bit.
+      We decided not to make any changes to Session Channels, and instead to focus on Direct Messages and Topic Channels for V1. We felt that DMs and Topic Channels have the clearest use case and the most potential to be improved by these changes.
     %p
-      We decided not to make any changes to Session Channels, and instead to focus on Direct Messages and Topic Channels for V1. We wanted to keep our scope really small, and Session Channels don’t have a super clear or cohesive use case for our customers.
-    %p
-      This project is currently in development. Here are the mockups that are being implemented for out first iteration.
+      This project is currently in development. Here are the mockups that are being implemented for our first iteration.
 
     .dd-unified-messaging__ios-final-designs
       .col-left
@@ -64,7 +71,13 @@
       .col-right
         = render partial: 'portfolio_items/iphone_frame', locals: { item: item, image_filename: 'ios_messages--unread.png', desc: 'iOS: Messages (Unread)' }
 
+    %p
+      For event organizers too, messaging features were all in different places in the CMS. I put them all in one section so they were easily discoverable, but can still be turned on and off individually. We're also planning start turning them on for all events by default&mdash;with a little tutorial letting organizers know about the changes we made.
+
     = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'studio_messages.png', desc: 'CMS: Messages' }
+
+    %p
+      Slightly different UI on Android vs iOS:
 
     .dd-unified-message__android-frames
       = render partial: 'portfolio_items/android_frame', locals: { item: item, image_filename: 'android_messages--empty.png', desc: 'Android: Messages (Empty)' }
