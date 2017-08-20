@@ -70,6 +70,11 @@
     +mq( page( width ) + page( padding-x ) * 2 )
       font-size: 1.1vw
 
+  .iphone-frame,
+  .android-frame
+    +mq( 900px )
+      font-size: 1.8vw
+
   .portfolio-item__section-name
     margin-bottom: 0.6em
 
@@ -111,12 +116,20 @@
 
 
 .dd-unified-messaging__before-section
-  +mq( 1100px, min-width )
+  padding-bottom: padding( xl )
+  .col-right
+    display: none
+
+  +mq( 1000px, min-width )
     +two-cols-fixed-right( 375px )
+    padding-bottom: 0
 
     .col-left
       padding-right: padding( md )
       padding-top: 2em
+
+    .col-right
+      display: block
 
     .caption
       padding: 1em 0
@@ -127,27 +140,49 @@
   padding-bottom: 40px
 
   .col-left,
-  .col-mid,
   .col-right
-    display: table-cell
-    vertical-align: middle
+    display: inline-block
+
+  .col-left
+    margin-right: padding( lg )
 
   .col-mid
-    padding: 2em
+    display: none
 
-  .aside--left,
-  .aside--right
-    max-width: 360px
-    padding: 3em 0
+  +mq( 1100px, min-width )
 
-  .aside--left
-    float: left
+    .col-left,
+    .col-mid,
+    .col-right
+      display: table-cell
+      vertical-align: middle
+      margin: 0
 
-  .aside--right
-    float: right
-    text-align: right
+    .col-mid
+      padding: 2em
+
+    .aside--left,
+    .aside--right
+      max-width: 360px
+      padding: 3em 0
+
+    .aside--left
+      float: left
+
+    .aside--right
+      float: right
+      text-align: right
 
 .dd-unified-message__android-frames
   .android-frame:first-child
-    +mq( 800px, min-width )
-      margin-right: padding( lg )
+    margin-right: padding( lg )
+
++mq( 775px )
+  .dd-unified-message__android-frames,
+  .dd-unified-messaging__ios-final-designs
+    text-align: center
+
+    .android-frame:first-child,
+    .col-left
+      margin-left: auto
+      margin-right: auto
