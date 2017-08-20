@@ -1,45 +1,52 @@
-$device-button-color: transparentize( white, 0.4 )
+$device-button-color-lightest: transparentize( white, 0.4 )
+$device-button-color-light: transparentize( white, 0.7 )
+$device-button-color-dark: transparentize( black, 0.6 )
+
 $browser-button-padding: em( 24px )
 $browser-border-radius: em( 10px )
 
-.browser-frame
+%device-frame
   +box-shadow( em( 12px ), em( 12px ), em( 16px ), transparentize( black, 0.8 ) )
-  border-radius: $browser-border-radius
+  position: relative
   overflow: hidden
+  background: #444444
+
+.browser-frame
+  @extend %device-frame
+  border-radius: $browser-border-radius
 
   img
     display: block
     width: 100%
     height: auto
 
-.browser-frame_chrome
+.browser-frame__chrome
   +flexbox
   +align-items( center )
   +justify-content( space-between )
   height: em( 62px )
   padding: 0 em( 24px )
-  background: #444444
 
-.browser-frame_buttons
+.browser-frame__buttons
   +flexbox
   +align-items( center )
   +justify-content( space-between )
   width: em( 72px )
 
-.browser-frame_round-button
-  +circle( em( 15px ), $device-button-color )
+.browser-frame__round-button
+  +circle( em( 15px ), $device-button-color-lightest )
 
-.menu-icon_line
+.menu-icon__line
   width: em( 30px )
   height: em( 5px )
   margin: em( 5px ) 0
   border-radius: em( 2px )
-  background: $device-button-color
+  background: $device-button-color-lightest
 
-.browser-frame_screen
+.browser-frame__screen
   position: relative
 
-.screen_border
+.browser-screen__border
   position: absolute
   top: 0
   right: 0
@@ -53,7 +60,75 @@ $browser-border-radius: em( 10px )
 
 .iphone-frame
   @extend %device-frame
-  border-radius: 46px
+  display: inline-block
+  border-radius: em( 46px )
+
+.iphone-frame__screen
+  width: em( 347px )
+  height: em( 617px )
+  margin: 0 em( 13px )
+  overflow: hidden
+
+  img
+    max-width: 100%
+    height: auto
+
+.iphone-frame__camera
+  +circle( em( 11px ), $device-button-color-dark )
+  margin: em( 15px ) auto 0
+
+.iphone-frame__sensor
+  +circle( em( 13px ), $device-button-color-light )
+  position: absolute
+  top: em( 37px )
+  left: em( 117px )
+
+.iphone-frame__speaker
+  width: em( 72px )
+  height: em( 9px )
+  margin: em( 13px ) auto em( 40px )
+  border-radius: em( 5px )
+  background: $device-button-color-light
+
+.iphone-frame__home-button
+  +circle( em( 62px), transparent )
+  +box-sizing( border-box )
+  border: em( 3px ) solid $device-button-color-light
+  margin: em( 14px ) auto
+
+.android-frame
+  @extend %device-frame
+  display: inline-block
+  border-radius: em( 34px )
+
+.android-frame__speaker,
+.android-frame__mic
+  width: em( 137px )
+  height: em( 16px )
+  border-radius: em( 8px )
+  background: $device-button-color-dark
+
+.android-frame__speaker
+  margin: em( 26px ) auto em( 31px )
+
+.android-frame__camera
+  +circle( em( 13px ), $device-button-color-light )
+  position: absolute
+  top: em( 27px )
+  left: em( 70px )
+
+.android-frame__screen
+  width: em( 356px )
+  height: em( 632px )
+  margin: 0 em( 10px )
+  overflow: hidden
+
+  img
+    max-width: 100%
+    height: auto
+
+.android-frame__mic
+  margin: em( 31px ) auto em( 26px )
 
 
 

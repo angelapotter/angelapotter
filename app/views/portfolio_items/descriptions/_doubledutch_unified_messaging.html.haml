@@ -12,7 +12,7 @@
     %p
       Next we compiled the biggest problems related to networking, messaging, and notifications that we’ve heard from our different user types. We grouped them by themes and each set our top priorities by putting dots on the themes and individual problems we thought were most important.
 
-    = image_tag "#{ item.sample_image_path }messaging-problems.png", alt: "#{ item.name }: Messaging Problems", class: 'portfolio-item__image--solo'
+    = image_tag "#{ item.sample_image_path }messaging-problems.png", alt: "#{ item.name }: Messaging Problems", class: 'portfolio-item__image'
 
 .portfolio-item__section
   .container.container--page-width.container--content
@@ -35,7 +35,9 @@
               Many event organizers did not enable these features for their events at all. There were many reasons cited for this, but two big ones were: they didn’t know the features existed or how to use them; or they tried them at one event and didn’t see a lot of attendees using them, so it didn’t seem worth setting them up again.
 
       .col-right
-        = image_tag "#{ item.sample_image_path }before_more-menu.png", alt: "#{ item.name }: Before: Messaging in App Menu", class: 'portfolio-item__image'
+        .caption
+          Messaging features live in  3 different places
+        = render partial: 'portfolio_items/iphone_frame', locals: { item: item, image_filename: 'before_more-menu.png', desc: 'Before: Messaging in App Menu' }
 
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
@@ -51,7 +53,7 @@
 
     .dd-unified-messaging__ios-final-designs
       .col-left
-        = image_tag "#{ item.sample_image_path }ios_messages--empty.png", alt: "#{ item.name }: iOS: Messages (Empty)", class: 'portfolio-item__image'
+        = render partial: 'portfolio_items/iphone_frame', locals: { item: item, image_filename: 'ios_messages--empty.png', desc: 'OS: Messages (Empty)' }
 
       .col-mid
         %p.aside--right
@@ -60,13 +62,14 @@
           I wanted attendees to be able to start browsing as soon as they get to the Messages tab. Horiziontal scrolling carousels allow for more recommendations to be addded later.
 
       .col-right
-        = image_tag "#{ item.sample_image_path }ios_messages--unread.png", alt: "#{ item.name }: iOS: Messages (Unread)", class: 'portfolio-item__image'
+        = render partial: 'portfolio_items/iphone_frame', locals: { item: item, image_filename: 'ios_messages--unread.png', desc: 'iOS: Messages (Unread)' }
 
     = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'studio_messages.png', desc: 'CMS: Messages' }
 
-    = image_tag "#{ item.sample_image_path }android_messages--empty.png", alt: "#{ item.name }: Android: Messages (Empty)", class: 'portfolio-item__image--solo left'
+    .dd-unified-message__android-frames
+      = render partial: 'portfolio_items/android_frame', locals: { item: item, image_filename: 'android_messages--empty.png', desc: 'Android: Messages (Empty)' }
 
-    = image_tag "#{ item.sample_image_path }android_messages--unread.png", alt: "#{ item.name }: Android: Messages (Unread)", class: 'portfolio-item__image--solo'
+      = render partial: 'portfolio_items/android_frame', locals: { item: item, image_filename: 'android_messages--unread.png', desc: 'Android: Messages (Unread)' }
 
 
 

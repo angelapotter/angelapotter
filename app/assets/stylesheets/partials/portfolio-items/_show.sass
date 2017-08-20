@@ -112,14 +112,28 @@
 
 .dd-unified-messaging__before-section
   +mq( 1100px, min-width )
-    +two-cols-fixed-right( 407px )
+    +two-cols-fixed-right( 375px )
 
     .col-left
       padding-right: padding( md )
+      padding-top: 2em
+
+    .caption
+      padding: 1em 0
+      text-align: center
+      color: gray( medium )
 
 .dd-unified-messaging__ios-final-designs
   padding-bottom: 40px
-  +three-cols-fluid-middle( 407px, 407px )
+
+  .col-left,
+  .col-mid,
+  .col-right
+    display: table-cell
+    vertical-align: middle
+
+  .col-mid
+    padding: 2em
 
   .aside--left,
   .aside--right
@@ -131,3 +145,9 @@
 
   .aside--right
     float: right
+    text-align: right
+
+.dd-unified-message__android-frames
+  .android-frame:first-child
+    +mq( 800px, min-width )
+      margin-right: padding( lg )
