@@ -1,0 +1,47 @@
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      Discovery & Background
+    %p
+      DoubleDutch has several reporting dashboards and exportable reports that show how attendees interacted with the event app. We’ve seen that many customers find these reports to be overwhelming and aren’t sure what to do with them.
+    %p
+      Through past user research, we’ve identified a few different personas within a customer’s organization that describe how they interact with data:
+
+    = image_tag "#{ item.sample_image_path }personas.png", alt: "#{ item.name }: Personas", class: 'portfolio-item__image--solo'
+
+    %p
+      The Leader cares about the ROI of their event; but typically the one who is in our CMS and is the Planner. The Planner cares about attendee experience and event logistics, and is not connected to the business goals of their company. They’re not data oriented, and don’t know what they’re looking for when a lot of choices are presented to them.
+    %p
+      We wanted to provide a report that was more simplified and targeted specifically at the event planner, that they could easily share with other event stakeholders. A couple of years ago we had an infographic-style PDF report that was really resonated with some of our customers. We wanted something similar, but with the goal of increasing the sophistication of the data we’re presenting just a little bit. Ultimately, the goal is for the Event Planner to share with the Event Owner and the Leader, who are much more data savvy.
+    %p
+      My project manager and I talked to several customers: some who had used the old report, and some who had just requested a shareable summary of their event. We also conducted some internal interviews with Customer Support and Account Managers within DoubleDutch. Here are some snippets from our notes:
+
+    = image_tag "#{ item.sample_image_path }user-research-notes.png", alt: "#{ item.name }: User Research Notes", class: 'portfolio-item__image'
+
+.portfolio-item__section
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The Objective
+
+    %p
+      We identified that customers wanted a report that was:
+
+    %ol.objectives--dd-engagement-report
+      %li
+        %strong Simple and visually appealing.
+        Customers wanted something that tells the story of their event with a few key metrics, and looks nice.
+      %li
+        %strong Easily shareable via email or a slideshow presentation.
+        Customers either wanted to send out a report to their boss and colleagues via email, or present portions of the report in PowerPoint slides.
+
+    %p
+      From a business perspective, we wanted the report to be <strong>distributed to other stakeholders in the company</strong>. We wanted this report to appeal to the Planner so they would share it; but ultimately we want to get the Event Owner and the Leader to see the value of our data. This meant making the report sophisticated enough that more data-minded customers would see its value, but still simple and easy enough that it resonates with the Planner.
+
+.portfolio-item__section.container--first
+  .container.container--page-width.container--content
+    %h3.heading--section.portfolio-item__section-name
+      The "Final" Product
+    %p
+      I tried out a lot of different options, but ultimately landed on the report below. It’s infographic-y, modular, and mostly uses data that we already have APIs for. It uses the brand color of the event to display the data (purple in this example).  This report is currently released as a beta, where it can be pulled automatically but needs to be sent to customers manually as a PDF. We’re gathering feedback and seeing how it looks with different types of events and data, and plan to make it available to all customers soon.
+
+    = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'engagement-report.png', desc: 'Event Engagement Report' }

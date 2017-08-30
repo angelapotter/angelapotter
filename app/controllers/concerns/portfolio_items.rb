@@ -13,6 +13,15 @@ class PortfolioItems < ActiveHash::Base
       show_case_study: true,
     },
     {
+      name: 'DoubleDutch Event Engagement Report',
+      company: 'DoubleDutch',
+      role: 'Design',
+      platform: 'Web & Mobile',
+      slug: 'doubledutch-engagement-report',
+      blurb: "An infographic-style report about what attendees did during the event.",
+      show_case_study: true,
+    },
+    {
       name: 'DoubleDutch Edit App',
       company: 'DoubleDutch',
       role: 'Design',
