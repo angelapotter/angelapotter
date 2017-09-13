@@ -1,7 +1,7 @@
-%nav__link--active
+=nav__link--active( $color: map-get( $header-props, color-light ) )
   &:after
     +transform( scaleX( 1 ) )
-    background: white
+    background: $color
 
 .header-push,
 .header
@@ -26,6 +26,8 @@
     padding: 5px 0
 
 .header
+  +flexbox
+  +justify-content( space-between )
   position: fixed
   top: 0
   left: 0
@@ -38,12 +40,23 @@
   .container
     position: relative
 
+.header--light
+  .header__home-link h2
+    background-image: image-url( 'home-link--dark.png' )
+  .nav__link
+    color: map-get( $header-props, color-dark )
+
+    +active-link-states
+      +nav__link--active( $color: map-get( $header-props, color-dark ) )
+
+    &.active
+      +nav__link--active( $color: map-get( $header-props, color-dark ) )
+
 .headroom
   +transition( transform transition( lg ), background transition( lg ) )
 
 .headroom--pinned
   +transform( translateY( 0% ) )
-  background: brand( primary )
 
 .headroom--unpinned
   +transform( translateY( -100% ) )
@@ -51,38 +64,41 @@
 .headroom--top
   background: transparent
 
-.header__home-link h2,
+.header__home-link,
+.header__nav--primary,
 .nav__link
-  padding-top: 1em
-  padding-bottom: 0.8em
+  height: 100%
+
+.header__home-link,
+.header__nav--primary
+  +flexbox
+  +align-items( center )
 
 .header__home-link
-  display: block
-  float: left
-  text-align: center
 
   +mq( map-get( $header-bps, nav-logo-stack ) )
     display: none
 
   h2
-    font-size: em( 23px )
-    font-weight: bold
-    color: map-get( $header-props, color-default )
-
-  img
+    $width: 208px
+    $height: 29px
     display: block
-    width: 208px
-    height: 29px
+    width: $width
+    height: $height
+    margin-top: 3px
+    overflow: hidden
+    background-image: image-url( 'home-link.png' )
+    background-size: $width $height
+    font-weight: bold
+    text-indent: 100%
 
 .header__nav--primary
   list-style-type: none
-  height: 100%
   padding-left: 0
-  margin: 0
+  margin: 0 auto
   text-align: center
 
   +mq( map-get( $header-bps, nav-logo-stack ), min-width )
-    float: right
     margin-right: -1em
 
   li
@@ -98,13 +114,12 @@
 
 .nav__link
   $transition: transition( md ) ease-in-out
-  $font-size: 19px
   display: block
   position: relative
   padding-left: 1em
   padding-right: 1em
-  color: map-get( $header-props, color-default )
-  font-size: em( $font-size )
+  font-size: em( 19px )
+  color: map-get( $header-props, color-light )
   text-transform: uppercase
 
   &:after
@@ -117,10 +132,10 @@
     background: transparent
 
   +active-link-states
-    @extend %nav__link--active
+    +nav__link--active
 
   &.active
-    @extend %nav__link--active
+    +nav__link--active
 
   +mq( map-get( $header-bps, nav-logo-stack ) )
     padding-top: 0.7em

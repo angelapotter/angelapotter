@@ -1,13 +1,12 @@
 .header.js__header{ class: "header--#{ params[ :controller ].gsub( '_', '-' ) }" }
-  .header__nav
-    %a.header__home-link{ href: root_path, title: "Home"}
-      %h2= image_tag 'home-link.png', alt: 'Angela Potter: Product Designer | San Francisco'
+  %a.header__home-link{ href: root_path, title: "Home"}
+    %h2
 
-    %ul.header__nav--primary
-      %li>
-        %a.nav__link{ href: root_path, class: ( 'active' if params[ :action ] == 'about' ) } Home
-      %li>
-        %a.nav__link{ href: work_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
-          Work
-      %li>
-        %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
+  %ul.header__nav--primary
+    %li>
+      %a.nav__link{ href: root_path, class: ( 'active' if params[ :action ] == 'about' ) } Home
+    %li>
+      %a.nav__link{ href: work_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
+        Work
+    %li>
+      %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume
