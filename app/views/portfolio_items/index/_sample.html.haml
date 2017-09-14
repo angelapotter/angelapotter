@@ -1,4 +1,4 @@
-.portfolio-item-sample.js__portfolio-item-sample{ class: "portfolio-item-sample--#{ item.slug }", data: { sample: item.slug } }
+.portfolio-item-sample.js__portfolio-item-sample.js__scroll-past-container{ class: "portfolio-item-sample--#{ item.slug }", data: { sample: item.slug } }
   .header-push
 
   .portfolio-item-sample__content
@@ -13,3 +13,7 @@
     .portfolio-item-sample__links
       - if item.outbound_link.present?
         = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm link--outbound'
+
+  - if item.show_case_study?
+    .scroll-past
+      = link_to '', '#', class: 'js__scroll-past-trigger'
