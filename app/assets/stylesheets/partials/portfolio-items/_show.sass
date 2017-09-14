@@ -4,16 +4,16 @@
     .headroom--pinned,
     .headroom--top,
     .headroom--not-top
-      background-color: map-get( $item-props, color )
+      background-color: transparentize( map-get( $item-props, color ), 0.03 )
 
     .portfolio-item__all-projects-link
-      color: map-get( $item-props, color )
+      color: map-get( $header-props, color-light )
 
     .btn-primary
-      +solid-button( $bg: map-get( $item-props, color ) )
+      +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
 
     .btn-primary-hollow
-      +hollow-button( $color: map-get( $item-props, color ) )
+      +hollow-button( $color: white )
 
 
 .heading--portfolio-item
@@ -28,23 +28,27 @@
   +mq( 550px )
     font-size: 75%
 
+.portfolio-item__all-projects-link,
+.portfolio-item-show__nav
+  +flexbox
+  +align-content( center )
+  +align-items( center )
+  height: 100%
+
+.portfolio-item__all-projects-link
+  $font-size: 20px
+  @extend %button-hover-effect
+  font-size: em( $font-size )
+
+  i
+    display: inline-block
+    vertical-align: middle
+    margin-right: 0.4em
+
+  +mq( 780px )
+    display: none
+
 .portfolio-items.show
-
-  .portfolio-item__all-projects-link
-    $font-size: 18px
-    @extend %button-hover-effect
-    display: block
-    padding: em( 4px, $font-size ) 0
-    font-size: em( $font-size )
-
-    i
-      display: inline-block
-      vertical-align: middle
-      margin-right: 0.4em
-
-    +mq( 780px )
-      display: none
-
   .portfolio-item__section
     margin-bottom: 70px
 
@@ -89,18 +93,18 @@
       margin-bottom: 0
 
 .portfolio-item-show__nav
-  text-align: center
-
-  .btn--nav,
-  .btn--outbound
-    @extend .btn
-    @extend .btn-sm
+  +flexbox
+  +align-items( center )
 
   .btn--nav
-    @extend .btn-primary-hollow
+    @extend %button-hover-effect
+    cursor: pointer
+    color: map-get( $header-props, color-light )
+    font-size: 1.8em
 
-  .btn--outbound
-    @extend .btn-primary
+  .portfolio-item-sample__progress
+    color: white
+    margin: 0 12px
 
 .objectives--dd-edit-app
   +ordered-list-circles( dd-edit-app-objectives )

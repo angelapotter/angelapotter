@@ -1,30 +1,5 @@
-.portfolio-item-samples
-  +transform( translateY( -100% ) )
-  +transition( transform portfolio-item-sample( transition ) )
-  position: fixed
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: z-index( modal )
-  color: white
-
-  &.opening
-    .portfolio-item-sample
-      +transition( transform 0s )
-
-  &.open
-    +transform( translateY( 0 ) )
-
 .portfolio-item-sample
-  +transform( translateX( 100% ) )
-  +transition( transform 0.5s )
-  position: absolute
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  background: transparentize( brand( primary ), 0.03 )
+  height: 100vh
 
   img
     display: block
@@ -61,7 +36,7 @@
       background: map-get( $item-props, color )
 
   .portfolio-item-sample--#{ map-get( $item-props, slug ) }
-    background: transparentize( map-get( $item-props, color ), 0.03 )
+    background: map-get( $item-props, color )
 
     .link--case-study
       +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
@@ -99,34 +74,13 @@
     width: 1.8em
     height: 1.8em
 
-.portfolio-item-sample__prev,
-.portfolio-item-sample__next
-  $padding-y: 0.1em
-  $padding-x: 0.1em
-  @extend .fa
-  position: absolute
-  top: 50%
-  margin-top: ( 0.5em + $padding-y ) * -1
-  padding: $padding-y $padding-x
-  font-size: em( 90px )
-  line-height: 1
-  z-index: z-index( page ) + 1
-
-  +mq-aspect-less-than-square
-    top: auto
-    bottom: 1vh
-    font-size: em( 70px )
-
-.portfolio-item-sample__prev
-  @extend .fa-angle-left
-  left: 1vh
-
-.portfolio-item-sample__next
-  @extend .fa-angle-right
-  right: 1vh
+.portfolio-item-sample__title,
+.portfolio-item-sample__blurb
+  color: white
+  text-align: center
 
 .portfolio-item-sample__title
-  font-size: em( 32px )
+  @extend %heading--page
 
   +mq( 440px )
     font-size: em( 30px )
@@ -141,16 +95,11 @@
     display: none
 
 .portfolio-item-sample__links
-  text-align: right
-
-  a + a
-    margin-left: 0.8em
+  text-align: center
+  margin-top: 1em
 
   .link--outbound
-    @extend .btn-default
-
-  +mq( portfolio-item-sample( progress-float-bp ) + 1, min-width )
-    float: right
+    @extend .btn-primary
 
   @media ( max-width: 500px ), ( #{ $mq-aspect-greater-than-double } )
     a
@@ -169,23 +118,7 @@
     text-align: left
     font-size: 90%
 
-.portfolio-item-sample__progress
-  +mq( portfolio-item-sample( progress-float-bp ) )
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 0
-    padding-bottom: 1.7em
-    text-align: center
-
-  +mq-aspect-greater-than-double
-    margin-top: 4vh
-
 +mq( portfolio-item-sample( progress-float-bp ) + 1, min-width )
   .portfolio-item-sample__blurb
     margin-top: 0
     font-size: em( 18px)
-
-  .portfolio-item-sample__progress
-    float: left
-    padding-top: 0.8em

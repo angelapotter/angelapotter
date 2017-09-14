@@ -4,6 +4,7 @@ class PortfolioItemsController < ApplicationController
     portfolio_items.each_with_index do |item, index|
       if item.slug == params[ :slug ]
         @item = item
+        @index = index
         return
       end
     end

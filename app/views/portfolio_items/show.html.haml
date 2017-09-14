@@ -1,29 +1,22 @@
 - content_for :title, @item.name
 
-.header-push
-.container.container--page-width.container--first.container--content
-  .heading--portfolio-item
-    %h1= @item.name
-    %h4.subheading= @item.blurb
-    = link_to work_path, class: 'portfolio-item__all-projects-link' do
-      %i.fa.fa-arrow-left
-      All Projects
+= render partial: 'portfolio_items/index/sample', locals: { item: @item, index: @index, length: portfolio_items.length }
 
+- if @item.show_case_study?
+  .content
+    = render @item.description_partial_path, { item: @item }
 
-.content
-  = render @item.description_partial_path, { item: @item }
+    .portfolio-item-show__nav.portfolio-item__section.container.container--page-width.container--content
+      - if @item.outbound_link.present?
+        = link_to @item.outbound_link.label, @item.outbound_link.url, target: '_blank', class: 'btn--outbound'
 
-  .portfolio-item-show__nav.portfolio-item__section.container.container--page-width.container--content
-    - if @item.outbound_link.present?
-      = link_to @item.outbound_link.label, @item.outbound_link.url, target: '_blank', class: 'btn--outbound'
+      - unless @index <= 0
+        = link_to portfolio_items_path( @portfolio_items[ @index - 1 ].slug ), class: 'btn--nav' do
+          %i.fa.fa-chevron-left
+          Previous case study
+      - unless @index >= @portfolio_items.length
+        = link_to portfolio_items_path( @portfolio_items[ @index + 1 ].slug ), class: 'btn--nav' do
+          Next case study
+          %i.fa.fa-chevron-right
 
-    - if prev_item_with_case_study( @item ).present?
-      = link_to portfolio_items_path( prev_item_with_case_study( @item ).slug ), class: 'btn--nav left' do
-        %i.fa.fa-chevron-left
-        Previous case study
-    - if next_item_with_case_study( @item ).present?
-      = link_to portfolio_items_path( next_item_with_case_study( @item ).slug ), class: 'btn--nav right' do
-        Next case study
-        %i.fa.fa-chevron-right
-
-  = render 'layouts/back_to_top'
+    = render 'layouts/back_to_top'
