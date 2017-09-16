@@ -6,7 +6,7 @@ class PortfolioItems < ActiveHash::Base
     {
       name: 'DoubleDutch Unified Messaging',
       company: 'DoubleDutch',
-      role: 'Design',
+      role: 'End-to-End Design',
       platform: 'Web & Mobile',
       slug: 'doubledutch-unified-messaging',
       blurb: "A messaging center for event attendees to see all their chat activity in one place.",
@@ -15,7 +15,7 @@ class PortfolioItems < ActiveHash::Base
     {
       name: 'DoubleDutch Event Engagement Report',
       company: 'DoubleDutch',
-      role: 'Design',
+      role: 'End-to-End Design',
       platform: 'Web & Mobile',
       slug: 'doubledutch-engagement-report',
       blurb: "An infographic-style report about what attendees did during the event.",
@@ -24,7 +24,7 @@ class PortfolioItems < ActiveHash::Base
     {
       name: 'DoubleDutch Edit App',
       company: 'DoubleDutch',
-      role: 'Design',
+      role: 'End-to-End Design',
       platform: 'Web',
       slug: 'doubledutch-edit-app',
       blurb: "A step-by-step workflow for editing and submitting your mobile event app.",
@@ -64,14 +64,12 @@ class PortfolioItems < ActiveHash::Base
       slug: 'goldbely-order-history',
       blurb: "An e-commerce order history page, where customers can track their food shipments."
     },
-    # Maybe add the order feedback experience here
-    #
     # {
-    #   name: 'Homepage Carousel',
+    #   name: 'Goldbely Homepage Carousel',
     #   company: 'Goldbely',
     #   role: 'Design + Front-End Dev',
     #   platform: 'Web',
-    #   slug: 'homepage-carousel',
+    #   slug: 'goldbely-homepage-carousel',
     #   blurb: "The rotating carousel on the Goldbely homepage, featuring our current sales and promotions.",
     #   outbound_link: OpenStruct.new({
     #     label: 'Visit Goldbely.com',
