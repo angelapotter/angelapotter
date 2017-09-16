@@ -7,14 +7,14 @@
     .portfolio-item-show__nav
 
       - unless @index <= 0
-        = link_to portfolio_items_path( @portfolio_items[ @index - 1 ].slug ), class: 'btn--nav' do
+        = link_to portfolio_items_path( @portfolio_items[ @index - 1 ].slug ), title: 'Previous Project', class: 'btn--nav' do
           %i.fa.fa-chevron-circle-left
 
       .portfolio-item-sample__progress
         Project #{ @index + 1 } of #{ portfolio_items.size }
 
       - unless @index >= @portfolio_items.length - 1
-        = link_to portfolio_items_path( @portfolio_items[ @index + 1 ].slug ), class: 'btn--nav' do
+        = link_to portfolio_items_path( @portfolio_items[ @index + 1 ].slug ), title: 'Next Project', class: 'btn--nav' do
           %i.fa.fa-chevron-circle-right
 
   - else

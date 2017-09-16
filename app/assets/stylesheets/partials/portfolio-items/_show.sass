@@ -4,7 +4,7 @@
     .headroom--pinned,
     .headroom--top,
     .headroom--not-top
-      background-color: transparentize( map-get( $item-props, color ), 0.03 )
+      background-color: transparentize( map-get( $item-props, color ), 0.05 )
 
     .portfolio-item__all-projects-link
       color: map-get( $header-props, color-light )
@@ -18,7 +18,6 @@
 
 .heading--portfolio-item
   @extend %heading--page
-  padding: 0.5em 0
   font-size: 90%
   text-align: center
 
@@ -36,17 +35,15 @@
   height: 100%
 
 .portfolio-item__all-projects-link
-  $font-size: 20px
+  $font-size: 18px
   @extend %button-hover-effect
   font-size: em( $font-size )
+  text-transform: uppercase
 
   i
     display: inline-block
     vertical-align: middle
     margin-right: 0.4em
-
-  +mq( 780px )
-    display: none
 
 .portfolio-items.show
   .portfolio-item__section
@@ -105,6 +102,13 @@
   .portfolio-item-sample__progress
     color: white
     margin: 0 12px
+
+  +mq( 600px )
+    .btn--nav:first-child
+      margin-right: 12px
+
+    .portfolio-item-sample__progress
+      display: none
 
 .objectives--dd-edit-app
   +ordered-list-circles( dd-edit-app-objectives )

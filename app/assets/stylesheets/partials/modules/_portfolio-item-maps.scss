@@ -10,17 +10,6 @@ $portfolio-item-cover-props: (
   @return map-get( $portfolio-item-cover-props, $prop );
 }
 
-
-$portfolio-item-sample-props: (
-  progress-float-bp: 600px,
-  transition: 0.6s
-);
-
-@function portfolio-item-sample( $prop ) {
-  @return map-get( $portfolio-item-sample-props, $prop );
-}
-
-
 $portfolio-items: (
   (
     slug: 'doubledutch-engagement-report',

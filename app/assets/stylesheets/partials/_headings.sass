@@ -2,9 +2,15 @@ $heading-page-height: 320px
 
 %heading--page
   h1
-    font-size: em( 50px )
+    font-size: em( 48px )
     font-weight: 300
     line-height: 1.1
+
+  +mq( 800px )
+    font-size: 90%
+
+  +mq( 500px )
+    font-size: 80%
 
 h2, h3, h4, h5, h6
   margin: 0
