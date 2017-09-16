@@ -1,31 +1,36 @@
+.portfolio-item-sample,
+.portfolio-item-sample__content,
+.portfolio-item-sample__image-container
+  +flexbox
+  +flex-flow( column )
+
 .portfolio-item-sample
   height: 100vh
+  padding: 0 1em
+
+  +mq-aspect-less-than-square
+    .portfolio-item-sample__title
+      margin-top: 6vh
+
+    .portfolio-item-sample__links
+      margin-bottom: 6vh
 
 .portfolio-item-sample__content
-  padding: 0.1vh 1em
+  padding: 0.1vh 1em 1vh
+  +flex( 1 )
+  +justify-content( center )
+
+.portfolio-item-sample__image-container
+  +align-items( center )
+  +justify-content( center )
+  +flex( 1 )
+  margin: 2vh 0 0
 
   img
-    display: block
-    clear: both
     width: auto
     height: auto
     max-width: 100%
-    max-height: 63vh
-    margin: 2vh auto
-
-    +mq-aspect-greater-than-usual
-      margin: 0 auto
-
-    +mq-aspect-greater-than-double
-      float: left
-      width: 50vw
-      margin: 6vh 2vw 0 5vw
-
-  +mq-aspect-less-than-square
-    padding: 5vh 1em
-
-    img
-      margin: 5vh auto 3vh
+    max-height: 100%
 
 @each $item-props in $portfolio-items
   .portfolio-item-cover--#{ map-get( $item-props, slug ) }
@@ -55,26 +60,3 @@
 
   @media ( max-height: 600px ), ( max-width: 350px )
     display: none
-
-.portfolio-item-sample__links
-  text-align: center
-
-  .link--outbound
-    @extend .btn-default
-
-  @media ( max-width: 500px ), ( #{ $mq-aspect-greater-than-double } )
-    a
-      display: block
-      + a
-        margin-left: 0
-        margin-top: 0.8em
-
-  +mq-aspect-less-than-square
-    text-align: center
-
-  +mq-aspect-greater-than-double
-    float: left
-    min-width: 30vw
-    margin-top: 6vh
-    text-align: left
-    font-size: 90%

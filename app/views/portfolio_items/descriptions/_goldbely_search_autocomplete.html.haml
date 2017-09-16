@@ -17,12 +17,13 @@
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
       The "Final" Product
-  .container.container--page-width
+
     = render partial: 'portfolio_items/browser_frame', locals: { item: item, image_filename: 'final-product.png', desc: 'Final Product' }
-  .container.container--page-width.container--content
-    %br
+
     %p
       Above is a screenshot of the final product. Users can click on a product, or go to a shop by clicking the shop name.
+
+    = render partial: 'portfolio_items/outbound_link', locals: { item: item }
 
 .portfolio-item__section
   .container.container--page-width.container--content

@@ -1,19 +1,14 @@
 .portfolio-item-sample.js__portfolio-item-sample.js__scroll-past-container{ class: "portfolio-item-sample--#{ item.slug }", data: { sample: item.slug } }
   .header-push
 
-  .portfolio-item-sample__content
-    .portfolio-item-sample__title
-      %h1= item.name
+  .portfolio-item-sample__title
+    %h1= item.name
 
-    .portfolio-item-sample__blurb
-      = item.blurb
+  .portfolio-item-sample__blurb
+    = item.blurb
 
-    = image_tag "#{ item.sample_image_path }sample.png", class: 'portfolio-item__image', alt: "#{ item.name } Portfolio Sample"
+  .portfolio-item-sample__image-container
+    = image_tag "#{ item.sample_image_path }sample.png", alt: "#{ item.name } Portfolio Sample"
 
-    .portfolio-item-sample__links
-      - if item.outbound_link.present?
-        = link_to item.outbound_link.label, item.outbound_link.url, target: '_blank', class: 'btn btn-sm link--outbound'
-
-  - if item.show_case_study?
-    .scroll-past
-      = link_to '', '#', class: 'js__scroll-past-trigger'
+  .scroll-past
+    = link_to '', '#', class: "js__scroll-past-trigger #{ 'invisible' unless item.show_case_study? }"

@@ -13,7 +13,7 @@
       +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
 
     .btn-primary-hollow
-      +hollow-button( $color: white )
+      +hollow-button( $color: map-get( $item-props, color ) )
 
 
 .heading--portfolio-item
@@ -111,6 +111,10 @@
 
     .portfolio-item-sample__progress
       display: none
+
+.portfolio-item-sample__links
+  margin-top: 1.4em
+  text-align: center
 
 .objectives--dd-edit-app
   +ordered-list-circles( dd-edit-app-objectives )

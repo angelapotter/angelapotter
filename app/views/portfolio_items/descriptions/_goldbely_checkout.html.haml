@@ -36,6 +36,8 @@
           %strong The shipping options are shown in radio buttons, with "Schedule for later" listed as a separate option.
           This makes it really clear to users when expedited shipping is available. Scheduling shipments for future delivery is a really cool feature that the company wanted to highlight, but many users just want to receive their item ASAP. Requiring users to pick their arrival date from a calendar was just adding extra friction to the checkout process for many customers.
 
+    = render partial: 'portfolio_items/outbound_link', locals: { item: item }
+
 .portfolio-item__section
   .container.container--page-width.container--content
     %h3.heading--section.portfolio-item__section-name
