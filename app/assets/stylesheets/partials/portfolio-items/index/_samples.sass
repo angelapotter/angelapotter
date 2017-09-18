@@ -1,12 +1,12 @@
 .portfolio-item-sample,
-.portfolio-item-sample__content,
-.portfolio-item-sample__image-container
+.portfolio-item-sample__content
   +flexbox
   +flex-flow( column )
 
 .portfolio-item-sample
   height: 100vh
   padding: 0 1em
+
 
   +mq-aspect-less-than-square
     .portfolio-item-sample__title
@@ -15,22 +15,21 @@
     .portfolio-item-sample__links
       margin-bottom: 6vh
 
-.portfolio-item-sample__content
-  padding: 0.1vh 1em 1vh
+.portfolio-item-sample__content,
+.portfolio-item-sample__image-container
   +flex( 1 )
+
+.portfolio-item-sample__content
+  +align-items( center )
   +justify-content( center )
 
 .portfolio-item-sample__image-container
-  +align-items( center )
-  +justify-content( center )
-  +flex( 1 )
-  margin: 2vh 0 0
-
-  img
-    width: auto
-    height: auto
-    max-width: 100%
-    max-height: 100%
+  width: 100%
+  margin: 2vh 0 0.5vh
+  background-repeat: no-repeat
+  background-position: center 10%
+  background-size: contain
+  text-indent: -100%
 
 @each $item-props in $portfolio-items
   .portfolio-item-cover--#{ map-get( $item-props, slug ) }

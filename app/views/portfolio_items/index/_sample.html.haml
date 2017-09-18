@@ -1,14 +1,15 @@
 .portfolio-item-sample.js__portfolio-item-sample.js__scroll-past-container{ class: "portfolio-item-sample--#{ item.slug }", data: { sample: item.slug } }
   .header-push
 
-  .portfolio-item-sample__title
-    %h1= item.name
+  .portfolio-item-sample__content
+    .portfolio-item-sample__title
+      %h1= item.name
 
-  .portfolio-item-sample__blurb
-    = item.blurb
+    .portfolio-item-sample__blurb
+      = item.blurb
 
-  .portfolio-item-sample__image-container
-    = image_tag "#{ item.sample_image_path }sample.png", alt: "#{ item.name } Portfolio Sample"
+    .portfolio-item-sample__image-container{ style: "background-image: url('assets/#{ item.sample_image_path }sample.png')" }
+      = "#{ item.name } Portfolio Sample"
 
   .scroll-past
     = link_to '', '#', class: "js__scroll-past-trigger #{ 'invisible' unless item.show_case_study? }"

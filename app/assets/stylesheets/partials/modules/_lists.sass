@@ -11,21 +11,25 @@
 
     &:before
       +box-sizing( border-box )
+      +flexbox
+      +align-items( center )
+      +justify-content( center )
       @extend %font-weight-semibold
       content: counter( $list-name )
       counter-increment: $list-name
-      display: inline-block
       position: absolute
       left: 0
       top: -2px
-      height: $circle-size
-      width: $circle-size
-      padding: $circle-size / 30
+      height: em( $circle-size, $font-size )
+      width: em( $circle-size, $font-size )
       border: 2px solid $circle-color
       font-size: 1.1em
       text-align: center
-      border-radius: $circle-size / 2
+      border-radius: em( $circle-size / 2, $font-size )
       color: $circle-color
 
-    +mq( 650px )
+  +mq( 650px )
+    font-size: 90%
+
+    li
       padding-left: 3em

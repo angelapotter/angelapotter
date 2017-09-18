@@ -156,10 +156,6 @@ class PortfolioItems < ActiveHash::Base
     "portfolio-items/#{ company_slug }/#{ slug }/"
   end
 
-  def sample_heading_image_path
-    "#{ sample_image_path }heading.jpg"
-  end
-
   def show_case_study?
     return show_case_study.present?
   end
