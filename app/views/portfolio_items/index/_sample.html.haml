@@ -8,7 +8,7 @@
     .portfolio-item-sample__blurb
       = item.blurb
 
-    .portfolio-item-sample__image-container{ style: "background-image: url('assets/#{ item.sample_image_path }sample.png')" }
+    .portfolio-item-sample__image-container{ style: "background-image: url('#{ asset_path( item.sample_image_path + 'sample.png' ) }')" }
       = "#{ item.name } Portfolio Sample"
 
   .scroll-past
