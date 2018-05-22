@@ -9,22 +9,10 @@ $about-accent-color: #E57C78
       display: none
 
 .heading--about
-  min-height: 100vh
-
   .heading__background-image
-    height: 100%
-    background: gray( off-white) image-url( 'headings/about.jpg' ) right top no-repeat
-    background-size: auto 100%
-
-    &:before
-      background: transparentize( white, 0.05 )
 
     +mq( 700px )
       background-image: none
-
-.about__hero-text,
-.about__content
-  color: gray(dark)
 
 .about__hero-text
   padding: 13vh 0
@@ -56,7 +44,7 @@ $about-accent-color: #E57C78
     font-size: 65%
 
 .about__view-work
-  +solid-button( $bg: $about-accent-color, $fg: white )
+  +solid-button
   @extend .btn
   @extend .btn-lg
 

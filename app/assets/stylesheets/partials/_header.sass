@@ -1,4 +1,4 @@
-=nav__link--active( $color: map-get( $header-props, color-light ) )
+=nav__link--active( $color: map-get( $header-props, color ) )
   &:after
     +transform( scaleX( 1 ) )
     background: $color
@@ -28,7 +28,6 @@
 .header
   +flexbox
   +justify-content( space-between )
-  @extend .header--light
   position: fixed
   top: 0
   left: 0
@@ -45,22 +44,6 @@
     padding-left: page( padding-x-mobile )
     padding-right: page( padding-x-mobile )
 
-.header--light
-  .header__home-link h2
-    background-image: image-url( 'home-link--dark.png' )
-
-  &.headroom--not-top
-    background: transparentize( white, 0.05 )
-
-  .nav__link
-    color: map-get( $header-props, color-dark )
-
-    +active-link-states
-      +nav__link--active( $color: map-get( $header-props, color-dark ) )
-
-    &.active
-      +nav__link--active( $color: map-get( $header-props, color-dark ) )
-
 .headroom
   +transition( transform transition( lg ), background transition( lg ) )
 
@@ -72,6 +55,9 @@
 
 .headroom--top
   background: transparent
+
+.headroom--not-top
+  background: transparentize( white, 0.05 )
 
 .header__home-link,
 .header__nav--primary,
@@ -96,7 +82,7 @@
     height: $height
     margin-top: 3px
     overflow: hidden
-    background-image: image-url( 'home-link.png' )
+    background-image: image-url( 'home-link--dark.png' )
     background-size: $width $height
     font-weight: bold
     text-indent: 100%
@@ -128,7 +114,7 @@
   padding-left: 1em
   padding-right: 1em
   font-size: em( 19px )
-  color: map-get( $header-props, color-light )
+  color: map-get( $header-props, color )
   text-transform: uppercase
 
   &:after

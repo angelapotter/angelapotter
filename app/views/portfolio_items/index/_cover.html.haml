@@ -1,5 +1,5 @@
 %li.portfolio-item-cover{ class: "portfolio-item-cover--#{ item.slug }" }>
-  %a.porfolio-item-cover__content.portfolio-item-cover__aspect-container{ href: portfolio_items_path( item.slug ), title: item.name }
+  %a.porfolio-item-cover__content.portfolio-item-cover__aspect-container{ href: portfolio_items_path( item.slug ) }
 
     .portfolio-item-cover__aspect
       = image_tag "#{ item.sample_image_path }cover.jpg", class: 'portfolio-item-cover__image', alt: "#{ item.name } Portfolio Cover"

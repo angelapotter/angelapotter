@@ -2,14 +2,8 @@ $resume-accent-color: darken( #789AC8, 5% )
 
 .resume
   .back-to-top
-    a
-      @extend .text-link--white
-
     @media ( min-height: 920px ) and ( min-width: resume( bp-stack ) )
       display: none
-
-  // .headroom--not-top
-  //   background: $resume-accent-color
 
   .container--first
     padding-top: 18vh
@@ -21,22 +15,13 @@ $resume-accent-color: darken( #789AC8, 5% )
       padding-top: 10vh
 
 .heading--resume
-  min-height: 100vh
-
   .heading__background-image
-    height: 100%
     background-image: image-url( 'headings/resume.jpg' )
-
-    &:before
-      background: transparentize( white, 0.05 )
 
   +mq( 600px )
     font-size: 85%
 
 .resume__section
-  color: gray(dark)
-  // text-shadow: 0 0 0.7em $resume-accent-color
-
   + .resume__section
     margin-top: 2em
 

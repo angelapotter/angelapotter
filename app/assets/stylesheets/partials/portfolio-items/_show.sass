@@ -1,19 +1,14 @@
 @each $item-props in $portfolio-items
   .show--#{ map-get( $item-props, slug ) }
 
-    .headroom--pinned,
-    .headroom--top,
-    .headroom--not-top
-      background-color: transparentize( map-get( $item-props, color ), 0.05 )
-
     .portfolio-item__all-projects-link
-      color: map-get( $header-props, color-light )
+      color: map-get( $header-props, color )
 
     .btn-primary
-      +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
+      +solid-button
 
     .btn-primary-hollow
-      +hollow-button( $color: map-get( $item-props, color ) )
+      +hollow-button
 
 
 .heading--portfolio-item
@@ -96,14 +91,14 @@
   .btn--nav
     @extend %button-hover-effect
     cursor: pointer
-    color: map-get( $header-props, color-light )
+    color: map-get( $header-props, color )
     font-size: 1.8em
 
   .portfolio-item-sample__progress
     margin: 0 em( 12px )
     min-width: em( 120px )
     text-align: center
-    color: white
+    color: map-get( $header-props, color )
 
   +mq( 600px )
     .btn--nav:first-child
