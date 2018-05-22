@@ -8,9 +8,6 @@ $about-accent-color: #E57C78
     +mq( 1200px, min-height )
       display: none
 
-  .headroom--not-top
-    background: $about-accent-color
-
 .heading--about
   min-height: 100vh
 
@@ -20,14 +17,14 @@ $about-accent-color: #E57C78
     background-size: auto 100%
 
     &:before
-      background: transparentize( $about-accent-color, 0.1 )
+      background: transparentize( white, 0.05 )
 
     +mq( 700px )
       background-image: none
 
 .about__hero-text,
 .about__content
-  color: white
+  color: gray(dark)
 
 .about__hero-text
   padding: 13vh 0
@@ -59,7 +56,7 @@ $about-accent-color: #E57C78
     font-size: 65%
 
 .about__view-work
-  +solid-button( $bg: white, $fg: $about-accent-color )
+  +solid-button( $bg: $about-accent-color, $fg: white )
   @extend .btn
   @extend .btn-lg
 

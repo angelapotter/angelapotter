@@ -8,8 +8,8 @@ $resume-accent-color: darken( #789AC8, 5% )
     @media ( min-height: 920px ) and ( min-width: resume( bp-stack ) )
       display: none
 
-  .headroom--not-top
-    background: $resume-accent-color
+  // .headroom--not-top
+  //   background: $resume-accent-color
 
   .container--first
     padding-top: 18vh
@@ -20,9 +20,6 @@ $resume-accent-color: darken( #789AC8, 5% )
     +mq( 800px )
       padding-top: 10vh
 
-    .heading--section
-      color: transparentize( white, 0.2 )
-
 .heading--resume
   min-height: 100vh
 
@@ -31,14 +28,14 @@ $resume-accent-color: darken( #789AC8, 5% )
     background-image: image-url( 'headings/resume.jpg' )
 
     &:before
-      background: transparentize( $resume-accent-color, 0.1 )
+      background: transparentize( white, 0.05 )
 
   +mq( 600px )
     font-size: 85%
 
 .resume__section
-  color: white
-  text-shadow: 0 0 0.7em $resume-accent-color
+  color: gray(dark)
+  // text-shadow: 0 0 0.7em $resume-accent-color
 
   + .resume__section
     margin-top: 2em

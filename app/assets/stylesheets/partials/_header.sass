@@ -28,6 +28,7 @@
 .header
   +flexbox
   +justify-content( space-between )
+  @extend .header--light
   position: fixed
   top: 0
   left: 0
@@ -47,6 +48,10 @@
 .header--light
   .header__home-link h2
     background-image: image-url( 'home-link--dark.png' )
+
+  &.headroom--not-top
+    background: transparentize( white, 0.05 )
+
   .nav__link
     color: map-get( $header-props, color-dark )
 
