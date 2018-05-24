@@ -109,20 +109,20 @@
 
 .nav__link
   $transition: transition( md ) ease-in-out
+  @extend %font-weight-light
   display: block
   position: relative
   padding-left: 1em
   padding-right: 1em
   font-size: em( 19px )
   color: map-get( $header-props, color )
-  text-transform: uppercase
 
   &:after
     +transform( scaleX( 0 ) )
     +transition( background-color $transition, transform $transition )
     display: block
     content: ''
-    height: 0.2em
+    height: 1px
     margin: 0 auto
     background: transparent
 

@@ -2,24 +2,16 @@ $about-accent-color: #E57C78
 
 .about
   .back-to-top
-    a
-      @extend .text-link--white
-
     +mq( 1200px, min-height )
       display: none
 
-.heading--about
-  .heading__background-image
-
-    +mq( 700px )
-      background-image: none
-
 .about__hero-text
   padding: 13vh 0
+  text-align: center
 
   h4
     @extend %font-weight-light
-    margin: 0 0 4vh
+    margin: 0 auto 4vh
     font-size: em( 52px )
     line-height: 1.25
 
@@ -44,7 +36,7 @@ $about-accent-color: #E57C78
     font-size: 65%
 
 .about__view-work
-  +solid-button
+  +hollow-button
   @extend .btn
   @extend .btn-lg
 

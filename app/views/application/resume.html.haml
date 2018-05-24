@@ -1,78 +1,75 @@
 - content_for :title, 'Resume'
 
-.heading--page-with-background-image.heading--resume
-  .heading__background-image
+.container.container--page-width.container--first.container--last.container--content
+  .resume__section
+    %h3.heading--section Experience
+    .resume__subsection
+      %h6
+        %span.resume__job-heading #{ current_job.position }, #{ link_to current_job.company, current_job.website, class: 'text-link--primary' }
+        %span.resume__dates Feb 2017–present, San Francisco
+      %ul
+        %li Oversee end-to-end design for all products
+        %li Work with product managers to define product specs and scope
+        %li Maintain and enforce style guides across web and mobile
 
-  .container.container--page-width.container--first.container--last.container--content
-    .resume__section
-      %h3.heading--section Experience
-      .resume__subsection
-        %h6
-          %span.resume__job-heading #{ current_job.position }, #{ link_to current_job.company, current_job.website, class: 'text-link--primary' }
-          %span.resume__dates Feb 2017–present, San Francisco
-        %ul
-          %li Oversee end-to-end design for all products
-          %li Work with product managers to define product specs and scope
-          %li Maintain and enforce style guides across web and mobile
+    .resume__subsection
+      %h6
+        %span.resume__job-heading Product Designer, #{ link_to current_job.company, current_job.website, class: 'text-link--primary' }
+        %span.resume__dates May 2016–Feb 2017, San Francisco
+      %ul
+        %li Designed all CMS and event reporting products
+        %li Enabled self-service for 50% of customers with a step-by-step CMS onboarding experience
+        %li Created the company’s first web styleguide
 
-      .resume__subsection
-        %h6
-          %span.resume__job-heading Product Designer, #{ link_to current_job.company, current_job.website, class: 'text-link--primary' }
-          %span.resume__dates May 2016–Feb 2017, San Francisco
-        %ul
-          %li Designed all CMS and event reporting products
-          %li Enabled self-service for 50% of customers with a step-by-step CMS onboarding experience
-          %li Created the company’s first web styleguide
+    .resume__subsection
+      %h6
+        %span.resume__job-heading UI/UX Designer, #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--primary' }
+        %psan.resume__dates June 2014–April 2016, San Francisco
+      %ul
+        %li Worked with the Creative Director on the full product design lifecycle
+        %li Reduced support tickets by improving the order scheduling and tracking experience
+        %li Established accurate conversion tracking, and ran user testing to understand funnel dropoff points
+        %li Implemented designs in HAML/SASS and CoffeeScript
 
-      .resume__subsection
-        %h6
-          %span.resume__job-heading UI/UX Designer, #{ link_to 'Goldbely', 'https://goldbely.com', class: 'text-link--primary' }
-          %psan.resume__dates June 2014–April 2016, San Francisco
-        %ul
-          %li Worked with the Creative Director on the full product design lifecycle
-          %li Reduced support tickets by improving the order scheduling and tracking experience
-          %li Established accurate conversion tracking, and ran user testing to understand funnel dropoff points
-          %li Implemented designs in HAML/SASS and CoffeeScript
+    .resume__subsection
+      %h6
+        %span.resume__job-heading UX Designer/Developer, #{ link_to 'OLSET', 'https://olset.com', class: 'text-link--primary' }
+        %psan.resume__dates July 2013–June 2014, San Francisco
+      %ul
+        %li Sole designer and front-end developer
+        %li Participated in 500 Startups Batch 7 with OLSET
 
-      .resume__subsection
-        %h6
-          %span.resume__job-heading UX Designer/Developer, #{ link_to 'OLSET', 'https://olset.com', class: 'text-link--primary' }
-          %psan.resume__dates July 2013–June 2014, San Francisco
-        %ul
-          %li Sole designer and front-end developer
-          %li Participated in 500 Startups Batch 7 with OLSET
+    .resume__subsection
+      %h6
+        %span.resume__job-heading UI/UX Design Intern, Biznik
+        %psan.resume__dates Oct 2012–June 2013 in Seattle
+      %ul
+        %li Designed and implemented the company's first ever user testing program
+        %li Created working prototypes in HTML and JQuery
 
-      .resume__subsection
-        %h6
-          %span.resume__job-heading UI/UX Design Intern, Biznik
-          %psan.resume__dates Oct 2012–June 2013 in Seattle
-        %ul
-          %li Designed and implemented the company's first ever user testing program
-          %li Created working prototypes in HTML and JQuery
+  .resume__section
+    %h3.heading--section Skills
+    .resume__subsection
+      %h6
+        %span.resume__job-heading Design
+      %div
+        Product design, task flows, user testing, user interviews, information architecture, visual design
 
-    .resume__section
-      %h3.heading--section Skills
-      .resume__subsection
-        %h6
-          %span.resume__job-heading Design
-        %div
-          Product design, task flows, user testing, user interviews, information architecture, visual design
+      %h6
+        %span.resume__job-heading Tools
+      %div
+        Sketch, Balsamiq, Adobe Photoshop, Google Analytics, HTML/CSS, Javascript, Git
 
-        %h6
-          %span.resume__job-heading Tools
-        %div
-          Sketch, Balsamiq, Adobe Photoshop, Google Analytics, HTML/CSS, Javascript, Git
+  .resume__section
+    %h3.heading--section Education
+    .resume__subsection
+      %h6
+        %span.resume__job-heading Northwestern University
+        %psan.resume__dates June 2012, Evanston, IL
+      %div
+        Bachelor of Music in Music Cognition & Flute Performance
 
-    .resume__section
-      %h3.heading--section Education
-      .resume__subsection
-        %h6
-          %span.resume__job-heading Northwestern University
-          %psan.resume__dates June 2012, Evanston, IL
-        %div
-          Bachelor of Music in Music Cognition & Flute Performance
+  .resume__view-pdf
+    = link_to 'View Resume PDF', asset_path( 'angela-potter-resume.pdf' )
 
-    .resume__view-pdf
-      = link_to 'View Resume PDF', asset_path( 'angela-potter-resume.pdf' )
-
-  = render 'layouts/back_to_top'
+= render 'layouts/back_to_top'

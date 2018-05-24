@@ -1,3 +1,8 @@
+@each $item-props in $portfolio-items
+  .portfolio-item-cover--#{ map-get( $item-props, slug ) }
+    .porfolio-item-cover__content
+      background: map-get( $item-props, color )
+
 .portfolio-item-covers
   @extend .clearfix
   list-style-type: none
@@ -21,13 +26,11 @@
   overflow: hidden
   position: relative
   cursor: pointer
+  background: brand( primary )
 
   +active-link-states
     .portfolio-item-cover__aspect
       +transform( translateY( portfolio-item-cover( blurb-height ) * -1 ) )
-
-    .portfolio-item-cover__image
-      opacity: 0.9
 
     .portfolio-item-cover__title
       +transform( translateY( portfolio-item-cover( fg-translate-offset ) * -1 ) )
@@ -89,7 +92,7 @@
   height: portfolio-item-cover( blurb-height )
   padding: 0 portfolio-item-cover( content-padding-x )
   font-size: em( 15px )
-  color: gray( darkest )
+  color: white
 
   span
     display: table-cell

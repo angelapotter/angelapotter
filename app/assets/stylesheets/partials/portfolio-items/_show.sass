@@ -5,10 +5,10 @@
       color: map-get( $header-props, color )
 
     .btn-primary
-      +solid-button
+      +solid-button( $bg: map-get( $item-props, color ) )
 
     .btn-primary-hollow
-      +hollow-button
+      +hollow-button( $color: map-get( $item-props, color ) )
 
 
 .heading--portfolio-item
