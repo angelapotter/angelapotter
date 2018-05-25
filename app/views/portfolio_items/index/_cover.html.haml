@@ -3,10 +3,8 @@
 
     .portfolio-item-cover__aspect
       = image_tag "#{ item.sample_image_path }cover.jpg", class: 'portfolio-item-cover__image', alt: "#{ item.name } Portfolio Cover"
-      .portfolio-item-cover__gradient
-        .portfolio-item-cover__title= item.name
 
       .portfolio-item-cover__dark-overlay
-
-    .portfolio-item-cover__blurb
-      %span= item.blurb
+        .portfolio-item-cover__text
+          .portfolio-item-cover__title= item.name
+          .portfolio-item-cover__blurb= item.blurb

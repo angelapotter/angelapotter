@@ -1,8 +1,9 @@
 .header.js__header{ class: "header--#{ params[ :controller ].gsub( '_', '-' ) }" }
   - if params[ :controller ] == 'portfolio_items' && params[ :action ] == 'show'
-    = link_to root_path, class: 'portfolio-item__all-projects-link' do
-      %i.fa.fa-arrow-left
-      Back to All Projects
+    .portfolio-item__all-projects-link
+      = link_to root_path, class: 'text-link--default' do
+        %i.fa.fa-arrow-left
+        Back to all projects
 
     .portfolio-item-show__nav
       = link_to prev_portfolio_item_path, title: 'Previous Project', class: "btn--nav #{ 'invisible' unless prev_portfolio_item.present? }" do

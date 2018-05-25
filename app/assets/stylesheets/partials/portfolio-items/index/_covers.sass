@@ -18,7 +18,7 @@
     float: left
     width: 50%
 
-  +mq( 1200px, min-width )
+  +mq( 1281px, min-width )
     width: percentage( 1 / 3 )
 
 .porfolio-item-cover__content
@@ -29,28 +29,25 @@
   background: brand( primary )
 
   +active-link-states
-    .portfolio-item-cover__aspect
-      +transform( translateY( portfolio-item-cover( blurb-height ) * -1 ) )
-
-    .portfolio-item-cover__title
-      +transform( translateY( portfolio-item-cover( fg-translate-offset ) * -1 ) )
+    .portfolio-item-cover__image
+      +transform( scale( 1.2 ) )
 
     .portfolio-item-cover__dark-overlay
       opacity: 1
-
-    .portfolio-item-cover__blurb
-      +transform( translateY( 0 ) )
 
 +set-aspect-ratio( '.portfolio-item-cover__aspect', 10, 8 )
   +transition( transform portfolio-item-cover( transition ) )
 
 .portfolio-item-cover__image
-  +transition( opacity portfolio-item-cover( transition ) )
+  +transition( transform portfolio-item-cover( transition ) )
   display: block
   width: 100%
   height: auto
 
 .portfolio-item-cover__dark-overlay
+  +flexbox
+  +align-items( center )
+  +justify-content( center )
   +transition( opacity portfolio-item-cover( transition ) )
   position: absolute
   top: 0
@@ -59,44 +56,18 @@
   bottom: 0
   z-index: z-index( page ) + 1
   opacity: 0
-  background: transparentize( black, 0.6 )
+  background: transparentize( black, 0.5 )
+  color: white
+  text-shadow: 0 0 0.8em transparentize( black, 0.5 )
+  text-align: center
 
-.portfolio-item-cover__gradient
-  +linear-gradient-vertical( $stop: transparentize( black, 0.4 ) )
-  position: absolute
-  bottom: 0
-  left: 0
-  right: 0
-  height: 30%
-  z-index: z-index( page ) + 2
+.portfolio-item-cover__text
+  padding: 1.4em
+  line-height: 1.25
 
 .portfolio-item-cover__title
-  @extend %font-weight-light
-  +transition( transform portfolio-item-cover( transition ) )
-  position: absolute
-  bottom: 16%
-  left: portfolio-item-cover( content-padding-x )
-  font-size: em( 21px )
-  color: white
-  text-shadow: 0 0 0.8em transparentize( black, 0.6 )
-
-.portfolio-item-cover__blurb
-  +box-sizing( border-box )
-  +transition( transform portfolio-item-cover( transition ) )
-  +transform( translateY( portfolio-item-cover( blurb-height ) + portfolio-item-cover( fg-translate-offset ) ) )
-  position: absolute
-  bottom: 0
-  left: 0
-  right: 0
-  display: table
-  height: portfolio-item-cover( blurb-height )
-  padding: 0 portfolio-item-cover( content-padding-x )
-  font-size: em( 15px )
-  color: white
-
-  span
-    display: table-cell
-    vertical-align: middle
+  font-size: em( 24px )
+  padding-bottom: 0.2em
 
 .portfolio-items
   .back-to-top

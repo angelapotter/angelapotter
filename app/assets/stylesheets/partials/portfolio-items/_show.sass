@@ -30,15 +30,18 @@
   height: 100%
 
 .portfolio-item__all-projects-link
-  $font-size: 18px
-  @extend %button-hover-effect
+  $font-size: 16px
   font-size: em( $font-size )
-  text-transform: uppercase
+
+  a,
+  i
+    +flexbox
+    +align-content( center )
+    +align-items( center )
 
   i
-    display: inline-block
-    vertical-align: middle
-    margin-right: 0.4em
+    margin-right: 0.8em
+    font-size: em( 14px, $font-size )
 
 .portfolio-items.show
   .portfolio-item__section
@@ -92,7 +95,7 @@
     @extend %button-hover-effect
     cursor: pointer
     color: map-get( $header-props, color )
-    font-size: 1.8em
+    font-size: 1.4em
 
   .portfolio-item-sample__progress
     margin: 0 em( 12px )
