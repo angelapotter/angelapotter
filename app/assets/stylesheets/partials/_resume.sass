@@ -2,46 +2,10 @@ $resume-accent-color: darken( #789AC8, 5% )
 
 .resume
   .back-to-top
-    a
-      @extend .text-link--white
-
     @media ( min-height: 920px ) and ( min-width: resume( bp-stack ) )
       display: none
 
-  .headroom--not-top
-    background: $resume-accent-color
-
-  .container--first
-    padding-top: 18vh
-
-    +mq( 1600px )
-      padding-top: 14vh
-
-    +mq( 800px )
-      padding-top: 10vh
-
-    .heading--section
-      color: transparentize( white, 0.2 )
-
-.heading--resume
-  min-height: 100vh
-
-  .heading__background-image
-    height: 100%
-    background-image: image-url( 'headings/resume.jpg' )
-
-    &:before
-      background: transparentize( $resume-accent-color, 0.1 )
-
-  +mq( 600px )
-    font-size: 85%
-
 .resume__section
-  color: white
-  text-shadow: 0 0 0.7em $resume-accent-color
-
-  + .resume__section
-    margin-top: 2em
 
   +mq( resume( bp-stack ), min-width )
     float: right
@@ -60,22 +24,16 @@ $resume-accent-color: darken( #789AC8, 5% )
       right: auto
 
 .resume__subsection
-  margin-top: 1.3em
+  + .resume__subsection
+    margin-top: 1.5em
 
-  h6
-    font-size: em( 18px )
+  ul
+    margin-top: 0.4em
 
-.resume__job-heading
+.resume__subheading
   @extend %font-weight-semibold
+  margin-bottom: 0.4em
 
-.resume__dates
-  @extend %font-weight-light
-
-  +mq( resume( bp-stack ), min-width )
-    display: block
-
-  +mq( 700px )
-    display: block
 .resume__view-pdf
   clear: both
   padding-top: 2.5em

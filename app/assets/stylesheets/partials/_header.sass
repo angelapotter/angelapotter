@@ -1,4 +1,4 @@
-=nav__link--active( $color: map-get( $header-props, color-light ) )
+=nav__link--active( $color: map-get( $header-props, color ) )
   &:after
     +transform( scaleX( 1 ) )
     background: $color
@@ -44,18 +44,6 @@
     padding-left: page( padding-x-mobile )
     padding-right: page( padding-x-mobile )
 
-.header--light
-  .header__home-link h2
-    background-image: image-url( 'home-link--dark.png' )
-  .nav__link
-    color: map-get( $header-props, color-dark )
-
-    +active-link-states
-      +nav__link--active( $color: map-get( $header-props, color-dark ) )
-
-    &.active
-      +nav__link--active( $color: map-get( $header-props, color-dark ) )
-
 .headroom
   +transition( transform transition( lg ), background transition( lg ) )
 
@@ -67,6 +55,9 @@
 
 .headroom--top
   background: transparent
+
+.headroom--not-top
+  background: transparentize( white, 0.05 )
 
 .header__home-link,
 .header__nav--primary,
@@ -84,8 +75,8 @@
     display: none
 
   h2
-    $width: 208px
-    $height: 29px
+    $width: 130px
+    $height: 26px
     display: block
     width: $width
     height: $height
@@ -118,20 +109,20 @@
 
 .nav__link
   $transition: transition( md ) ease-in-out
+  @extend %font-weight-light
   display: block
   position: relative
   padding-left: 1em
   padding-right: 1em
   font-size: em( 19px )
-  color: map-get( $header-props, color-light )
-  text-transform: uppercase
+  color: map-get( $header-props, color )
 
   &:after
     +transform( scaleX( 0 ) )
     +transition( background-color $transition, transform $transition )
     display: block
     content: ''
-    height: 0.2em
+    height: 1px
     margin: 0 auto
     background: transparent
 

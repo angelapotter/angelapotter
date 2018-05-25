@@ -1,28 +1,28 @@
 .header.js__header{ class: "header--#{ params[ :controller ].gsub( '_', '-' ) }" }
   - if params[ :controller ] == 'portfolio_items' && params[ :action ] == 'show'
-    = link_to work_path, class: 'portfolio-item__all-projects-link' do
-      %i.fa.fa-arrow-left
-      Back to All Projects
+    .portfolio-item__all-projects-link
+      = link_to root_path do
+        %i.fa.fa-arrow-left
+        Back to all projects
 
     .portfolio-item-show__nav
       = link_to prev_portfolio_item_path, title: 'Previous Project', class: "btn--nav #{ 'invisible' unless prev_portfolio_item.present? }" do
-        %i.fa.fa-chevron-circle-left
+        %i.fa.fa-caret-left
 
       .portfolio-item-sample__progress
         Project #{ @index + 1 } of #{ portfolio_items.size }
 
       = link_to next_portfolio_item_path, title: 'Next Project', class: "btn--nav #{ 'invisible' unless next_portfolio_item.present? }" do
-        %i.fa.fa-chevron-circle-right
+        %i.fa.fa-caret-right
 
   - else
     %a.header__home-link{ href: root_path, title: "Home"}
       %h2
 
     %ul.header__nav--primary
-      %li>
-        %a.nav__link{ href: root_path, class: ( 'active' if params[ :action ] == 'about' ) } Home
-      %li>
-        %a.nav__link{ href: work_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) }
-          Work
-      %li>
+      %li
+        %a.nav__link{ href: root_path, class: ( 'active' if params[ :controller ] == 'portfolio_items' ) } Work
+      %li
+        %a.nav__link{ href: about_path, class: ( 'active' if params[ :action ] == 'about' ) } About
+      %li
         %a.nav__link{ href: resume_path, class: ( 'active' if params[ :action ] == 'resume' ) } Resume

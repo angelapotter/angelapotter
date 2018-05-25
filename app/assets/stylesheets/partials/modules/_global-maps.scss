@@ -12,8 +12,7 @@ $gray-shades: (
 );
 
 $brand-colors: (
-  primary: #00B890,
-  primary-dark: #00AE88
+  primary: #2889CC
 );
 
 @function gray( $shade: dark ) {
@@ -70,8 +69,7 @@ $header-props: (
   height: 4.3em,
   height-mobile: 3.35em,
   padding-y: 0,
-  color-light: white,
-  color-dark: gray( dark )
+  color: gray( darkest )
 );
 
 $header-bps: (

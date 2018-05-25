@@ -4,39 +4,48 @@ class PortfolioItems < ActiveHash::Base
 
   self.data = [
     {
-      name: 'DoubleDutch Unified Messaging',
+      name: 'Industrial Control Models',
+      company: 'Kelvin',
+      role: 'Lead Design',
+      platform: 'Web',
+      slug: 'kelvin-control-models',
+      blurb: "Empower analysts to tune control models for natural gas wells",
+      show_case_study: true,
+    },
+    {
+      name: 'Unified Messaging',
       company: 'DoubleDutch',
       role: 'End-to-End Design',
       platform: 'Web & Mobile',
       slug: 'doubledutch-unified-messaging',
-      blurb: "A messaging center for event attendees to see all their chat activity in one place.",
+      blurb: "Allow event attendees to see all their chat activity in one place",
       show_case_study: true,
     },
     {
-      name: 'DoubleDutch Event Engagement Report',
+      name: 'Attendee Engagement Report',
       company: 'DoubleDutch',
       role: 'End-to-End Design',
       platform: 'Web & Mobile',
       slug: 'doubledutch-engagement-report',
-      blurb: "An infographic-style report about what attendees did during the event.",
+      blurb: "Visualize attendee behavior for event organizers",
       show_case_study: true,
     },
     {
-      name: 'DoubleDutch Edit App',
+      name: 'Edit Event App',
       company: 'DoubleDutch',
       role: 'End-to-End Design',
       platform: 'Web',
       slug: 'doubledutch-edit-app',
-      blurb: "A step-by-step workflow for editing and submitting your mobile event app.",
+      blurb: "Guide event organizers through editing and submitting their mobile event app",
       show_case_study: true,
     },
     {
-      name: 'Goldbely Checkout',
+      name: 'E-Commerce Checkout',
       company: 'Goldbely',
       role: 'Design + Front-End Dev',
       platform: 'Web',
       slug: 'goldbely-checkout',
-      blurb: "A web checkout experience for an e-commerce food startup.",
+      blurb: "Enable foodies to buy and schedule food orders from across the country",
       show_case_study: true,
       outbound_link: OpenStruct.new({
         label: 'View on Goldbely.com',
@@ -44,12 +53,12 @@ class PortfolioItems < ActiveHash::Base
       }),
     },
     {
-      name: 'Goldbely Search',
+      name: 'E-Commerce Search',
       company: 'Goldbely',
       role: 'Design',
       platform: 'Web',
       slug: 'goldbely-search-autocomplete',
-      blurb: "Search results for an e-commerce website that update as you type.",
+      blurb: "Provide visual search results with autosuggest",
       outbound_link: OpenStruct.new({
         label: 'View on Goldbely.com',
         url: 'https://www.goldbely.com',
@@ -57,12 +66,12 @@ class PortfolioItems < ActiveHash::Base
       show_case_study: true,
     },
     {
-      name: 'Goldbely Order History',
+      name: 'E-Commerce Order History',
       company: 'Goldbely',
       role: 'Design',
       platform: 'Web',
       slug: 'goldbely-order-history',
-      blurb: "An e-commerce order history page, where customers can track their food shipments."
+      blurb: "Empower customers to track their food shipments"
     },
     # {
     #   name: 'Goldbely Homepage Carousel',
@@ -94,7 +103,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design + Front-End Dev',
       platform: 'Android',
       slug: 'anydo-hotel-matches',
-      blurb: "A partnership with Any.do that allows users to book hotels from the Android to-do list app.",
+      blurb: "Allow Any.do users to book hotels from their to-do list",
     },
     {
       name: 'OLSET Hotel Matches',
@@ -102,7 +111,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design + Front-End Dev',
       platform: 'Web',
       slug: 'olset-hotel-matches',
-      blurb: "Hotel search results with match ratings based on the user's preferences and travel history.",
+      blurb: "Provide business travelers with personalized hotel matches",
     },
     # {
     #   name: 'Hotel Site Landing Page',
@@ -117,14 +126,14 @@ class PortfolioItems < ActiveHash::Base
       role: 'Design',
       platform: 'Android',
       slug: 'music-notation-app',
-      blurb: "Mockups for a music notation app for Android.",
+      blurb: "Compose music on your phone",
     },
     {
       name: 'Old Person App',
       role: 'Design + XML',
       platform: 'Android',
       slug: 'old-person-app',
-      blurb: "An Android app with a flashlight, magnifying glass, and large print notebook.",
+      blurb: "Equip vision-impaired users with a flashlight, magnifying glass, and large print notebook.",
       outbound_link: OpenStruct.new({
         label: 'Download from Google Play',
         url: 'https://play.google.com/store/apps/details?id=com.thirdlayer.oldperson&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS50aGlyZGxheWVyLm9sZHBlcnNvbiJd',
@@ -136,7 +145,7 @@ class PortfolioItems < ActiveHash::Base
       role: 'UI Design + Prototyping',
       platform: 'Web',
       slug: 'myfive',
-      blurb: "A prototype for a web app that helps freelancers keep track of their referrals."
+      blurb: "Help freelancers keep track of their referral sources"
     },
   ]
 

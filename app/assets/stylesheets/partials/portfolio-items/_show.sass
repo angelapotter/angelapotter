@@ -1,21 +1,6 @@
 @each $item-props in $portfolio-items
   .show--#{ map-get( $item-props, slug ) }
 
-    .headroom--pinned,
-    .headroom--top,
-    .headroom--not-top
-      background-color: transparentize( map-get( $item-props, color ), 0.05 )
-
-    .portfolio-item__all-projects-link
-      color: map-get( $header-props, color-light )
-
-    .btn-primary
-      +solid-button( $bg: white, $fg: map-get( $item-props, color ) )
-
-    .btn-primary-hollow
-      +hollow-button( $color: map-get( $item-props, color ) )
-
-
 .heading--portfolio-item
   @extend %heading--page
   font-size: 90%
@@ -35,15 +20,20 @@
   height: 100%
 
 .portfolio-item__all-projects-link
-  $font-size: 18px
-  @extend %button-hover-effect
+  $font-size: 16px
   font-size: em( $font-size )
-  text-transform: uppercase
+
+  a
+    +text-action
+
+  a,
+  i
+    +flexbox
+    +align-content( center )
+    +align-items( center )
 
   i
-    display: inline-block
-    vertical-align: middle
-    margin-right: 0.4em
+    margin-right: 0.8em
 
 .portfolio-items.show
   .portfolio-item__section
@@ -94,16 +84,16 @@
   +align-items( center )
 
   .btn--nav
-    @extend %button-hover-effect
+    +text-action
     cursor: pointer
-    color: map-get( $header-props, color-light )
-    font-size: 1.8em
+    color: map-get( $header-props, color )
+    font-size: 1.25em
 
   .portfolio-item-sample__progress
     margin: 0 em( 12px )
     min-width: em( 120px )
     text-align: center
-    color: white
+    color: map-get( $header-props, color )
 
   +mq( 600px )
     .btn--nav:first-child
