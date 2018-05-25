@@ -51,9 +51,9 @@ class ApplicationController < ActionController::Base
 
   def current_job
     OpenStruct.new({
-      position: 'Senior Product Designer',
-      company: 'DoubleDutch',
-      website: 'http://doubledutch.me'
+      position: 'Product Designer',
+      company: 'Kelvin',
+      website: 'http://www.kelvininc.com'
     })
   end
 

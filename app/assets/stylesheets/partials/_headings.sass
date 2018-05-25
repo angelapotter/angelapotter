@@ -17,15 +17,10 @@ h2, h3, h4, h5, h6
   padding: 0
 
 .heading--section
-  @extend %font-weight-semibold
-  font-size: em( 22px )
-  text-transform: uppercase
-  color: gray( medium-dark )
+  @extend %font-weight-light
+  font-size: em( 32px )
+  padding: padding( lg ) 0 padding( md )
+  color: gray( medium )
 
   +mq( 1100px )
-    font-size: em( 20px )
-
-.subheading
-  font-size: em( 22px )
-  padding: em( 5px ) 0
-  font-weight: normal
+    font-size: em( 24px )
