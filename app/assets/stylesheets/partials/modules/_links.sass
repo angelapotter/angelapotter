@@ -20,6 +20,11 @@ $link-color: brand( primary )
   +active-link-states
     +text-link-hover-style( $color-hover )
 
+=text-action( $color: gray( dark ) )
+  color: $color
+
+  +active-link-states
+    color: $link-color
 
 .text-link--primary
   +text-link( $link-color )
@@ -42,10 +47,12 @@ $link-color: brand( primary )
   a
     @extend .fa
     @extend .fa-angle-down
-    @extend %button-hover-effect
     display: inline-block
     padding: 0 0.2em
     font-size: em( 82px )
     color: gray( dark )
+
+    +active-link-states
+      color: $link-color
 
 

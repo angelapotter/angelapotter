@@ -10,7 +10,7 @@ class PortfolioItems < ActiveHash::Base
       platform: 'Web',
       slug: 'kelvin-control-models',
       blurb: "Empower analysts to tune control models for natural gas wells",
-      show_case_study: false,
+      show_case_study: true,
     },
     {
       name: 'Unified Messaging',

@@ -1,10 +1,4 @@
-$button-transition: transition( md ) ease-in-out
-
-%button-hover-effect
-  +transition( transform $button-transition )
-
-  +active-link-states
-    +transform( scale( 1.1, 1.1 ) )
+$button-transition: transition( sm ) ease-in-out
 
 =hollow-button( $color: brand( primary ) )
   $border-size: 2px
@@ -12,15 +6,23 @@ $button-transition: transition( md ) ease-in-out
   background: transparent
   color: $color
 
+  +active-link-states
+    background: $color
+    color: white
+
 =solid-button( $bg: $link-color, $fg: white )
   $border-size: 2px
   border: $border-size solid $bg
   background: $bg
   color: $fg
 
+  +active-link-states
+    background: transparent
+    color: $bg
+
 .btn
-  @extend %button-hover-effect
   @extend %font-weight-semibold
+  +transition( background $button-transition, color $button-transition )
   display: inline-block
   min-width: em( 150px )
   padding: em( 15px ) em( 28px )
