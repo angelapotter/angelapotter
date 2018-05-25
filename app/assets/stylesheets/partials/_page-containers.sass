@@ -26,11 +26,11 @@ body
   margin: 0 auto
   padding: 0
 
-.container--page-width
-  max-width: page( width )
+=content-container( $width: page( width ) )
+  max-width: $width
 
   &.container--content
-    +mq( page( width ) + page( padding-x ) * 2 )
+    +mq( $width + page( padding-x ) * 2 )
       padding-left: page( padding-x )
       padding-right: page( padding-x )
       max-width: 100%
@@ -39,8 +39,11 @@ body
       padding-left: page( padding-x-mobile )
       padding-right: page( padding-x-mobile )
 
+.container--page-width
+  +content-container
+
 .container--narrow
-  max-width: 840px
+  +content-container( $width: 800px )
 
 .container--first
   padding-top: page( padding-y )
